@@ -6,16 +6,16 @@ class StaticController extends Controller
 {
     public function getAbout()
     {
-        return view('about');
+        return view('static.about');
     }
 
     public function getHowItWorks()
     {
-        return view('how-it-works');
+        return view('static.how-it-works');
     }
 
     public function getFeedBack()
     {
-        return view('feedback');
+        return view('static.feedback');
     }
 }

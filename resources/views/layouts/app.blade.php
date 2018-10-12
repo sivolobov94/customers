@@ -24,23 +24,23 @@
 
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
-            </a>
+            <a class="navbar-brand" href="{{ url('/') }}">Главная</a>
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item ">
-                        <a class="nav-link" href="#">О площадке <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('about')}}">О площадке <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Как это работает</a>
+                        <a class="nav-link" href="{{route('how-it-works')}}">Как это работает</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="#">Обратная связь</a>
+                        <a class="nav-link " href="{{route('feedback')}}">Обратная связь</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <form class="form-inline my-2 my-lg-0" METHOD="get" action="{{route('search')}}">
+                    @csrf
+                    <input name="text" class="form-control mr-sm-2" type="text" placeholder="Search"
+                           aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
@@ -84,7 +84,6 @@
                                       style="display: none;">
                                     @csrf
                                 </form>
-
                             </div>
                         </li>
                     @endguest

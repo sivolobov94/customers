@@ -11,33 +11,42 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes(['verify' => true]);
+//mainpage
+Route::get('/', 'MainController@index')->name('main');
 //profile
 Route::get('/account/profile', 'ProfileController@getProfile')->name('profile');
-Route::get('/account/edit-profile', 'ProfileController@editProfile')->name('edit-profile');
+Route::post('/account/edit-profile', 'ProfileController@postEditProfile')->name('post-edit-profile');
+Route::get('/account/edit-profile', 'ProfileController@getEditProfile')->name('get-edit-profile');
 //account
-Route::get('/account/logo', 'AccountController@getLogo')->name('logo');
-Route::get('/account/edit-email', 'AccountController@editEmail')->name('edit-email');
-Route::get('/account/edit-password', 'AccountController@editPassword')->name('edit-password');
-Route::get('/account/field', 'AccountController@getField')->name('field');
-Route::get('/account/description', 'AccountController@getDescription')->name('description');
-Route::get('/account/requisites', 'AccountController@getRequisites')->name('requisites');
-Route::get('/account/notifications', 'AccountController@getNotifications')->name('notifications');
-Route::get('/account/orders', 'AccountController@getOrders')->name('orders');
-Route::get('/account/price', 'AccountController@getPrice')->name('price');
-Route::get('/account/referal', 'AccountController@getReferal')->name('referal');
-Route::get('/account/bill', 'AccountController@getBill')->name('bill');
-Route::get('/account/documents', 'AccountController@getDocuments')->name('documents');
-Route::get('/account/referal-partner', 'AccountController@getReferalPartner')->name('referal-partner');
-Route::get('/account/payment', 'AccountController@getPayment')->name('payment');
+Route::get('/account/logo', 'ProfileController@getLogo')->name('logo');
 
+Route::get('/account/edit-email', 'ProfileController@getEditEmail')->name('get-edit-email');
+Route::post('/account/edit-email', 'ProfileController@postEditEmail')->name('post-edit-email');
 
-
+Route::get('/account/edit-password', 'ProfileController@editPassword')->name('edit-password');
+Route::get('/account/field', 'ProfileController@getField')->name('field');
+Route::get('/account/description', 'ProfileController@getDescription')->name('description');
+Route::get('/account/requisites', 'ProfileController@getRequisites')->name('requisites');
+Route::get('/account/notifications', 'ProfileController@getNotifications')->name('notifications');
+Route::get('/account/orders', 'ProfileController@getOrders')->name('orders');
+Route::get('/account/price', 'ProfileController@getPrice')->name('price');
+Route::get('/account/referal', 'ProfileController@getReferal')->name('referal');
+Route::get('/account/bill', 'ProfileController@getBill')->name('bill');
+Route::get('/account/documents', 'ProfileController@getDocuments')->name('documents');
+Route::get('/account/referal-partner', 'ProfileController@getReferalPartner')->name('referal-partner');
+Route::get('/account/payment', 'ProfileController@getPayment')->name('payment');
+//search routes
+Route::get('/search', 'SearchController@search' )->name('search');
 //static pages
 Route::get('/about', 'StaticController@getAbout')->name('about');
 Route::get('/how-it-works', 'StaticController@getHowItWorks')->name('how-it-works');
 Route::get('/feedback', 'StaticController@getFeedback')->name('feedback');
+//products
+Route::Resource('products', 'ProductController');
+//orders
+Route::Resource('orders', 'OrderController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

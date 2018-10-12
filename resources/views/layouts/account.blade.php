@@ -8,7 +8,7 @@
                     <div class="list-group" >
                         <a href="{{route('profile')}}"><button type="button" class="list-group-item list-group-item-action ">Профиль</button></a>
                         <a href="{{route('logo')}}"><button type="button" class="list-group-item list-group-item-action">Логотип</button></a>
-                        <a href="{{route('edit-email')}}"><button type="button" class="list-group-item list-group-item-action">Изменить Email</button></a>
+                        <a href="{{route('get-edit-email')}}"><button type="button" class="list-group-item list-group-item-action">Изменить Email</button></a>
                         <a href="{{route('edit-password')}}"><button type="button" class="list-group-item list-group-item-action">Сменить Пароль</button></a>
                         <a href="{{route('field')}}"><button type="button" class="list-group-item list-group-item-action" >Сфера деятельности</button></a>
                         <a href="{{route('payment')}}"><button type="button" class="list-group-item list-group-item-action">Способ оплаты и доставка</button></a>

@@ -11,13 +11,15 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
+    public $role;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','role'
     ];
 
     /**
@@ -32,5 +34,15 @@ class User extends Authenticatable implements MustVerifyEmail
     public function profile()
     {
         return $this->hasOne('App\Profile');
+    }
+
+    public function setRole($role)
+    {
+
+    }
+
+    public function getRole()
+    {
+        return $this->role;
     }
 }
