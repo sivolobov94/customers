@@ -3,21 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Profile;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
     public function getProfile()
     {
-        $profile = Profile::where('user_id', Auth::user()->getAuthIdentifier())->get();
+        $profile = Profile::where('user_id', Auth::user()->getAuthIdentifier())->first();
         return view('account.profile', ['profile' => $profile]);
     }
 
     public function getEditProfile()
     {
-        $profile = Profile::where('user_id', Auth::user()->getAuthIdentifier())->get();
-        
+        $profile = Profile::where('user_id', Auth::user()->getAuthIdentifier())->first();
         return view('account.edit-profile', ['profile' => $profile]);
     }
 
@@ -48,12 +49,33 @@ class ProfileController extends Controller
 
     public function getEditEmail()
     {
-        return view('account.edit-email');
+        $user = User::where('id', Auth::user()->getAuthIdentifier())->first();
+        return view('account.edit-email', ['email' => $user->email]);
     }
 
-    public function editPassword()
+
+    public function postEditEmail(Request $request)
+    {
+        $user = User::where('id', Auth::user()->getAuthIdentifier())->first();
+        $user->email = $request->input('email');
+        return view('account.edit-email', ['email' => $user->email]);
+    }
+
+    public function getEditPassword()
     {
         return view('account.edit-password');
+    }
+
+    public function postEditPassword(Request $request)
+    {
+        $user = User::where('id', Auth::user()->getAuthIdentifier())->first();
+        if (password_verify($request->input('current_password'), $user->password) && $request->input('new_password') === $request->input('accept_password')) {
+            $user->password = $request->input('new_password');
+            $user->save();
+            return view('account.edit-password-success');
+        } else {
+            return view('account.edit-password');
+        }
     }
 
     public function getField()
@@ -68,11 +90,40 @@ class ProfileController extends Controller
 
     public function getDescription()
     {
-        return view('account.description');
+        $profile = Profile::where('user_id', Auth::user()->getAuthIdentifier())->first();
+        return view('account.description', ['profile' => $profile]);
     }
 
+    public function getEditDescription()
+    {
+        $profile = Profile::where('user_id', Auth::user()->getAuthIdentifier())->first();
+        return view('account.edit-description', ['profile' => $profile]);
+    }
+
+    public function postEditDescription(Request $request)
+    {
+        $data = $request->all();
+        $profile = Profile::where('user_id', Auth::user()->getAuthIdentifier())->first();
+        $profile->small_description = $data['small_description'];
+        $profile->description = $data['description'];
+        $profile->site = $data['site'];
+        $profile->save();
+
+        return view('account.description', ['profile' => $profile]);
+    }
     public function getRequisites()
     {
+        return view('account.requisites');
+    }
+
+    public function getEditRequisites()
+    {
+        return view('account.edit-requisites');
+    }
+
+    public function postEditRequisites(Request $request)
+    {
+        $requisites = DB::table('requisites')->where('user_id', Auth::user()->getAuthIdentifier())->first();
         return view('account.requisites');
     }
 
@@ -110,4 +161,5 @@ class ProfileController extends Controller
     {
         return view('account.referal-partner');
     }
+
 }

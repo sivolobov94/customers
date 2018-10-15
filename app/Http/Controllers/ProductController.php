@@ -19,20 +19,25 @@ class ProductController extends Controller
         return view('products.index', ['items' => $items]);
     }
 
+    public function getOrderCreate()
+    {
+        
+    }
+
     /**
      * Show the form for creating a new resource.
      *
-     * @param $data
+     * @param Request $request
      * @return void
      */
-    public function create()
+    public function create(Request $request)
     {
         $product = new Product;
         $product->create([
-            'name' => 'услуги адвоката',
-            'description' => 'Услуги адвоката в Москве',
-            'price' => '50000',
-            'image' => 'картинка'
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'price' => $request->input('price'),
+            'image' => $request->input('image')
         ]);
     }
 

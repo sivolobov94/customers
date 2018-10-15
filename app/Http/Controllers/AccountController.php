@@ -22,7 +22,4 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-
-
 }

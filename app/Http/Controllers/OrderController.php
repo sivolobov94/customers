@@ -8,6 +8,21 @@ use App\Http\Controllers\Controller;
 
 class OrderController extends Controller
 {
+    public function getOrderCreate()
+    {
+        return view('account.create-order');
+    }
+
+    public function postCreateOrder(Request $request)
+    {
+        $order = new Order(
+            [
+                ''
+            ]
+        );
+        return view('account.order-success');
+    }
+
     /**
      * Display a listing of the resource.
      *

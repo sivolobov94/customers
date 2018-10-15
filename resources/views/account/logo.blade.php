@@ -4,9 +4,10 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Логотип</h1>
-            <div class="container">
-                <img src="../../../img/logo.png" alt="logo">
-            </div>
+            <form method="post" enctype="multipart/form-data">
+                <input type="file" name="image">
+                <button type="submit">Загрузить</button>
+            </form>
             <button type="button" class="btn btn-primary">Изменить</button>
         </div>
     </div>

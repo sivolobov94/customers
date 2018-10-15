@@ -24,7 +24,9 @@ class CreateProfilesTable extends Migration
             $table->string('logo')->nullable();
             $table->string('field')->nullable();
             $table->string('payment')->nullable();
+            $table->string('small_description')->nullable();
             $table->string('description')->nullable();
+            $table->string('site')->nullable();
             $table->string('requisites')->nullable();
             $table->string('referal')->nullable();
 

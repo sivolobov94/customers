@@ -4,10 +4,20 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Описание</h1>
-            <p class="lead">Краткое описание: бла бла бла</p>
-            <p class="lead">Детальное описание:бла бла блабла бла блабла бла блабла бла блабла бла бла</p>
-            <p class="lead">Сайт:йцуйцуцйу.com</p>
-            <button type="button" class="btn btn-primary">Сохранить</button>
+                <div class="form-group">
+                    <label for="small_description">Краткое описание: </label>
+                    <p>{{$profile->small_description}}</p>
+                </div>
+                <div class="form-group">
+                    <label for="description">Детальное описание</label>
+                    <p>{{$profile->description}}</p>
+
+                    <div class="form-group">
+                        <label for="site">Сайт</label>
+                        <p>{{$profile->site}}</p>
+                    </div>
+                </div>
+                <a href="{{route('get-edit-description')}}" class="btn btn-primary">Изменить</a>
         </div>
     </div>
 @stop

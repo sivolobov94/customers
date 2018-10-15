@@ -24,9 +24,15 @@ Route::get('/account/logo', 'ProfileController@getLogo')->name('logo');
 Route::get('/account/edit-email', 'ProfileController@getEditEmail')->name('get-edit-email');
 Route::post('/account/edit-email', 'ProfileController@postEditEmail')->name('post-edit-email');
 
-Route::get('/account/edit-password', 'ProfileController@editPassword')->name('edit-password');
+Route::get('/account/edit-password', 'ProfileController@getEditPassword')->name('get-edit-password');
+Route::post('/account/edit-password', 'ProfileController@postEditPassword')->name('post-edit-password');
+
 Route::get('/account/field', 'ProfileController@getField')->name('field');
-Route::get('/account/description', 'ProfileController@getDescription')->name('description');
+
+Route::get('/account/description', 'ProfileController@getDescription')->name('get-description');
+Route::get('/account/edit-description', 'ProfileController@getEditDescription')->name('get-edit-description');
+Route::post('/account/edit-description', 'ProfileController@postEditDescription')->name('post-edit-description');
+
 Route::get('/account/requisites', 'ProfileController@getRequisites')->name('requisites');
 Route::get('/account/notifications', 'ProfileController@getNotifications')->name('notifications');
 Route::get('/account/orders', 'ProfileController@getOrders')->name('orders');
@@ -45,7 +51,11 @@ Route::get('/feedback', 'StaticController@getFeedback')->name('feedback');
 //products
 Route::Resource('products', 'ProductController');
 //orders
-Route::Resource('orders', 'OrderController');
+//Route::Resource('orders', 'OrderController');
+
+Route::get('/order-create', 'OrderController@getOrderCreate')->name('get-order-create');
+Route::post('/order-create', 'OrderController@postOrderCreate')->name('post-order-create');
+Route::get('/order-success', 'OrderController@getOrdersuccess')->name('get-order-success');
 
 Auth::routes();
 
