@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -19,9 +20,26 @@ class ProductController extends Controller
         return view('products.index', ['items' => $items]);
     }
 
-    public function getOrderCreate()
+    public function getProductCreate()
     {
-        
+        return view('account.create-product');
+    }
+
+    public function postProductCreate(Request $request)
+    {
+        $product = new Product();
+        $product->user_id = Auth::user()->getAuthIdentifier();
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->category = $request->category;
+        $product->region = $request->region;
+        $product->manufacturer = $request->manufacturer;
+        $product->image = $request->image;
+        $product->measure = $request->measure;
+        $product->price_for_one = $request->price_for_one;
+        $product->cashback = $request->cashback;
+        $product->save();
+        return view('account.product-success');
     }
 
     /**

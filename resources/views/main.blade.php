@@ -47,26 +47,7 @@
         <h2><span class="green">экономьте</span> на покупках...</h2>
         <h1>зарабатывайте еще!</h1>
     </div>
-<div class="container">
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">Наименование товара/услуги</th>
-            <th scope="col">Описание</th>
-            <th scope="col">Цена</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($items as $item)
-        <tr>
-            <td>{{$item->name}}</td>
-            <td>{{$item->description}}</td>
-            <td>{{$item->price}}</td>
-        </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
+
 </body>
 </html>
 @endsection

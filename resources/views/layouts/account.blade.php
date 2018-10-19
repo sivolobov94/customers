@@ -20,6 +20,7 @@
                         <a href="{{route('bill')}}"><button type="button" class="list-group-item list-group-item-action">Отправить счет</button></a>
                         <a href="{{route('documents')}}"><button type="button" class="list-group-item list-group-item-action">Загрузка документов для подтверждения успешной сделки</button></a>
                         <a href="{{route('referal-partner')}}"><button type="button" class="list-group-item list-group-item-action" >Реферальная программа (партнерка)</button></a>
+                        <a href="{{route('products')}}"><button type="button" class="list-group-item list-group-item-action" >Мои товары</button></a>
                     </div>
                 </div>
 
@@ -30,7 +31,7 @@
                 <a style="padding: 10px; position: absolute; left: 85%; top:40%;" href="{{route('get-order-create')}}" class="btn btn-success btn-lg">Создать заказ</a>
             </div>
             <div class="container">
-                <a style="padding: 10px; position: absolute; left: 85%; top:30%;" href="{{route('products.create')}}" class="btn btn-success btn-lg">Добавить товар</a>
+                <a style="padding: 10px; position: absolute; left: 85%; top:30%;" href="{{route('get-product-create')}}" class="btn btn-success btn-lg">Добавить товар</a>
             </div>
         </div>
     </div>
