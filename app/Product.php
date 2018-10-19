@@ -20,9 +20,8 @@ class Product extends Model
         'cashback'
         ];
 
-    public function create($data)
+    public function user()
     {
-       $product = new Product($data);
-       $product->save();
+        return $this->belongsTo('App\User');
     }
 }

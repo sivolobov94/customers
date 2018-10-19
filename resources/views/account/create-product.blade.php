@@ -4,7 +4,7 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Описание</h1>
-            <form method="post" action="{{route('post-order-create')}}">
+            <form method="post" action="{{route('post-product-create')}}">
                 {{csrf_field()}}
                     <div class="form-group">
                         <label for="name">Наименование
@@ -35,7 +35,7 @@
                             <input value="" name="cashback" type="text" class="form-control rounded-0">
                         </label>
                     </div>
-                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <button type="submit" class="btn btn-primary">Добавить</button>
             </form>
         </div>
     </div>

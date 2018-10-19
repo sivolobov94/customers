@@ -1,0 +1,71 @@
+.register-header {
+	margin-bottom:30px;
+}
+
+.register-header h2{
+	text-align: center; 
+} 
+
+.form-control {
+    font-size: .7rem;
+    line-height: 2.6;
+    color: #e5e7e5;
+    border: 1px solid #ededed;
+    border-radius: 0.10rem;
+}
+
+.form-check-label a{
+	color: #a4c381;
+}
+
+button.button-click {
+  position: relative;
+  width: 50%;
+  height: 5em;
+  margin: 2em auto;
+  background: #ffd500;
+  border: 2px solid #ffd500;
+  border-right: none;
+  border-radius: 4px;
+  text-align: center;
+  color: #000;
+  font-family: Arial, Helvetica, sans-sreif;
+  font-size: 1.2em;
+  line-height: 5em;
+  vertical-align: middle;
+}
+
+button.button-click:after {
+  content: "";
+  position: absolute;
+  top: 53%;
+  right: -1.75em;
+  width: 3.6em;
+  height: 3.6em;
+  margin-top: -1.92em;
+  background: #ffd500;
+  border: 2px solid #ffd500;
+  border-left: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-radius: 4px;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+button.button-click:hover {
+  background: #d8b400;
+  cursor: pointer;
+}
+
+button.button-click:hover:after {
+ background: #d8b400;
+ cursor: pointer;
+}
+
+button.button-click:active{
+   background: #d8b400;
+}
+
+button.button-click:active:after {
+   background: #d8b400;
+}

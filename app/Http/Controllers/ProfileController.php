@@ -18,22 +18,20 @@ class ProfileController extends Controller
 
     public function getEditProfile()
     {
-        $profile = Profile::where('user_id', Auth::user()->getAuthIdentifier())->first();
+        $profile = User::find(Auth::user()->getAuthIdentifier())->profile;
         return view('account.edit-profile', ['profile' => $profile]);
     }
 
     public function postEditProfile(Request $request)
     {
-        Profile::updateOrCreate(
-            ['user_id' => Auth::user()->getAuthIdentifier()],
-            [   'name' => $request->input('name'),
-                'phone' => $request->input('phone'),
-                'company' => $request->input('company'),
-                'region' => $request->input('region'),
-                'address' => $request->input('address')
-            ]
-        );
-        $profile = Profile::where('user_id', Auth::user()->getAuthIdentifier())->get();
+        $profile = User::find(Auth::user()->getAuthIdentifier())->profile;
+        $profile->name = $request->name;
+        $profile->company = $request->company;
+        $profile->phone = $request->phone;
+        $profile->region = $request->region;
+        $profile->address = $request->address;
+        $profile->save();
+
         return view('account.profile', ['profile' => $profile]);
     }
 
@@ -125,6 +123,13 @@ class ProfileController extends Controller
     {
         $requisites = DB::table('requisites')->where('user_id', Auth::user()->getAuthIdentifier())->first();
         return view('account.requisites');
+    }
+
+    public function getProducts()
+    {
+        $products = User::find(Auth::user()->getAuthIdentifier())->products;
+        //dd($products);
+        return view('account.products', ['products' => $products]);
     }
 
     public function getNotifications()
