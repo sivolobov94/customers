@@ -8,7 +8,7 @@
                     <div class="register-header"><h2>Регистрация нового </br> пользователя</h2></div>
                     <div class="register-body">
                         <form method="POST" action="{{ route('register') }}">
-
+                            {{csrf_field()}}
                             <div class="form-group row">
                                 <label for="email" class="col-form-label text-md-right">{{ __('E-Mail:') }}</label></br>
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="{{ __('* E-Mail:') }}" required>
@@ -38,18 +38,18 @@
 
                             <div id="radio" class="form-group row">
                                 <div class="col-md-3">
-                                    <input type="radio" class="form-check-input" name="role" value="sale">
+                                    <input type="radio" class="form-check-input" name="role" value="sale" >
                                     <label class="form-check-label"> Продавец</label>
                                 </div>
                                 <div class="col-md-3 col-md-offset-6">
-                                    <input type="radio" class="form-check-input" name="role" value="buyer">
+                                    <input type="radio" class="form-check-input" name="role" value="buyer" checked>
                                     <label class="form-check-label"> Покупатель</label>
                                 </div>
                             </div>
 
                             <div class="form-check row">
-                                <input type="checkbox" class="form-check-input" id="check-oferta">
-                                <label class="form-check-label" for="check-oferta">Я принимаю <a href="#">условия пользования сервиса</a></label>
+                                <input type="checkbox" class="form-check-input" id="check-oferta" required>
+                                <label class="form-check-label" for="check-oferta">Я принимаю <a href="{{'file:///'.public_path('license.pdf')}}">условия пользования сервиса</a></label>
                             </div>
 
                             <div class="form-group row mb-0">

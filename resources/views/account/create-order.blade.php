@@ -35,7 +35,7 @@
                         <input value="" name="cashback" type="text" class="form-control rounded-0">
                     </label>
                 </div>
-                <button type="submit" class="btn btn-primary">Оформить заказ</button>
+                <button type="submit" class="btn btn-primary">Сохранить</button>
             </form>
         </div>
     </div>

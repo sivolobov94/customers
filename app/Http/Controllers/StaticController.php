@@ -18,4 +18,5 @@ class StaticController extends Controller
     {
         return view('static.feedback');
     }
+
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CustomOrder;
 use App\Profile;
 use App\User;
 use Illuminate\Http\Request;
@@ -139,7 +140,9 @@ class ProfileController extends Controller
 
     public function getOrders()
     {
-        return view('account.orders');
+        $orders = User::find(Auth::user()->getAuthIdentifier())->customOrders()->get();
+        $orders = [];
+        return view('account.orders',['orders' => $orders] );
     }
 
     public function getPrice()

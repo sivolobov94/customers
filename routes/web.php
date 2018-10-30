@@ -47,9 +47,11 @@ Route::get('/account/products', 'ProfileController@getProducts')->name('products
 //search routes
 Route::get('/search', 'SearchController@search' )->name('search')->middleware('verified');
 //static pages
-Route::get('/about', 'StaticController@getAbout')->name('about')->middleware('verified');
-Route::get('/how-it-works', 'StaticController@getHowItWorks')->name('how-it-works')->middleware('verified');
-Route::get('/feedback', 'StaticController@getFeedback')->name('feedback')->middleware('verified');
+Route::get('/about', 'StaticController@getAbout')->name('about');
+Route::get('/how-it-works', 'StaticController@getHowItWorks')->name('how-it-works');
+Route::get('/feedback', 'StaticController@getFeedback')->name('feedback');
+Route::get('/license', 'StaticController@getLicenses')->name('license');
+
 //products
 //Route::Resource('products', 'ProductController');
 //orders
@@ -60,10 +62,18 @@ Route::post('/order-create', 'OrderController@postOrderCreate')->name('post-orde
 Route::get('/order-success', 'OrderController@getOrderSuccess')->name('get-order-success')->middleware('verified');
 Route::get('/order-payment', 'OrderController@getOrderPayment')->name('get-order-payment')->middleware('verified');
 
+//custom orders
+Route::get('/custom-order-create', 'CustomOrderController@getCustomOrderCreate')->name('get-custom-order-create')->middleware('verified');
+Route::post('/custom-order-create', 'CustomOrderController@postCustomOrderCreate')->name('post-custom-order-create')->middleware('verified');
+Route::get('/custom-order-success', 'CustomOrderController@getCustomOrderSuccess')->name('get-custom-order-success')->middleware('verified');
+
 //products not resource
 Route::get('/product-create', 'ProductController@getProductCreate')->name('get-product-create')->middleware('verified');
 Route::post('/product-create', 'ProductController@postProductCreate')->name('post-product-create')->middleware('verified');
 Route::get('/product-success', 'ProductController@getProductSuccess')->name('get-product-success')->middleware('verified');
+
+//feedback mail
+Route::post('/feedback/send', 'FeedbackController@send')->name('feedback-send')->middleware('verified');
 
 Auth::routes();
 

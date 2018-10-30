@@ -8,7 +8,8 @@
 
                 <!--Form with header-->
 
-                <form action="mail.php" method="post">
+                <form action="{{route('feedback-send')}}" method="post">
+                    {{csrf_field()}}
                     <div class="card border-primary rounded-0">
                         <div class="card-header p-0">
                             <div class="bg-info text-white text-center py-2">
@@ -24,7 +25,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fa fa-user text-info"></i></div>
                                     </div>
-                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ваше имя" required>
+                                    <input type="text" class="form-control" id="nombre" name="name" placeholder="Ваше имя" required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -41,7 +42,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fa fa-comment text-info"></i></div>
                                     </div>
-                                    <textarea class="form-control" placeholder="Сообщение..." required></textarea>
+                                    <textarea name="message" class="form-control" placeholder="Сообщение..." required></textarea>
                                 </div>
                             </div>
 
@@ -52,4 +53,7 @@
 
                     </div>
                 </form>
-    @endsection
+            </div>
+        </div>
+    </div>
+@endsection
