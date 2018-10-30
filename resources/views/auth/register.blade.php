@@ -5,13 +5,15 @@
         <div class="row justify-content-center">
             <div class="col-xs-12 col-sm-10 col-md-5">
                 <div class="register">
-                    <div class="register-header"><h2>Регистрация нового </br> пользователя</h2></div>
+                    <div class="register-header"><h2>Регистрация нового </br> 
+пользователя</h2></div>
                     <div class="register-body">
                         <form method="POST" action="{{ route('register') }}">
                             {{csrf_field()}}
                             <div class="form-group row">
                                 <label for="email" class="col-form-label text-md-right">{{ __('E-Mail:') }}</label></br>
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="{{ __('* E-Mail:') }}" required>
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' 
+}}" name="email" value="{{ old('email') }}" placeholder="{{ __('* E-Mail:') }}" required>
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -21,8 +23,10 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="password" class="col-form-label text-md-right">{{ __('Пароль:') }}</label></br>
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="{{ __('* Пароль:') }}" required>
+                                <label for="password" class="col-form-label text-md-right">{{ __('Пароль:') 
+}}</label></br>
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' 
+is-invalid' : '' }}" name="password" placeholder="{{ __('* Пароль:') }}" required>
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
@@ -32,8 +36,10 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="password-confirm" class="col-form-label text-md-right">{{ __('Пароль еще раз:') }}</label></br>
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="{{ __('* Подтверждение пароля:') }}" required>
+                                <label for="password-confirm" class="col-form-label text-md-right">{{ __('Пароль еще 
+раз:') }}</label></br>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" 
+placeholder="{{ __('* Подтверждение пароля:') }}" required>
                             </div>
 
                             <div id="radio" class="form-group row">
@@ -64,3 +70,4 @@
         </div>
     </div>
 @endsection
+
