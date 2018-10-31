@@ -36,6 +36,7 @@ class FeedBack extends Mailable
     public function build()
     {
         $data = ['name' => $this->name, 'message' => $this->message];
-        return $this->from($this->email)->view('mail.feedback', $data);
+        $email = $this->email;
+        return $this->from($email)->view('mail.feedback', $data);
     }
 }
