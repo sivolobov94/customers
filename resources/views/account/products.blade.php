@@ -34,6 +34,10 @@
                 @endforeach
                 </tbody>
             </table>
+                <div class="container">
+                    <a  href="{{route('get-product-create')}}"
+                       class="btn btn-outline-secondary btn-lg">Добавить товар</a>
+                </div>
         </div>
     </div>
 @stop

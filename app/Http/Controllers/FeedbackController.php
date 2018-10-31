@@ -14,8 +14,7 @@ class FeedbackController extends Controller
         $user_email = $request->email;
         $user_name = $request->name;
 
-        Mail::raw($user_message, function($message) use ($user_email, $user_name)
-        {
+        Mail::raw($user_message, function ($message) use ($user_email, $user_name) {
             $message->from($user_email, $user_name);
             $message->to(env('ADMIN_EMAIL'));
         });

@@ -6,6 +6,7 @@ use App\CustomOrder;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class CustomOrderController extends Controller
@@ -28,7 +29,6 @@ class CustomOrderController extends Controller
                 'category' => 'string',
                 'file' =>'string|nullable'
         ]);
-
         $order = new CustomOrder();
         $order->name = $request->name;
         $order->user_id = Auth::user()->getAuthIdentifier();

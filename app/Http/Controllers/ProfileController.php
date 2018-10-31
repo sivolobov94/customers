@@ -25,7 +25,7 @@ class ProfileController extends Controller
 
     public function postEditProfile(Request $request)
     {
-        $profile = User::find(Auth::user()->getAuthIdentifier())->profile;
+        $profile = Profile::firstOrCreate(['user_id' => Auth::user()->getAuthIdentifier()]);
         $profile->name = $request->name;
         $profile->company = $request->company;
         $profile->phone = $request->phone;
@@ -141,7 +141,6 @@ class ProfileController extends Controller
     public function getOrders()
     {
         $orders = User::find(Auth::user()->getAuthIdentifier())->customOrders()->get();
-        $orders = [];
         return view('account.orders',['orders' => $orders] );
     }
 

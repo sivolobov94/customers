@@ -32,6 +32,9 @@
                         <a class="nav-link" href="{{route('get-custom-order-create')}}">Создать заказ<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item ">
+                        <a class="nav-link" href="{{route('get-all-products')}}">Все товары<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item ">
                         <a class="nav-link" href="{{route('about')}}">О площадке <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
