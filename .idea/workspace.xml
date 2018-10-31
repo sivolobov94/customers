@@ -2,196 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c2815c0-1d7d-41a3-be4d-7a41dba62ff7" name="Default Changelist" comment="init project">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.env.dev" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.env.prod" />
-      <change beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
       <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FeedBackController.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/FeedBack.php" afterPath="$PROJECT_DIR$/app/Mail/FeedBack.php" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/filp/whoops/CHANGELOG.md" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/LICENSE.md" afterPath="$PROJECT_DIR$/vendor/filp/whoops/LICENSE.md" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/composer.json" afterPath="$PROJECT_DIR$/vendor/filp/whoops/composer.json" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/ErrorException.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/ErrorException.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Formatter.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Formatter.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Frame.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Frame.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/FrameCollection.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/FrameCollection.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Inspector.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Exception/Inspector.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/CallbackHandler.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/CallbackHandler.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/Handler.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/Handler.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/HandlerInterface.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/HandlerInterface.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/JsonResponseHandler.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/JsonResponseHandler.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/PlainTextHandler.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/PlainTextHandler.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/PrettyPageHandler.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/PrettyPageHandler.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/XmlResponseHandler.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Handler/XmlResponseHandler.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/css/whoops.base.css" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/css/whoops.base.css" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/js/clipboard.min.js" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/js/clipboard.min.js" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/js/prettify.min.js" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/js/prettify.min.js" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/js/whoops.base.js" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/js/whoops.base.js" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/js/zepto.min.js" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/js/zepto.min.js" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/env_details.html.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/env_details.html.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/frame_code.html.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/frame_code.html.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/frame_list.html.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/frame_list.html.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/frames_container.html.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/frames_container.html.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/frames_description.html.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/frames_description.html.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/header.html.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/header.html.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/header_outer.html.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/header_outer.html.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/layout.html.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/layout.html.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/panel_details.html.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/panel_details.html.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/panel_details_outer.html.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/panel_details_outer.html.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/panel_left.html.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/panel_left.html.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/panel_left_outer.html.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Resources/views/panel_left_outer.html.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Run.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Run.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/RunInterface.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/RunInterface.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Util/HtmlDumperOutput.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Util/HtmlDumperOutput.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Util/Misc.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Util/Misc.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Util/SystemFacade.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Util/SystemFacade.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Util/TemplateHelper.php" afterPath="$PROJECT_DIR$/vendor/filp/whoops/src/Whoops/Util/TemplateHelper.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/composer.json" afterPath="$PROJECT_DIR$/vendor/laravel/framework/composer.json" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/Recaller.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/Recaller.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cache/CacheManager.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cache/CacheManager.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/ConfirmableTrait.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/ConfirmableTrait.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Event.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Event.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ManagesFrequencies.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ManagesFrequencies.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Encryption/Encrypter.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Encryption/Encrypter.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Connectors/PostgresConnector.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Connectors/PostgresConnector.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Connectors/SQLiteConnector.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Connectors/SQLiteConnector.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/DetectsLostConnections.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/DetectsLostConnections.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasRelationships.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasRelationships.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Concerns/InteractsWithPivotTable.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Concerns/InteractsWithPivotTable.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasManyThrough.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasManyThrough.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasOneOrMany.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasOneOrMany.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Grammars/SQLiteGrammar.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Grammars/SQLiteGrammar.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/SQLiteConnection.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/SQLiteConnection.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/ColumnDefinition.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/ColumnDefinition.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/ChangeColumn.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/ChangeColumn.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/PostgresGrammar.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/PostgresGrammar.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/SqlServerConnection.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/SqlServerConnection.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Application.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Application.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/Presets/None.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/Presets/None.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/Presets/Vue.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/Presets/Vue.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/Presets/react-stubs/webpack.mix.js" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/Presets/react-stubs/webpack.mix.js" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/Presets/vue-stubs/webpack.mix.js" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/Presets/vue-stubs/webpack.mix.js" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/403.blade.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views/403.blade.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Providers/ArtisanServiceProvider.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Providers/ArtisanServiceProvider.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithContainer.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithContainer.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithDatabase.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithDatabase.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/PendingCommand.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/PendingCommand.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/RefreshDatabase.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/RefreshDatabase.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/TestResponse.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/TestResponse.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/JsonResource.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/JsonResource.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Testing/File.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Testing/File.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Notifications/resources/views/email.blade.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Notifications/resources/views/email.blade.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Listener.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Listener.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Queue.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Queue.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Matching/UriValidator.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Matching/UriValidator.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Redirector.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Redirector.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/ResourceRegistrar.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/ResourceRegistrar.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteUrlGenerator.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteUrlGenerator.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Router.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Router.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RoutingServiceProvider.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RoutingServiceProvider.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Session/Store.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Session/Store.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Arr.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Arr.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Carbon.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Carbon.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Collection.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Collection.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Route.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Route.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Manager.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Manager.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Str.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Str.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Testing/Fakes/NotificationFake.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Testing/Fakes/NotificationFake.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Testing/Fakes/QueueFake.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Testing/Fakes/QueueFake.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Translation/FileLoader.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Translation/FileLoader.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Translation/MessageSelector.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Translation/MessageSelector.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Translation/Translator.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Translation/Translator.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/Concerns/ValidatesAttributes.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/Concerns/ValidatesAttributes.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/.github/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/.github/CONTRIBUTING.md" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Node/AbstractNode.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Node/AbstractNode.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Node/Builder.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Node/Builder.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Node/File.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Node/File.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Version.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Version.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/TestCase.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/TestCase.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/BankAccount-clover.xml" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/BankAccount-clover.xml" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForBankAccount/BankAccount.php.html" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForBankAccount/BankAccount.php.html" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForClassWithAnonymousFunction/source_with_class_and_anonymous_function.php.html" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/HTML/CoverageForClassWithAnonymousFunction/source_with_class_and_anonymous_function.php.html" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/XML/CoverageForBankAccount/BankAccount.php.xml" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/XML/CoverageForBankAccount/BankAccount.php.xml" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/XML/CoverageForClassWithAnonymousFunction/source_with_class_and_anonymous_function.php.xml" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/XML/CoverageForClassWithAnonymousFunction/source_with_class_and_anonymous_function.php.xml" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/XML/CoverageForFileWithIgnoredLines/source_with_ignore.php.xml" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/Report/XML/CoverageForFileWithIgnoredLines/source_with_ignore.php.xml" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/class-with-anonymous-function-clover.xml" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/class-with-anonymous-function-clover.xml" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/ignored-lines-clover.xml" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/_files/ignored-lines-clover.xml" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/bootstrap.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/bootstrap.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/tests/BuilderTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/tests/BuilderTest.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/tests/FilterTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/tests/FilterTest.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/.gitattributes" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/.gitattributes" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/.gitignore" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/.travis.yml" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/.travis.yml" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/ChangeLog.md" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/ChangeLog.md" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/LICENSE" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/LICENSE" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/README.md" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/README.md" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/build.xml" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/build.xml" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/composer.json" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/composer.json" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/phpunit.xml" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/phpunit.xml" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/src/Token.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/src/Token.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/src/Token/Stream.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/src/Token/Stream.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/src/Token/Stream/CachingFactory.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/src/Token/Stream/CachingFactory.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/Token/ClassTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/Token/ClassTest.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/Token/ClosureTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/Token/ClosureTest.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/Token/FunctionTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/Token/FunctionTest.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/Token/IncludeTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/Token/IncludeTest.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/Token/InterfaceTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/Token/InterfaceTest.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/Token/NamespaceTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/Token/NamespaceTest.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/classExtendsNamespacedClass.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/classExtendsNamespacedClass.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/classInNamespace.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/classInNamespace.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/classInScopedNamespace.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/classInScopedNamespace.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/classUsesNamespacedFunction.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/classUsesNamespacedFunction.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/class_with_method_named_empty.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/class_with_method_named_empty.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/class_with_method_that_declares_anonymous_class.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/class_with_method_that_declares_anonymous_class.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/class_with_method_that_declares_anonymous_class2.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/class_with_method_that_declares_anonymous_class2.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/class_with_multiple_anonymous_classes_and_functions.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/class_with_multiple_anonymous_classes_and_functions.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/closure.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/closure.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/issue19.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/issue19.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/issue30.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/issue30.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/multipleNamespacesWithOneClassUsingBraces.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/multipleNamespacesWithOneClassUsingBraces.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/multipleNamespacesWithOneClassUsingNonBraceSyntax.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/multipleNamespacesWithOneClassUsingNonBraceSyntax.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/php-code-coverage-issue-424.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/php-code-coverage-issue-424.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/source.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/source.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/source2.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/source2.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/source3.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/source3.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/source4.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/source4.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/source5.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/_fixture/source5.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/bootstrap.php" afterPath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/tests/bootstrap.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/.php_cs.dist" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/.php_cs.dist" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/.travis.yml" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/.travis.yml" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/phive.xml" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/phive.xml" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Runner/Version.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Runner/Version.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/TextUI/TestRunner.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/TextUI/TestRunner.php" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -283,11 +95,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="75" column="49" lean-forward="false" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="49" />
+            <state relative-caret-position="510">
+              <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-520">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthenticatesUsers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -305,7 +147,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
@@ -318,7 +160,7 @@
       <file leaf-file-name="VerificationController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="370">
               <caret line="40" column="45" lean-forward="false" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
               <folding />
             </state>
@@ -344,10 +186,13 @@
       <find>validation.required</find>
       <find>subj</find>
       <find>email/resend</find>
+      <find>-&gt;middleware('verified')</find>
+      <find>-&gt;middleware('auth')</find>
     </findStrings>
     <replaceStrings>
       <replace>ProfileController</replace>
       <replace>$profile</replace>
+      <replace>-&gt;middleware('auth')</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -403,9 +248,9 @@
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FeedBackController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FeedbackController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/.env.prod" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
@@ -501,7 +346,7 @@
       <path value="$PROJECT_DIR$/vendor/opis/closure" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="232" />
     <option name="y" value="109" />
     <option name="width" value="1111" />
@@ -552,6 +397,14 @@
               <item name="customers" type="b2602c69:ProjectViewProjectNode" />
               <item name="customers" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Auth" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="customers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Mail" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -596,17 +449,6 @@
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="layouts" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="customers" type="b2602c69:ProjectViewProjectNode" />
-              <item name="customers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="customers" type="b2602c69:ProjectViewProjectNode" />
-              <item name="customers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="composer" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -685,12 +527,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212523000" />
+    <option name="totallyTimeSpent" value="214623000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="232" y="109" width="1111" height="595" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23287672" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18667643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -742,37 +585,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Validation/ValidatesRequests.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="24" column="44" lean-forward="false" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_10_14_150939_create_requisites_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -1180,14 +992,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="40" column="45" lean-forward="false" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomOrderController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1218,14 +1022,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="75" column="49" lean-forward="false" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1264,18 +1060,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="40" column="45" lean-forward="false" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/bin/php-parse">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-520">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding />
         </state>
       </provider>
