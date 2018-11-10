@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c2815c0-1d7d-41a3-be4d-7a41dba62ff7" name="Default Changelist" comment="init project">
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/admin_login.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/light-bootstrap-dashboard.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/login.blade.php" />
-      <change beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomOrderController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomOrderController.php" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FeedbackController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FeedbackController.php" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
-      <change beforePath="$PROJECT_DIR$/app/Profile.php" afterPath="$PROJECT_DIR$/app/Profile.php" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_09_24_124234_create_profiles_table.php" afterPath="$PROJECT_DIR$/database/migrations/2018_09_24_124234_create_profiles_table.php" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_10_01_072646_create_products_table.php" afterPath="$PROJECT_DIR$/database/migrations/2018_10_01_072646_create_products_table.php" />
-      <change beforePath="$PROJECT_DIR$/public/license.pdf.pdf" afterPath="$PROJECT_DIR$/public/license.pdf" />
-      <change beforePath="$PROJECT_DIR$/public/license.txt.docx" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/resources/views/account/create-product.blade.php" afterPath="$PROJECT_DIR$/resources/views/account/create-product.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/account/edit-password.blade.php" afterPath="$PROJECT_DIR$/resources/views/account/edit-password.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/account/edit-profile.blade.php" afterPath="$PROJECT_DIR$/resources/views/account/edit-profile.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/account/products.blade.php" afterPath="$PROJECT_DIR$/resources/views/account/products.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/account/profile.blade.php" afterPath="$PROJECT_DIR$/resources/views/account/profile.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/account.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/account.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main.blade.php" afterPath="$PROJECT_DIR$/resources/views/main.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/search.blade.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
-    </list>
+    <list default="true" id="6c2815c0-1d7d-41a3-be4d-7a41dba62ff7" name="Default Changelist" comment="init project" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -159,8 +129,8 @@
       <file leaf-file-name="light-bootstrap-dashboard.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/light-bootstrap-dashboard.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="246" column="25" lean-forward="false" selection-start-line="246" selection-start-column="25" selection-end-line="246" selection-end-column="25" />
+            <state relative-caret-position="362">
+              <caret line="258" column="1" lean-forward="true" selection-start-line="258" selection-start-column="1" selection-end-line="258" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -547,7 +517,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="285499000" />
+    <option name="totallyTimeSpent" value="286327000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1221,8 +1191,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/light-bootstrap-dashboard.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="246" column="25" lean-forward="false" selection-start-line="246" selection-start-column="25" selection-end-line="246" selection-end-column="25" />
+        <state relative-caret-position="362">
+          <caret line="258" column="1" lean-forward="true" selection-start-line="258" selection-start-column="1" selection-end-line="258" selection-end-column="1" />
           <folding />
         </state>
       </provider>
