@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Categories;
 use App\Product;
+use App\Regions;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 
 class ProductController extends Controller
 {
@@ -16,17 +20,21 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $items = Product::all();
+        $items = Product::where(['reserved' => false])->get();
         return view('products.index', ['items' => $items]);
     }
 
     public function getProductCreate()
     {
-        return view('account.create-product');
+        $categories = Categories::all();
+        $regions = Regions::all();
+        //dd($regions, $categories);
+        return view('account.create-product', ['categories' => $categories, 'regions' => $regions]);
     }
 
     public function postProductCreate(Request $request)
     {
+        //dd($request->file());
         $product = new Product();
         $product->user_id = Auth::user()->getAuthIdentifier();
         $product->name = $request->name;
@@ -34,10 +42,14 @@ class ProductController extends Controller
         $product->category = $request->category;
         $product->region = $request->region;
         $product->manufacturer = $request->manufacturer;
-        $product->image = $request->image;
         $product->measure = $request->measure;
         $product->price_for_one = $request->price_for_one;
         $product->cashback = $request->cashback;
+        $image = $request->file('image');
+        if ($image->isValid()) {
+            $image->move('products_images', $image->getClientOriginalName());
+            $product->image = 'products_images/'.$image->getClientOriginalName();
+        }
         $product->save();
         return view('account.product-success');
     }
@@ -53,6 +65,7 @@ class ProductController extends Controller
         $product = new Product;
         $product->create([
             'name' => $request->input('name'),
+            'category' => $request->input('category'),
             'description' => $request->input('description'),
             'price' => $request->input('price'),
             'image' => $request->input('image')

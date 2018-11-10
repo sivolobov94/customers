@@ -76,6 +76,13 @@ Route::get('/product-success', 'ProductController@getProductSuccess')->name('get
 //feedback mail
 Route::post('/feedback/send', 'FeedbackController@send')->name('feedback-send');
 
+//admin-panel
+Route::get('/admin/logout', 'AdminController@logout')->name('admin-logout');
+Route::get('/admin/login', 'AdminController@getLogin')->name('admin-get-login');
+Route::post('/admin/login', 'AdminController@postLogin')->name('admin-post-login');
+Route::get('/admin', 'AdminController@getAdminPage')->name('get-admin-page')->middleware('admin');
+Route::get('/admin/user', 'AdminController@getUserProfile')->name('get-admin-user')->middleware('admin');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

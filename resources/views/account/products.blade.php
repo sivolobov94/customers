@@ -1,43 +1,43 @@
 @extends('layouts.account')
 
 @section('account-content')
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Мои товары</h1>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Название</th>
-                    <th scope="col">Описание</th>
-                    <th scope="col">категория</th>
-                    <th scope="col">Регион</th>
-                    <th scope="col">Изготовитель</th>
-                    <th scope="col">категория</th>
-                    <th scope="col">единицы измерения</th>
-                    <th scope="col">цена за штуку</th>
-                    <th scope="col">кэшбэк</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($products as $product)
-                <tr>
-                    <td>{{$product->name}}</td>
-                    <td>{{$product->description}}</td>
-                    <td>{{$product->category}}</td>
-                    <td>{{$product->region}}</td>
-                    <td>{{$product->manufacturer}}</td>
-                    <td>{{$product->category}}</td>
-                    <td>{{$product->measure}}</td>
-                    <td>{{$product->price_for_one}}</td>
-                    <td>{{$product->cashback}}</td>
-                </tr>
-                @endforeach
-                </tbody>
-            </table>
+    <div class="col-md-12">
+        <div class="card card-plain">
+            <div class="header">
+                <h4 class="title">Ваши товары</h4>
+            </div>
+            <div class="content table-responsive table-full-width">
+                <table class="table table-hover">
+                    <thead>
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th>Категория</th>
+                    <th>Регион</th>
+                    <th>Производитель</th>
+                    <th>Единица измерения</th>
+                    <th>Цена за единицу</th>
+                    <th>% кэшбэка</th>
+                    </thead>
+                    <tbody>
+                    @foreach($products as $product)
+                        <tr>
+                            <td>{{$product->name}}</td>
+                            <td>{{$product->description}}</td>
+                            <td>{{$product->category}}</td>
+                            <td>{{$product->region}}</td>
+                            <td>{{$product->manufacturer}}</td>
+                            <td>{{$product->measure}}</td>
+                            <td>{{$product->price_for_one}}</td>
+                            <td>{{$product->cashback}}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
                 <div class="container">
                     <a  href="{{route('get-product-create')}}"
                        class="btn btn-outline-secondary btn-lg">Добавить товар</a>
                 </div>
-        </div>
-    </div>
 @stop

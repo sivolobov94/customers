@@ -16,8 +16,10 @@
 </head>
 <style>
     html, body {
-        background-image: url("../../public/img/uspeh_bg.png");
-        background-size: 100%;
+        background-image: url("../../img/uspeh_bg.png");
+        background-size: cover;
+        overflow: hidden;
+
     }
 
     .text {
@@ -41,7 +43,6 @@
 </style>
 @section('content')
 <body>
-    <img src="../../img/uspeh_bg.png" alt="background-image" width="100%" height="100%">
     <div class="text">
         <h3>Возвращайте деньги...</h3>
         <h2><span class="green">экономьте</span> на покупках...</h2>

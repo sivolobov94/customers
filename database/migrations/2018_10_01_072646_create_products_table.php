@@ -25,6 +25,7 @@ class CreateProductsTable extends Migration
             $table->string('measure');
             $table->string('price_for_one');
             $table->string('cashback');
+            $table->boolean('reserved')->default(false);
             $table->timestamps();
         });
     }

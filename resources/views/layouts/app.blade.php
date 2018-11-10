@@ -19,10 +19,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/my.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin_login.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
-
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">Главная</a>
@@ -46,9 +46,9 @@
                 </ul>
                 <form class="form-inline my-2 my-lg-0" METHOD="get" action="{{route('search')}}">
                     @csrf
-                    <input name="text" class="form-control mr-sm-2" type="text" placeholder="Search"
+                    <input name="text" class="form-control mr-sm-2" type="text" placeholder="Введите название..."
                            aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
                 </form>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -68,10 +68,10 @@
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">Вход</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">Регистрация</a>
                         </li>
                     @else
                         <li class="nav-item dropdown">
@@ -84,9 +84,7 @@
 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
+                                                     document.getElementById('logout-form').submit();">Выход</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                       style="display: none;">
                                     @csrf

@@ -28,6 +28,6 @@ class SearchController extends Controller
         if ($items->count() < 1) {
             return view('products.not-found');
         }
-        return view('search', ['items' => $items]);
+        return view('products.index', ['items' => $items]);
     }
 }

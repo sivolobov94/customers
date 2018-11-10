@@ -1,76 +1,149 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row py-3">
-            <div class="col-3 order-2" id="sticky-sidebar">
-                <div class="sticky-top">
-                    <div class="list-group">
-                        <a href="{{route('profile')}}">
-                            <button type="button" class="list-group-item list-group-item-action ">Профиль</button>
-                        </a>
-                        <a href="{{route('logo')}}">
-                            <button type="button" class="list-group-item list-group-item-action">Логотип</button>
-                        </a>
-                        <a href="{{route('get-edit-email')}}">
-                            <button type="button" class="list-group-item list-group-item-action">Изменить Email</button>
-                        </a>
-                        <a href="{{route('get-edit-password')}}">
-                            <button type="button" class="list-group-item list-group-item-action">Сменить Пароль</button>
-                        </a>
-                        <a href="{{route('field')}}">
-                            <button type="button" class="list-group-item list-group-item-action">Сфера деятельности</button>
-                        </a>
-                        <a href="{{route('payment')}}">
-                            <button type="button" class="list-group-item list-group-item-action">Способ оплаты и доставка
-                            </button>
-                        </a>
-                        <a href="{{route('get-description')}}">
-                            <button type="button" class="list-group-item list-group-item-action">Описание</button>
-                        </a>
-                        <a href="{{route('requisites')}}">
-                            <button type="button" class="list-group-item list-group-item-action">Реквизиты</button>
-                        </a>
-                        <a href="{{route('notifications')}}">
-                            <button type="button" class="list-group-item list-group-item-action">Уведомления</button>
-                        </a>
-                        <a href="{{route('orders')}}">
-                            <button type="button" class="list-group-item list-group-item-action">Мои заказы</button>
-                        </a>
-                        <a href="{{route('price')}}">
-                            <button type="button" class="list-group-item list-group-item-action">Загрузить прайс</button>
-                        </a>
-                        <a href="{{route('referal')}}">
-                            <button type="button" class="list-group-item list-group-item-action">Реферальная программа
-                            </button>
-                        </a>
-                        <a href="{{route('bill')}}">
-                            <button type="button" class="list-group-item list-group-item-action">Отправить счет</button>
-                        </a>
-                        <a href="{{route('documents')}}">
-                            <button type="button" class="list-group-item list-group-item-action">Загрузка документов для
-                                подтверждения успешной сделки
-                            </button>
-                        </a>
-                        <a href="{{route('referal-partner')}}">
-                            <button type="button" class="list-group-item list-group-item-action">Реферальная программа
-                                (партнерка)
-                            </button>
-                        </a>
-                        <a href="{{route('products')}}">
-                            <button type="button" class="list-group-item list-group-item-action">Мои товары</button>
-                        </a>
-                    </div>
-                </div>
+        <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="{{asset('img/favicon.ico')}}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        @yield('account-content')
-                    </div>
-                </div>
-            </div>
+    <title>Light Bootstrap Dashboard by Creative Tim</title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Bootstrap core CSS     -->
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="{{asset('css/animate.min.css')}}" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="{{asset('css/light-bootstrap-dashboard.css?v=1.4.0')}}" rel="stylesheet"/>
+
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="{{asset('css/demo.css')}}" rel="stylesheet" />
+
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="{{asset('css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar" data-color="blue" data-image="{{asset('img/sidebar-5.jpg')}}">
+
+        <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
+
+        <div class="sidebar-wrapper">
+
+
+
+            <ul class="nav">
+                <li>
+                    <a href="{{route('profile')}}">
+                        <i class="pe-7s-user"></i>
+                        <p>Профиль</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('get-edit-profile')}}">
+                        <i class="pe-7s-user"></i>
+                        <p>Редактировать профиль</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('get-edit-password')}}">
+                        <i class="pe-7s-user"></i>
+                        <p>Изменить пароль</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('products')}}">
+                        <i class="pe-7s-user"></i>
+                        <p>Мои товары</p>
+                    </a>
+                </li><li>
+                    <a href="{{route('get-edit-password')}}">
+                        <i class="pe-7s-user"></i>
+                        <p>Мои заказы</p>
+                    </a>
+                </li><li>
+                    <a href="{{route('get-edit-password')}}">
+                        <i class="pe-7s-user"></i>
+                        <p>Реферальная ссылка</p>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
+
+    <div class="main-panel">
+@yield('account-content')
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="{{route('get-custom-order-create')}}">
+                                Создать заказ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('get-all-products')}}">
+                                Все товары
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('about')}}">
+                                О площадке
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('how-it-works')}}">
+                                Как это работает
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('feedback')}}">
+                                Обратная связь
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+</body>
+
+<!--   Core JS Files   -->
+<script src="{{asset('js/jquery.3.2.1.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
+
+<!--  Charts Plugin -->
+<script src="{{asset('js/chartist.min.js')}}"></script>
+
+<!--  Notifications Plugin    -->
+<script src="{{asset('js/bootstrap-notify.js')}}"></script>
+
+<!--  Google Maps Plugin    -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
+<!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+<script src="{{asset('js/light-bootstrap-dashboard.js?v=1.4.0')}}"></script>
+
+<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+<script src="{{asset('js/demo.js')}}"></script>
+
+</html>
+
 @endsection
