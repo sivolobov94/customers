@@ -45,7 +45,7 @@ Route::get('/account/payment', 'ProfileController@getPayment')->name('payment')-
 Route::get('/account/products', 'ProfileController@getProducts')->name('products')->middleware('verified');
 
 //search routes
-Route::get('/search', 'SearchController@search' )->name('search')->middleware('verified');
+Route::get('/search', 'SearchController@search' )->name('search');
 //static pages
 Route::get('/about', 'StaticController@getAbout')->name('about');
 Route::get('/how-it-works', 'StaticController@getHowItWorks')->name('how-it-works');
@@ -68,7 +68,7 @@ Route::post('/custom-order-create', 'CustomOrderController@postCustomOrderCreate
 Route::get('/custom-order-success', 'CustomOrderController@getCustomOrderSuccess')->name('get-custom-order-success')->middleware('verified');
 
 //products not resource
-Route::get('/products', 'ProductController@index')->name('get-all-products')->middleware('verified');
+Route::get('/products', 'ProductController@index')->name('get-all-products');
 Route::get('/product-create', 'ProductController@getProductCreate')->name('get-product-create')->middleware('verified');
 Route::post('/product-create', 'ProductController@postProductCreate')->name('post-product-create')->middleware('verified');
 Route::get('/product-success', 'ProductController@getProductSuccess')->name('get-product-success')->middleware('verified');

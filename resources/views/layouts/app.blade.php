@@ -46,7 +46,7 @@
                 </ul>
                 <form class="form-inline my-2 my-lg-0" METHOD="get" action="{{route('search')}}">
                     @csrf
-                    <input name="text" class="form-control mr-sm-2" type="text" placeholder="Введите название..."
+                    <input name="text" class="form-control mr-sm-2" type="text" placeholder="Введите название"
                            aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
                 </form>
@@ -77,7 +77,7 @@
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ 'Пользователь' }} <span class="caret"></span>
+                                {{ 'Пользователь' }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('profile') }}">Личный кабинет</a>

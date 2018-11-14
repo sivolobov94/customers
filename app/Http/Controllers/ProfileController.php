@@ -32,6 +32,7 @@ class ProfileController extends Controller
     {
         //dd($request);
         $profile = Profile::firstOrCreate(['user_id' => Auth::user()->getAuthIdentifier()]);
+        //$regions = Regions::all();
         $profile->name = $request->name;
         $profile->company = $request->company;
         $profile->phone = $request->phone;

@@ -21,7 +21,7 @@
     <link href="{{asset('css/animate.min.css')}}" rel="stylesheet"/>
 
     <!--  Light Bootstrap Table core CSS    -->
-    <link href="{{asset('css/light-bootstrap-dashboard.css?v=1.4.0')}}" rel="stylesheet"/>
+    <link href="{{asset('css/light-bootstrap-dashboard.css')}}" rel="stylesheet"/>
 
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
@@ -41,9 +41,6 @@
         <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
 
         <div class="sidebar-wrapper">
-
-
-
             <ul class="nav">
                 <li>
                     <a href="{{route('profile')}}">
@@ -85,40 +82,6 @@
 
     <div class="main-panel">
 @yield('account-content')
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="{{route('get-custom-order-create')}}">
-                                Создать заказ
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{route('get-all-products')}}">
-                                Все товары
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{route('about')}}">
-                                О площадке
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{route('how-it-works')}}">
-                                Как это работает
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{route('feedback')}}">
-                                Обратная связь
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </footer>
     </div>
 </div>
 

@@ -19,7 +19,6 @@
         background-image: url("../../img/uspeh_bg.png");
         background-size: cover;
         overflow: hidden;
-
     }
 
     .text {

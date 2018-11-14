@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -11,16 +12,16 @@ class NewOrder extends Notification
 {
     use Queueable;
 
-    private $id;
+    private $user;
 
     /**
      * Create a new notification instance.
      *
-     * @param $id
+     * @param User $user
      */
-    public function __construct($id)
+    public function __construct(User $user)
     {
-        $this->id = $id;
+        $this->user = $user;
     }
 
     /**
@@ -31,7 +32,10 @@ class NewOrder extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return [
+            'mail',
+            'database'
+        ];
     }
 
     /**
