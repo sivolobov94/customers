@@ -15,33 +15,18 @@ Auth::routes(['verify' => true]);
 //mainpage
 Route::get('/', 'MainController@index')->name('main');
 //profile
+Route::get('/user/{$id}', 'AccountController@getAccount')->name('account')->middleware('verified');
+
 Route::get('/account/profile', 'ProfileController@getProfile')->name('profile')->middleware('verified');
 Route::post('/account/edit-profile', 'ProfileController@postEditProfile')->name('post-edit-profile')->middleware('verified');
 Route::get('/account/edit-profile', 'ProfileController@getEditProfile')->name('get-edit-profile')->middleware('verified');
 //account
-Route::get('/account/logo', 'ProfileController@getLogo')->name('logo')->middleware('verified');
-
-Route::get('/account/edit-email', 'ProfileController@getEditEmail')->name('get-edit-email')->middleware('verified');
-Route::post('/account/edit-email', 'ProfileController@postEditEmail')->name('post-edit-email')->middleware('verified');
 
 Route::get('/account/edit-password', 'ProfileController@getEditPassword')->name('get-edit-password')->middleware('auth');
 Route::post('/account/edit-password', 'ProfileController@postEditPassword')->name('post-edit-password')->middleware('verified');
-
-Route::get('/account/field', 'ProfileController@getField')->name('field')->middleware('verified');
-
-Route::get('/account/description', 'ProfileController@getDescription')->name('get-description')->middleware('verified');
-Route::get('/account/edit-description', 'ProfileController@getEditDescription')->name('get-edit-description')->middleware('verified');
-Route::post('/account/edit-description', 'ProfileController@postEditDescription')->name('post-edit-description')->middleware('verified');
-
-Route::get('/account/requisites', 'ProfileController@getRequisites')->name('requisites')->middleware('verified');
 Route::get('/account/notifications', 'ProfileController@getNotifications')->name('notifications')->middleware('verified');
 Route::get('/account/orders', 'ProfileController@getOrders')->name('orders')->middleware('verified');
-Route::get('/account/price', 'ProfileController@getPrice')->name('price')->middleware('verified');
 Route::get('/account/referal', 'ProfileController@getReferal')->name('referal')->middleware('verified');
-Route::get('/account/bill', 'ProfileController@getBill')->name('bill')->middleware('verified');
-Route::get('/account/documents', 'ProfileController@getDocuments')->name('documents')->middleware('verified');
-Route::get('/account/referal-partner', 'ProfileController@getReferalPartner')->name('referal-partner')->middleware('verified');
-Route::get('/account/payment', 'ProfileController@getPayment')->name('payment')->middleware('verified');
 Route::get('/account/products', 'ProfileController@getProducts')->name('products')->middleware('verified');
 
 //search routes
@@ -61,6 +46,8 @@ Route::get('/order-create', 'OrderController@getOrderCreate')->name('get-order-c
 Route::post('/order-create', 'OrderController@postOrderCreate')->name('post-order-create')->middleware('verified');
 Route::get('/order-success', 'OrderController@getOrderSuccess')->name('get-order-success')->middleware('verified');
 Route::get('/order-payment', 'OrderController@getOrderPayment')->name('get-order-payment')->middleware('verified');
+
+Route::get('/do-order', 'OrderController@doOrder')->name('do-order')->middleware('verified');
 
 //custom orders
 Route::get('/custom-order-create', 'CustomOrderController@getCustomOrderCreate')->name('get-custom-order-create')->middleware('verified');

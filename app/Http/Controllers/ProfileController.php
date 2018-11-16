@@ -12,10 +12,10 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
+
     public function getProfile()
     {
         $profile = Profile::where('user_id', Auth::user()->getAuthIdentifier())->first();
-       // dd($profile);
         return view('account.profile', ['profile' => $profile]);
     }
 
@@ -62,7 +62,7 @@ class ProfileController extends Controller
         $profile->r_cashback = $request->r_cashback;
 
         $logo = $request->file('image');
-        if ($logo->isValid()) {
+        if ($logo) {
             $logo->move('company_logos', $logo->getClientOriginalName());
             $profile->logo= 'company_logos/'.$logo->getClientOriginalName();
         }

@@ -1,10 +1,10 @@
 @extends('layouts.account')
 
 @section('account-content')
+
     @if($profile === null)
         <div class="col-md-12">
             <div class="content">
-                <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
@@ -18,7 +18,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
 
             @else
@@ -169,7 +168,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label>Главный бухгалтер</label>
-                                                            <input {{$profile->r_chief_accountant}} readonly
+                                                            <input value="{{$profile->r_chief_accountant}}" readonly
                                                                    name="r_chief_accountant" type="text"
                                                                    class="form-control-plaintext" placeholder="">
                                                         </div>

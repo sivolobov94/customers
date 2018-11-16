@@ -483,6 +483,7 @@
                                             <input name="image"  type="file" class="form-control-file" id="exampleFormControlFile1">
                                         </div>
                                     </div>
+
                                     <button type="submit" class="btn btn-info btn-fill pull-right">Обновить</button>
                                     <div class="clearfix"></div>
                                 </form>

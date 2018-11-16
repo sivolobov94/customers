@@ -2,28 +2,34 @@
 
 namespace App\Notifications;
 
+use App\Product;
 use App\User;
 use Illuminate\Bus\Queueable;
+use Illuminate\Notifications\Action;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class NewOrder extends Notification
+class DoOrder extends Notification
 {
     use Queueable;
 
     private $from_user;
-    private $order_id;
+    private $product;
+    private $user_to;
+
     /**
      * Create a new notification instance.
      *
-     * @param User $user
-     * @param $order_id
+     * @param User $user_from
+     * @param User $user_to
+     * @param Product $product
      */
-    public function __construct(User $user, $order_id)
+    public function __construct(User $user_from,User $user_to, Product $product)
     {
-        $this->from_user = $user;
-        $this->order_id = $order_id;
+        $this->from_user = $user_from;
+        $this->user_to = $user_to;
+        $this->product = $product;
     }
 
     /**
@@ -48,15 +54,16 @@ class NewOrder extends Notification
      */
     public function toMail($notifiable)
     {
-        $subject = sprintf('%s: Новое сообщение от %s!', config('app.name'), $this->from_user->name);
-        $greeting = sprintf('Здравствуйте, %s!', $notifiable->name);
+        $subject = sprintf('%s: Новое сообщение от %s!', config('app.name'), $this->from_user->profile->name);
+        $greeting = sprintf('Здравствуйте, %s!', $this->user_to->profile->name);
 
         return (new MailMessage)
             ->subject($subject)
             ->greeting($greeting)
-            ->salutation('Новый заказ')
-            ->line('Для вашей рубрики имеется новый заказ')
-            ->action('Посмотреть заказ', url('/'));
+            ->line('На ваш Товар '.$this->product->name.' имеется отклик от '."{$this->from_user->profile->name}")
+            ->action('Посмотреть Покупателя', route('account', ['id' => $this->from_user->id]));
+            //->line(new Action('Утвердить заказ', url('/products')));
+
     }
 
     /**

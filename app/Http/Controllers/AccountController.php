@@ -2,24 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Profile;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function getAccount($id)
     {
-        $this->middleware(['auth', 'verified']);
+        $profile = Profile::where('user_id', $id)->first();
+        return view('account.profile', ['profile' => $profile]);
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
 }

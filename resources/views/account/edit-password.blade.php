@@ -1,7 +1,6 @@
 @extends('layouts.account')
 
 @section('account-content')
-
     <div class="content">
         <div class="container-fluid">
             <div class="row">
