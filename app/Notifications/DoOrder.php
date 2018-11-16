@@ -54,13 +54,13 @@ class DoOrder extends Notification
      */
     public function toMail($notifiable)
     {
-        $subject = sprintf('%s: Новое сообщение от %s!', config('app.name'), $this->from_user->profile->name);
+        $subject = sprintf('%s: Новое сообщение от %s!', config('app.name'), $this->from_user->profile->name ?? 'Безымянного пользователя');
         $greeting = sprintf('Здравствуйте, %s!', $this->user_to->profile->name);
 
         return (new MailMessage)
             ->subject($subject)
             ->greeting($greeting)
-            ->line('На ваш Товар '.$this->product->name.' имеется отклик от '."{$this->from_user->profile->name}")
+            ->line('На ваш Товар '.$this->product->name.' имеется отклик от ' . $this->from_user->profile->name  ?? 'Безымянного пользователя')
             ->action('Посмотреть Покупателя', route('account', ['id' => $this->from_user->id]));
             //->line(new Action('Утвердить заказ', url('/products')));
 
