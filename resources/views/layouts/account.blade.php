@@ -61,7 +61,7 @@
                         <p>Мои товары</p>
                     </a>
                 </li><li>
-                    <a href="{{route('get-edit-password')}}">
+                    <a href="{{route('orders')}}">
                         <i class="pe-7s-user"></i>
                         <p>Мои заказы</p>
                     </a>
@@ -75,7 +75,7 @@
         </div>
     </div>
 
-    <div class="main-panel">
+    <div class="main-panel" style="margin-top: 60px;">
 @yield('account-content')
     </div>
 </div>

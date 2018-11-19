@@ -106,29 +106,8 @@ class ProfileController extends Controller
         return view('account.orders',['orders' => $orders] );
     }
 
-    public function getPrice()
-    {
-        return view('account.price');
-    }
-
     public function getReferal()
     {
         return view('account.referal');
     }
-
-    public function getBill()
-    {
-        return view('account.bill');
-    }
-
-    public function getDocuments()
-    {
-        return view('account.documents');
-    }
-
-    public function getReferalPartner()
-    {
-        return view('account.referal-partner');
-    }
-
 }

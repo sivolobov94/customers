@@ -20,16 +20,16 @@
                     </thead>
                     <tbody>
                     @foreach($products as $product)
-                        <tr>
-                            <td>{{$product->name}}</td>
-                            <td>{{$product->description}}</td>
-                            <td>{{$product->category}}</td>
-                            <td>{{$product->region}}</td>
-                            <td>{{$product->manufacturer}}</td>
-                            <td>{{$product->measure}}</td>
-                            <td>{{$product->price_for_one}}</td>
-                            <td>{{$product->cashback}}</td>
-                        </tr>
+                            <tr onclick="window.location.assign('/product/{{$product->id}}');">
+                                <td>{{$product->name}}</td>
+                                <td>{{$product->description}}</td>
+                                <td>{{$product->category}}</td>
+                                <td>{{$product->region}}</td>
+                                <td>{{$product->manufacturer}}</td>
+                                <td>{{$product->measure}}</td>
+                                <td>{{$product->price_for_one}}</td>
+                                <td>{{$product->cashback}}</td>
+                            </tr>
                     @endforeach
                     </tbody>
                 </table>

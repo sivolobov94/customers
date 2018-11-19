@@ -15,7 +15,7 @@ Auth::routes(['verify' => true]);
 //mainpage
 Route::get('/', 'MainController@index')->name('main');
 //profile
-Route::get('/user/{$id}', 'AccountController@getAccount')->name('account')->middleware('verified');
+Route::get('/user/{id}', 'AccountController@getAccount')->name('account')->middleware('verified');
 
 Route::get('/account/profile', 'ProfileController@getProfile')->name('profile')->middleware('verified');
 Route::post('/account/edit-profile', 'ProfileController@postEditProfile')->name('post-edit-profile')->middleware('verified');
@@ -50,12 +50,14 @@ Route::get('/order-payment', 'OrderController@getOrderPayment')->name('get-order
 Route::get('/do-order', 'OrderController@doOrder')->name('do-order')->middleware('verified');
 
 //custom orders
+Route::get('/custom-order/{id}', 'CustomOrderController@show')->name('custom-order-detail')->middleware('verified');
 Route::get('/custom-order-create', 'CustomOrderController@getCustomOrderCreate')->name('get-custom-order-create')->middleware('verified');
 Route::post('/custom-order-create', 'CustomOrderController@postCustomOrderCreate')->name('post-custom-order-create')->middleware('verified');
 Route::get('/custom-order-success', 'CustomOrderController@getCustomOrderSuccess')->name('get-custom-order-success')->middleware('verified');
 
 //products not resource
 Route::get('/products', 'ProductController@index')->name('get-all-products');
+Route::get('/product/{id}', 'ProductController@show')->name('product-detail');
 Route::get('/product-create', 'ProductController@getProductCreate')->name('get-product-create')->middleware('verified');
 Route::post('/product-create', 'ProductController@postProductCreate')->name('post-product-create')->middleware('verified');
 Route::get('/product-success', 'ProductController@getProductSuccess')->name('get-product-success')->middleware('verified');
