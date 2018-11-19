@@ -15,9 +15,13 @@
     <!-- Styles -->
 </head>
 <style>
-    html, body {
-        background-image: url("../../img/uspeh_bg.png");
+    html {
+        background: url("../../img/uspeh_bg.png")  no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
         background-size: cover;
+        height: 100%;
         overflow: hidden;
     }
 
@@ -37,6 +41,23 @@
     }
     .green {
         color: green;
+    }
+
+    @media only screen and (max-width: 640px) {
+        .text {
+            position	: absolute;
+            top		    : 350px;
+            left		: 120px;
+            width		: 100%;
+
+            color			: white;
+            font			: bold 44px Helvetica, Sans-Serif;
+            font-size: 40px;
+            font-style: normal;
+            font-family: "Helvetica Neue", sans-serif;
+            letter-spacing		: -1px;
+            padding			: 10px;
+        }
     }
 
 </style>

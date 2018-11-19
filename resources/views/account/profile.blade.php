@@ -5,19 +5,19 @@
     @if($profile === null)
         <div class="col-md-12">
             <div class="content">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="header">
-                                    <h4 class="title">Ваш профиль еще не заполнен.</h4>
-                                </div>
-                                <div class="content">
-                                    <a class="btn btn-primary" href="{{route('get-edit-profile')}}">Заполнить</a>
-                                    <div class="clearfix"></div>
-                                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Ваш профиль еще не заполнен.</h4>
+                            </div>
+                            <div class="content">
+                                <a class="btn btn-primary" href="{{route('get-edit-profile')}}">Заполнить</a>
+                                <div class="clearfix"></div>
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
 
             @else
@@ -29,13 +29,14 @@
                         </div>
                         <div class="content">
                             <div class="author">
-                                <a href="#">
-                                    <img class="avatar border-gray" src="../../../{{$profile->logo}}" alt="..."/>
-
+                                    @if($profile->logo)
+                                        <img class="avatar border-gray" src="../../../{{$profile->logo}}" alt="logo"/>
+                                    @else
+                                        <img class="avatar border-gray" src="../../../img/no-photo.png" alt="no-photo"/>
+                                    @endif
                                     <h4 class="title">{{$profile->name}}<br/>
                                         <small>Компания {{$profile->company}}</small>
                                     </h4>
-                                </a>
                             </div>
                             <p class="description text-center"> {{$profile->region}}<br>
                                 {{$profile->address}} <br>

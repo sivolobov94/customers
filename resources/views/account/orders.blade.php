@@ -1,33 +1,37 @@
 @extends('layouts.account')
 
 @section('account-content')
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Мои заказы</h1>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Номер заказа</th>
-                    <th scope="col">Дата запроса</th>
-                    <th scope="col">Наименование/поставщик</th>
-                    <th scope="col">Наименование/поставщик</th>
-                    <th scope="col">Наименование/поставщик</th>
-
-                </tr>
-                </thead>
-                <tbody>
-              @foreach($orders as $order)
-                <tr>
-                    <td>$order->id</td>
-                    <td>$order->created_at</td>
-                    <td>$order->name<br>$order->provider</td>
-                    <td>$order->name<br>$order->provider</td>
-                    <td>$order->name<br>$order->provider</td>
-
-                </tr>
+    <div class="col-md-12">
+        <div class="card card-plain">
+            <div class="header">
+                <h4 class="title">Ваши заказы</h4>
+            </div>
+            <div class="content table-responsive table-full-width">
+                <table class="table table-hover">
+                    <thead>
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th>Категория</th>
+                    <th>Регион</th>
+                    <th>Имя покупателя</th>
+                    <th>Электронная почта</th>
+                    <th>телефон</th>
+                    </thead>
+                    <tbody>
+                    @foreach($orders as $order)
+                        <tr onclick="window.location.assign('/custom-order/{{$order->id}}');">
+                            <td>{{$order->name}}</td>
+                            <td>{{$order->description}}</td>
+                            <td>{{$order->category}}</td>
+                            <td>{{$order->region}}</td>
+                            <td>{{$order->user_name}}</td>
+                            <td>{{$order->email}}</td>
+                            <td>{{$order->phone}}</td>
+                        </tr>
                     @endforeach
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 @stop

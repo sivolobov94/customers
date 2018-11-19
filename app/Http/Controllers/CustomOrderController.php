@@ -68,4 +68,10 @@ class CustomOrderController extends Controller
     {
         return view('custom_order.success');
     }
+
+    public function show($id)
+    {
+        $order = CustomOrder::find($id);
+        return view('custom_order.detail', ['order' => $order]);
+    }
 }
