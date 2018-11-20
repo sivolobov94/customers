@@ -11,6 +11,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/light-bootstrap-dashboard.js') }}" defer></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -20,6 +22,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/my.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin_login.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/light-bootstrap-dashboard.css') }}" rel="stylesheet">
 
 </head>
 <body>

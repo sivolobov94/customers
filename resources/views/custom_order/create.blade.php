@@ -17,18 +17,20 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label>Наименование</label>
-                                            <input value="" name="name" type="text"
-                                                   class="form-control" placeholder="">
+                                            <input title="Наименование" value="{{old('name')}}" name="name" type="text"
+                                                   class="form-control" placeholder="Заголовок вашего заказа...">
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-8">
+                                        <label for="inputState">Описание</label>
                                         <div class="form-group">
-                                            <label for="inputState">Описание</label>
-                                            <input value="" name="description"
-                                                   type="text" class="form-control" placeholder="">
+                                            <textarea title="Описание" name="description" id="" cols="60" rows="5"
+                                                      placeholder="Опишите подробнее что вы хотели бы найти...">
+                                                {{old('description')}}
+                                            </textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -37,7 +39,7 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label for="inputState">Регион</label>
-                                            <select name="category" id="inputState" class="form-control form-control-lg">
+                                            <select name="region" id="inputState" class="form-control form-control-lg">
                                                 @if($regions)
                                                     @foreach($regions as $region)
                                                         <option>{{ $region->name }}</option>
@@ -52,8 +54,8 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label>Ваше имя</label>
-                                            <input value="" name="user_name" type="text"
-                                                   class="form-control" placeholder="">
+                                            <input value="{{old('user_name')}}" name="user_name" type="text"
+                                                   class="form-control" placeholder="Введите имя">
                                         </div>
                                     </div>
                                 </div>
@@ -62,8 +64,8 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label for="inputState">Email</label>
-                                            <input value="" name="email"
-                                                   type="text" class="form-control" placeholder="">
+                                            <input value="{{old('email')}}" name="email"
+                                                   type="text" class="form-control" placeholder="example@mail.ru">
                                         </div>
                                     </div>
                                 </div>
@@ -72,8 +74,8 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label for="inputState">Телефон</label>
-                                            <input value="" name="phone"
-                                                   type="text" class="form-control" placeholder="">
+                                            <input value="{{old('phone')}}" name="phone"
+                                                   type="text" class="form-control" placeholder="+79998887766">
                                         </div>
                                     </div>
                                 </div>
@@ -81,7 +83,7 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label for="inputState">Рубрики</label>
+                                            <label for="inputState">Категория</label>
                                             <select name="category" id="inputState" class="form-control form-control-lg">
                                                 @if($categories)
                                                     @foreach($categories as $category)

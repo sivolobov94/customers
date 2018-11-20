@@ -46,7 +46,7 @@
                 <li>
                     <a href="{{route('get-edit-profile')}}">
                         <i class="pe-7s-user"></i>
-                        <p>Редактировать профиль</p>
+                        <p>Настройки</p>
                     </a>
                 </li>
                 <li>

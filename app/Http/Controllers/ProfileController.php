@@ -30,9 +30,77 @@ class ProfileController extends Controller
 
     public function postEditProfile(Request $request)
     {
-        //dd($request);
+        $messages = [
+
+            'r_email.email' => 'Поле Email должно быть в формате example@mail.ru',
+            'regex' => 'Телефон Должен быть в формате +79998887766',
+            'between' => 'Значение кэшбэка должно быть в диапазоне от :min до :max',
+            'fax.size' => 'Поле Факс должно не превышать :size символов',
+            'r_INN.size' => 'Поле ИНН должно содержать :size символов',
+            'r_KPP.size' => 'Поле КПП должно содержать :size символов',
+            'r_OGRN.size' => 'Поле OGRN должно содержать :size символов',
+            'r_OKPO.size' => 'Поле OKPO должно содержать :size символов',
+            'r_OKATO.size' => 'Поле OKATO должно содержать :size символов',
+            'r_cashback.integer' => 'Поле кэшбэк должно быть числом',
+
+
+            'name' => 'Поле Имя не должно превышать 191 символ',
+            'company' => 'Поле Название компании не должно превышать 191 символ',
+            'phone' => 'Поле Телефон не должно превышать 191 символ',
+            'region' => 'Поле Регион не должно превышать 191 символ',
+            'address' => 'Поле Адрес не должно превышать 191 символ',
+            'small_description' => 'Поле Краткое описание не должно превышать 191 символ',
+            'description' => 'Поле Описание не должно превышать 1000 символов',
+            'site' => 'Поле Сайт не должно превышать 191 символ',
+            'category' => 'Поле Категория не должно превышать 191 символ',
+            'r_fullname' => 'Поле Полное наименоание предприятия не должно превышать 191 символ',
+            'r_name' => 'Поле Сокращенное название предприятия не должно превышать 191 символ',
+            'r_date_create' => 'Поле Дата создания не должно превышать 191 символ',
+            'r_law_address' => 'Поле Юридический адрес не должно превышать 191 символ',
+            'r_post_address' => 'Поле Почтовый адрес не должно превышать 191 символ',
+            'r_director' => 'Поле Директор не должно превышать 191 символ',
+            'r_chief_accountant' => 'Поле Главный бухгалтер не должно превышать 191 символ',
+            'r_email' => 'Поле Email не должно превышать 191 символ',
+            'r_phone' => 'Поле Телефон не должно превышать 191 символ',
+            'r_fax' => 'Поле Факс не должно превышать 15 символ',
+            'r_INN' => 'Поле ИНН не должно превышать 15 символ',
+            'r_KPP' => 'Поле КПП не должно превышать 15 символ',
+            'r_OGRN' => 'Поле ОГРН не должно превышать 15 символ',
+            'r_OKPO' => 'Поле ОКПО не должно превышать 15 символ',
+            'r_OKATO' => 'Поле ОКАТО не должно превышать 15 символ',
+            'r_bank_requisites' => 'Поле Банковские реквизиты не должно превышать 15 символ',
+        ];
+        $request->validate(
+            [
+                'name' => 'required|string|max:191|nullable',
+                'company' => 'string|max:1000|nullable',
+                'phone' => 'string|regex:/^(\+7)[0-9]{9}$/|max:12|nullable',
+                'region' => 'string|max:191|nullable',
+                'address' => 'email|max:191|nullable',
+                'small_description' => 'string||max:191|nullable',
+                'description' => 'string|max:1000|nullable',
+                'site' => 'string|max:191|nullable',
+                'category' => 'string|max:191|nullable',
+                'r_fullname' => 'string|max:191|nullable',
+                'r_name' => 'string|max:191|nullable',
+                'r_date_create' => 'string|max:191|nullable',
+                'r_law_address' => 'string|max:191|nullable',
+                'r_post_address' => 'string|max:191|nullable',
+                'r_director' => 'string|max:191|nullable',
+                'r_chief_accountant' => 'string|max:191|nullable',
+                'r_email' => 'string|email|max:191|nullable',
+                'r_phone' => 'string|regex:/^(\+7)[0-9]{9}$/|max:12|max:191|nullable',
+                'r_fax' => 'string|max:15|nullable',
+                'r_INN' => 'string|size:10|nullable',
+                'r_KPP' => 'string|size:9|nullable',
+                'r_OGRN' => 'string|size:13|nullable',
+                'r_OKPO' => 'string|size:9|nullable',
+                'r_OKATO' => 'string|size:11|nullable',
+                'r_bank_requisites' => 'string|max:191|nullable',
+                'r_cashback' =>'integer|between:1,100|nullable'
+            ], $messages);
+
         $profile = Profile::firstOrCreate(['user_id' => Auth::user()->getAuthIdentifier()]);
-        //$regions = Regions::all();
         $profile->name = $request->name;
         $profile->company = $request->company;
         $profile->phone = $request->phone;

@@ -34,7 +34,36 @@ class ProductController extends Controller
 
     public function postProductCreate(Request $request)
     {
-        //dd($request->file());
+        $messages = [
+            'name.required' => 'Наименование обязательное поле',
+            'description.required' => 'Описание обязательное поле',
+            'region.required' => 'Регион обязательное поле',
+            'category.required' => 'Категория обязательное поле',
+            'manufacturer.required' => 'Производитель обязательное поле',
+            'measure.required' => 'Единица измерения обязательное поле',
+            'price_for_one.required' => 'Цена за единицу обязательное поле',
+            'cashback.required' => 'кэшбэк обязательное поле',
+            
+            'name.max' => 'Поле наименование не должно быть больше 191 символов',
+            'description.max' => 'Поле Описание не должно быть больше 1000 символов',
+            'user_name.max' => 'Поле Ваше имя не должно быть больше 191 символов',
+            'email.max' => 'Поле Email не должно быть больше 191 символов',
+            'phone.max' => 'Поле телефон не должно быть больше 12 символов',
+            'category.max' => 'Поле наименование не должно быть больше 191 символов',
+        ];
+        $request->validate(
+            [
+                'name' => 'required|string|max:50',
+                'description' => 'required|string|max:191',
+                'category' => 'required|string|max:191',
+                'region' => 'required|string|max:191',
+                'manufacturer' => 'required|email|max:50',
+                'measure' => 'required|string|max:20',
+                'price_for_one' => 'required|string|max:10',
+                'cashback' => 'required|numeric|between:1,100',
+            ], $messages);
+
+
         $product = new Product();
         $product->user_id = Auth::user()->getAuthIdentifier();
         $product->name = $request->name;
@@ -46,7 +75,7 @@ class ProductController extends Controller
         $product->price_for_one = $request->price_for_one;
         $product->cashback = $request->cashback;
         $image = $request->file('image');
-        if ($image->isValid()) {
+        if ($image) {
             $image->move('products_images', $image->getClientOriginalName());
             $product->image = 'products_images/'.$image->getClientOriginalName();
         }

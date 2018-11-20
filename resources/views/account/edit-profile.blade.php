@@ -54,7 +54,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Телефон</label>
-                                            <input value="{{$profile->phone}}" name="phone" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->phone}}" name="phone" type="text" class="form-control" placeholder="+79998887766">
                                         </div>
                                     </div>
                                 </div>
@@ -93,7 +93,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="inputState">Рубрики</label>
+                                            <label for="inputState">Категории</label>
                                             <select multiple name="category" id="inputState" class="form-control form-control-lg">
                                             @if($categories)
                                                 @foreach($categories as $category)
@@ -169,7 +169,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Телефон</label>
-                                            <input value="{{$profile->r_phone}}" name="r_phone" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_phone}}" name="r_phone" type="text" class="form-control" placeholder="+79998887766">
                                         </div>
                                     </div>
                                 </div>
@@ -184,13 +184,13 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>ИНН</label>
-                                            <input value="{{$profile->r_INN}}" name="r_INN" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_INN}}" name="r_INN" type="number" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>КПП</label>
-                                            <input value="{{$profile->r_KPP}}" name="r_KPP" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_KPP}}" name="r_KPP" type="number" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -199,19 +199,19 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>ОГРН</label>
-                                            <input value="{{$profile->r_OGRN}}" name="r_OGRN" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_OGRN}}" name="r_OGRN" type="number" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>ОКПО</label>
-                                            <input value="{{$profile->r_OKPO}}" name="r_OKPO" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_OKPO}}" name="r_OKPO" type="number" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>ОКАТО</label>
-                                            <input value="{{$profile->r_OKATO}}" name="r_OKATO" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_OKATO}}" name="r_OKATO" type="number" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -240,6 +240,15 @@
                                 <button type="submit" class="btn btn-info btn-fill pull-right">Обновить</button>
                                 <div class="clearfix"></div>
                             </form>
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -483,10 +492,18 @@
                                             <input name="image"  type="file" class="form-control-file" id="exampleFormControlFile1">
                                         </div>
                                     </div>
-
                                     <button type="submit" class="btn btn-info btn-fill pull-right">Обновить</button>
                                     <div class="clearfix"></div>
                                 </form>
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>

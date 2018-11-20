@@ -9,7 +9,6 @@ use App\Profile;
 use App\Regions;
 use App\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 
@@ -25,17 +24,37 @@ class CustomOrderController extends Controller
 
     public function postCustomOrderCreate(Request $request)
     {
-        $validator = $request->validate(
+        $messages = [
+            'name.required' => 'Наименование обязательное поле',
+            'description.required' => 'Описание обязательное поле',
+            'region.required' => 'Регион обязательное поле',
+            'user_name.required' => 'Ваше имя обязательное поле',
+            'email.required' => 'Email обязательное поле',
+            'phone.required' => 'Телефон обязательное поле',
+            'category.required' => 'Категория обязательное поле',
+
+            'name.max' => 'Поле наименование не должно быть больше 191 символов',
+            'description.max' => 'Поле Описание не должно быть больше 1000 символов',
+            'user_name.max' => 'Поле Ваше имя не должно быть больше 191 символов',
+            'email.max' => 'Поле Email не должно быть больше 191 символов',
+            'phone.max' => 'Поле телефон не должно быть больше 12 символов',
+            'category.max' => 'Поле наименование не должно быть больше 191 символов',
+
+            'email' => 'Поле Email должно быть в формате example@mail.ru',
+            'regex' => 'Телефон Должен быть в формате +79998887766'
+        ];
+        $request->validate(
             [
-                'name' => 'required|string',
-                'description' => 'required|string',
-                'region' => 'string|nullable',
-                'user_name' => 'required|string',
-                'email' => 'required|email',
-                'phone' => 'required|string',
-                'category' => 'string',
+                'name' => 'required|string|max:191',
+                'description' => 'required|string|max:1000',
+                'region' => 'string|required',
+                'user_name' => 'required|string|max:191',
+                'email' => 'required|email|max:191',
+                'phone' => 'required|string|regex:/^(\+7)[0-9]{9}$/|max:12',
+                'category' => 'required|string|max:191',
                 'file' =>'file|nullable'
-        ]);
+        ],$messages);
+
         $order = new CustomOrder();
         $order->name = $request->name;
         $order->user_id = Auth::user()->getAuthIdentifier();
