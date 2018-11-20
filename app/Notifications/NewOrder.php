@@ -68,7 +68,7 @@ class NewOrder extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+
         ];
     }
 }

@@ -60,12 +60,20 @@
                         <i class="pe-7s-user"></i>
                         <p>Мои товары</p>
                     </a>
-                </li><li>
+                </li>
+                <li>
                     <a href="{{route('orders')}}">
                         <i class="pe-7s-user"></i>
                         <p>Мои заказы</p>
                     </a>
-                </li><li>
+                </li>
+                <li>
+                    <a href="{{route('notifications')}}">
+                        <i class="pe-7s-user"></i>
+                        <p>Уведомления</p>
+                    </a>
+                </li>
+                <li>
                     <a href="{{route('get-edit-password')}}">
                         <i class="pe-7s-user"></i>
                         <p>Реферальная ссылка</p>

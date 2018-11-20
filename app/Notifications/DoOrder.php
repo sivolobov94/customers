@@ -17,6 +17,7 @@ class DoOrder extends Notification
     private $from_user;
     private $product;
     private $user_to;
+    private $quantity;
 
     /**
      * Create a new notification instance.
@@ -24,12 +25,14 @@ class DoOrder extends Notification
      * @param User $user_from
      * @param User $user_to
      * @param Product $product
+     * @param $quantity
      */
-    public function __construct(User $user_from,User $user_to, Product $product)
+    public function __construct(User $user_from,User $user_to, Product $product, $quantity)
     {
         $this->from_user = $user_from;
         $this->user_to = $user_to;
         $this->product = $product;
+        $this->quantity = $quantity;
     }
 
     /**
@@ -54,13 +57,16 @@ class DoOrder extends Notification
      */
     public function toMail($notifiable)
     {
-        $subject = sprintf('%s: Новое сообщение от %s!', config('app.name'), $this->from_user->profile->name ?? 'Безымянного пользователя');
-        $greeting = sprintf('Здравствуйте, %s!', $this->user_to->profile->name);
+        $name_user_from = $this->from_user->profile->name ?? 'Пользователь без имени';
+        $name_user_to = $this->user_to->profile->name ?? '';
+
+        $subject = sprintf('%s: Новое сообщение от %s!', config('app.name'), $name_user_from);
+        $greeting = sprintf('Здравствуйте %s', $name_user_to);
 
         return (new MailMessage)
             ->subject($subject)
             ->greeting($greeting)
-            ->line('На ваш Товар '.$this->product->name.' имеется отклик от ' . $this->from_user->profile->name  ?? 'Безымянного пользователя')
+            ->line('На ваш Товар '.$this->product->name.' имеется отклик от ' . $name_user_from)
             ->action('Посмотреть Покупателя', route('account', ['id' => $this->from_user->id]));
             //->line(new Action('Утвердить заказ', url('/products')));
 
@@ -74,8 +80,16 @@ class DoOrder extends Notification
      */
     public function toArray($notifiable)
     {
+        $name_user_from = $this->from_user->profile->name ?? 'Пользователь без имени';
+
         return [
-            //
+            'product_id' => $this->product->id,
+            'product_name' => $this->product->name,
+            'name_user_from' => $name_user_from,
+            'id_user_from' => $this->from_user->id,
+            'quantity' => $this->quantity,
+            'measure' => $this->product->measure
+
         ];
     }
 }

@@ -10,13 +10,13 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12">
-                            <h4>{{$product->name}}</h4>
+                            <h4>Название: {{$product->name}}</h4>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                             <p class="description">
-                                {{$product->description}}
+                                Описание: {{$product->description}}
                             </p>
                         </div>
                     </div>
@@ -24,34 +24,42 @@
                     <div class="row">
                         <div class="col-md-12">
                             <input title="Производитель" type="text" readonly class="form-control-plaintext"
-                                   value="{{$product->manufacturer}}">
+                                   value="Производитель: {{$product->manufacturer}}">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-12">
                             <input type="text" readonly class="form-control-plaintext"
-                                   value="{{$product->manufacturer}}">
+                                   value="Единица измерения: {{$product->measure}}">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-12">
-                            <input type="text" readonly class="form-control-plaintext" value="{{$product->measure}}">
+                            <input type="text" readonly class="form-control-plaintext"
+                                   value="Цена за единицу: {{$product->price}}">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-12">
-                            <input type="text" readonly class="form-control-plaintext" value="{{$product->price}}">
+                            <input type="text" readonly class="form-control-plaintext" value="Кэшбэк %: {{$product->cashback}}">
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <input type="text" readonly class="form-control-plaintext" value="{{$product->cashback}}">
+                    <form method="post" action="{{route('do-order', ['id' => $product->id])}}">
+                        {{csrf_field()}}
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="quantity">Укажите количество товара, которое хотите заказать</label>
+                                <input name="quantity" style="margin-bottom: 15px;"
+                                       id="quantity" type="number" class="form-control" value="" placeholder="10" required>
+                            </div>
                         </div>
-                    </div>
+                        <button type="submit" class="btn btn-primary">Заказать</button>
+                    </form>
+
                 </div>
             </div>
         </div>

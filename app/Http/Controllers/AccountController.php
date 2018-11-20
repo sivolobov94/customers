@@ -10,6 +10,6 @@ class AccountController extends Controller
     public function getAccount($id)
     {
         $profile = Profile::where('user_id', $id)->first();
-        return view('account.profile', ['profile' => $profile]);
+        return view('profile', ['profile' => $profile]);
     }
 }

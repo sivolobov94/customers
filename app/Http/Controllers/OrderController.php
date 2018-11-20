@@ -19,7 +19,7 @@ class OrderController extends Controller
         $product = Product::find($request->id);
         $to_user = User::find($product->user_id);
         $from_user = User::find(Auth::user()->getAuthIdentifier());
-        Notification::send($to_user, new DoOrder($from_user, $to_user, $product));
+        Notification::send($to_user, new DoOrder($from_user, $to_user, $product, $request->quantity));
         return view('products.index', ['items' => $products]);
     }
 }

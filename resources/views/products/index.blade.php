@@ -10,7 +10,6 @@
                     <div class="card-body">
                         <h5 class="card-title">{{$item->name}}</h5>
                         <p class="card-text">{{$item->description}}</p>
-                        <a href="{{route('do-order', ['id' => $item->id])}}" class="btn btn-primary">Заказать</a>
                     </div>
                 </div>
             </a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Categories;
 use App\Product;
+use App\Profile;
 use App\Regions;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Http\Request;
@@ -28,8 +29,12 @@ class ProductController extends Controller
     {
         $categories = Categories::all();
         $regions = Regions::all();
-        //dd($regions, $categories);
-        return view('account.create-product', ['categories' => $categories, 'regions' => $regions]);
+        $profile = Profile::find(Auth::user()->getAuthIdentifier());
+        return view('account.create-product', [
+            'categories' => $categories,
+            'regions' => $regions,
+            'profile' => $profile
+            ]);
     }
 
     public function postProductCreate(Request $request)
@@ -43,7 +48,7 @@ class ProductController extends Controller
             'measure.required' => 'Единица измерения обязательное поле',
             'price_for_one.required' => 'Цена за единицу обязательное поле',
             'cashback.required' => 'кэшбэк обязательное поле',
-            
+
             'name.max' => 'Поле наименование не должно быть больше 191 символов',
             'description.max' => 'Поле Описание не должно быть больше 1000 символов',
             'user_name.max' => 'Поле Ваше имя не должно быть больше 191 символов',

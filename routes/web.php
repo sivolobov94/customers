@@ -28,6 +28,7 @@ Route::get('/account/notifications', 'ProfileController@getNotifications')->name
 Route::get('/account/orders', 'ProfileController@getOrders')->name('orders')->middleware('verified');
 Route::get('/account/referal', 'ProfileController@getReferal')->name('referal')->middleware('verified');
 Route::get('/account/products', 'ProfileController@getProducts')->name('products')->middleware('verified');
+Route::get('/account/notifications', 'NotificationsController@index')->name('notifications')->middleware('verified');
 
 //search routes
 Route::get('/search', 'SearchController@search' )->name('search');
@@ -47,7 +48,7 @@ Route::post('/order-create', 'OrderController@postOrderCreate')->name('post-orde
 Route::get('/order-success', 'OrderController@getOrderSuccess')->name('get-order-success')->middleware('verified');
 Route::get('/order-payment', 'OrderController@getOrderPayment')->name('get-order-payment')->middleware('verified');
 
-Route::get('/do-order', 'OrderController@doOrder')->name('do-order')->middleware('verified');
+Route::post('/do-order', 'OrderController@doOrder')->name('do-order')->middleware('verified');
 
 //custom orders
 Route::get('/custom-order/{id}', 'CustomOrderController@show')->name('custom-order-detail')->middleware('verified');
@@ -64,6 +65,8 @@ Route::get('/product-success', 'ProductController@getProductSuccess')->name('get
 
 //feedback mail
 Route::post('/feedback/send', 'FeedbackController@send')->name('feedback-send');
+
+//notifications
 
 //admin-panel
 Route::get('/admin/logout', 'AdminController@logout')->name('admin-logout');

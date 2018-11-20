@@ -59,10 +59,10 @@
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <div class="form-group col-md-12">
+                                        <div class="form-group col-md-4">
                                             <label for="inputCity">% кэшбэка</label>
-                                            <textarea name="cashback" rows="5" type="text" class="form-control"
-                                                      id="inputCity"></textarea>
+                                            <input value="{{$profile->r_cashback}}" name="price_for_one" type="text"
+                                                   class="form-control" id="inputCity" readonly>
                                         </div>
                                     </div>
                                     <div class="form-row">
