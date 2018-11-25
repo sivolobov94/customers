@@ -31,11 +31,12 @@ class CustomOrderController extends Controller
             'regions' => $regions,
             'profile' => $profile
         ]);
+
     }
 
     public function postCustomOrderCreate(Request $request)
     {
-
+        
         $messages = [
             'name.required' => 'Наименование обязательное поле',
             'description.required' => 'Описание обязательное поле',

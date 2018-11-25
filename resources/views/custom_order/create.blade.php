@@ -12,7 +12,6 @@
                         <div class="content">
                             <form method="post" enctype="multipart/form-data" action="{{route('post-custom-order-create')}}">
                                 {{csrf_field()}}
-
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">

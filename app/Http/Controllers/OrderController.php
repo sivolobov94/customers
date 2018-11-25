@@ -15,10 +15,17 @@ class OrderController extends Controller
 {
     public function doOrder(Request $request)
     {
+        if(Auth::user()->toArray()['role'] === 'sale') {
+            return redirect()
+                ->back()
+                ->withErrors(
+                    ['msg' => 'Пользоавтели являющиеся продавцами не могут заказывать товары']
+                );
+        }
         $request->validate(
             [
                 'quantity' => 'required|digits_between:1,10',
-                'comment' => 'string|max:140'
+                'comment' => 'max:140'
             ]
         );
         $products = Product::all();

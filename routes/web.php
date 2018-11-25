@@ -75,6 +75,10 @@ Route::post('/admin/login', 'AdminController@postLogin')->name('admin-post-login
 Route::get('/admin', 'AdminController@getAdminPage')->name('get-admin-page')->middleware('admin');
 Route::get('/admin/user', 'AdminController@getUserProfile')->name('get-admin-user')->middleware('admin');
 
+//accept delivery
+Route::get('/accept-delivery/{id}', 'NotificationsController@getAcceptDelivery')->name('get-accept-delivery')->middleware('verified');
+Route::post('/accept-delivery', 'NotificationsController@PostAcceptDelivery')->name('post-accept-delivery')->middleware('verified');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
