@@ -72,11 +72,11 @@ class ProfileController extends Controller
         ];
         $request->validate(
             [
-                'name' => 'required|string|max:191|nullable',
+                'name' => 'string|max:191|nullable',
                 'company' => 'string|max:1000|nullable',
-                'phone' => 'string|regex:/^(\+7)[0-9]{9}$/|max:12|nullable',
+                'phone' => 'string|regex:/^(\+7|8)[0-9]{10}$/|max:12|nullable',
                 'region' => 'string|max:191|nullable',
-                'address' => 'email|max:191|nullable',
+                'address' => 'max:191|nullable',
                 'small_description' => 'string||max:191|nullable',
                 'description' => 'string|max:1000|nullable',
                 'site' => 'string|max:191|nullable',
@@ -89,7 +89,7 @@ class ProfileController extends Controller
                 'r_director' => 'string|max:191|nullable',
                 'r_chief_accountant' => 'string|max:191|nullable',
                 'r_email' => 'string|email|max:191|nullable',
-                'r_phone' => 'string|regex:/^(\+7)[0-9]{9}$/|max:12|max:191|nullable',
+                'r_phone' => 'string|regex:/^(\+7|8)[0-9]{10}$/|max:12|max:191|nullable',
                 'r_fax' => 'string|max:15|nullable',
                 'r_INN' => 'string|size:10|nullable',
                 'r_KPP' => 'string|size:9|nullable',

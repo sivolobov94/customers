@@ -10,7 +10,7 @@
                             <h4 class="title">Создание заказа</h4>
                         </div>
                         <div class="content">
-                            <form method="post" action="{{route('post-custom-order-create')}}">
+                            <form method="post" enctype="multipart/form-data" action="{{route('post-custom-order-create')}}">
                                 {{csrf_field()}}
 
                                 <div class="row">
@@ -54,7 +54,7 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label>Ваше имя</label>
-                                            <input value="{{old('user_name')}}" name="user_name" type="text"
+                                            <input value="{{$profile->name ?? old('user_name')}}" name="user_name" type="text"
                                                    class="form-control" placeholder="Введите имя">
                                         </div>
                                     </div>
@@ -64,7 +64,7 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label for="inputState">Email</label>
-                                            <input value="{{old('email')}}" name="email"
+                                            <input value="{{$profile->r_email ?? old('email')}}" name="email"
                                                    type="text" class="form-control" placeholder="example@mail.ru">
                                         </div>
                                     </div>
@@ -74,7 +74,7 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label for="inputState">Телефон</label>
-                                            <input value="{{old('phone')}}" name="phone"
+                                            <input value="{{$profile->phone ?? old('phone')}}" name="phone"
                                                    type="text" class="form-control" placeholder="+79998887766">
                                         </div>
                                     </div>
@@ -97,8 +97,8 @@
 
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
-                                        <label for="exampleFormControlFile1">Изображение (необязательно)</label>
-                                        <input name="image" type="file" class="form-control-file"
+                                        <label for="exampleFormControlFile1">Приложить файл</label>
+                                        <input name="file" type="file" class="form-control-file"
                                                id="exampleFormControlFile1">
                                     </div>
                                 </div>

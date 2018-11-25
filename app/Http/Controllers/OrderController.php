@@ -15,11 +15,17 @@ class OrderController extends Controller
 {
     public function doOrder(Request $request)
     {
+        $request->validate(
+            [
+                'quantity' => 'required|digits_between:1,10',
+                'comment' => 'string|max:140'
+            ]
+        );
         $products = Product::all();
         $product = Product::find($request->id);
         $to_user = User::find($product->user_id);
         $from_user = User::find(Auth::user()->getAuthIdentifier());
-        Notification::send($to_user, new DoOrder($from_user, $to_user, $product, $request->quantity));
+        Notification::send($to_user, new DoOrder($from_user, $to_user, $product, $request->quantity, $request->comment));
         return view('products.index', ['items' => $products]);
     }
 }

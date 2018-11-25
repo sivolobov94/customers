@@ -18,6 +18,7 @@ class DoOrder extends Notification
     private $product;
     private $user_to;
     private $quantity;
+    private $comment;
 
     /**
      * Create a new notification instance.
@@ -26,13 +27,15 @@ class DoOrder extends Notification
      * @param User $user_to
      * @param Product $product
      * @param $quantity
+     * @param $comment
      */
-    public function __construct(User $user_from,User $user_to, Product $product, $quantity)
+    public function __construct(User $user_from,User $user_to, Product $product, $quantity, $comment)
     {
         $this->from_user = $user_from;
         $this->user_to = $user_to;
         $this->product = $product;
         $this->quantity = $quantity;
+        $this->comment = $comment;
     }
 
     /**
@@ -88,7 +91,8 @@ class DoOrder extends Notification
             'name_user_from' => $name_user_from,
             'id_user_from' => $this->from_user->id,
             'quantity' => $this->quantity,
-            'measure' => $this->product->measure
+            'measure' => $this->product->measure,
+            'comment' => $this->comment
 
         ];
     }

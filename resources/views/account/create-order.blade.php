@@ -17,8 +17,8 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Наименование</label>
-                                            <input value=""  name="name" type="text"
-                                                   class="form-control" placeholder="">
+                                            <input value="{{old('name')}}"  name="name" type="text"
+                                                   class="form-control" placeholder="" autofocus>
                                         </div>
                                     </div>
                                 </div>
@@ -27,7 +27,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="inputState">Описание</label>
-                                            <input value=""  name="description"
+                                            <input value="{{old('description')}}"  name="description"
                                                    type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
@@ -37,7 +37,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="inputState">Регион</label>
-                                            <input value=""  name="region"
+                                            <input value="{{old('region')}}"  name="region"
                                                    type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
@@ -47,7 +47,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Ваше имя</label>
-                                            <input value=""  name="user_name" type="text"
+                                            <input value="{{old('user_name')}}"  name="user_name" type="text"
                                                    class="form-control" placeholder="">
                                         </div>
                                     </div>
@@ -57,7 +57,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="inputState">Email</label>
-                                            <input value=""  name="email"
+                                            <input value="{{old('email')}}"  name="email"
                                                    type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
@@ -67,7 +67,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="inputState">Телефон</label>
-                                            <input value=""  name="phone"
+                                            <input value="{{old('phone')}}"  name="phone"
                                                    type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
@@ -76,7 +76,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Рубрика</label>
+                                            <label>Категория</label>
                                             <input value=""  name="category" type="text"
                                                    class="form-control" placeholder="">
                                         </div>
@@ -86,7 +86,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Рубрика</label>
+                                            <label>Категория</label>
                                             <input value=""  name="category" type="text"
                                                    class="form-control" placeholder="">
                                         </div>
@@ -95,7 +95,7 @@
 
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
-                                        <label for="exampleFormControlFile1">Изображение (необязательно)</label>
+                                        <label for="exampleFormControlFile1">Приложить файл</label>
                                         <input name="image"  type="file" class="form-control-file" id="exampleFormControlFile1">
                                     </div>
                                 </div>

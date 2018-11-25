@@ -55,7 +55,7 @@ placeholder="{{ __('* Подтверждение пароля:') }}" required>
 
                             <div class="form-check row">
                                 <input type="checkbox" class="form-check-input" id="check-oferta" required>
-                                <label class="form-check-label" for="check-oferta">Я принимаю <a href="{{'file:///'.public_path('license.pdf')}}">условия пользования сервиса</a></label>
+                                <label class="form-check-label" for="check-oferta">Я принимаю <a href="{{asset('license.pdf')}}" target="_blank">условия пользования сервиса</a></label>
                             </div>
 
                             <div class="form-group row mb-0">

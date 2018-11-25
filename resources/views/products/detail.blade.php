@@ -57,9 +57,25 @@
                                        id="quantity" type="number" class="form-control" value="" placeholder="10" required>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Коментарий:</p>
+                                <textarea name="comment" id="" cols="45" rows="4" placeholder="Коментарий к заказу...">
+                            </textarea>
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-primary">Заказать</button>
                     </form>
-
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

@@ -14,16 +14,28 @@ use Illuminate\Support\Facades\Notification;
 
 class CustomOrderController extends Controller
 {
+    public function index()
+    {
+        $custom_orders = CustomOrder::all();
+        return view('custom_order.index', ['custom_orders' => $custom_orders]);
+    }
+
     public function getCustomOrderCreate()
     {
         $categories = Categories::all();
         $regions = Regions::all();
+        $profile = Profile::find(Auth::user()->getAuthIdentifier());
 
-        return view('custom_order.create', ['categories' => $categories, 'regions' => $regions]);
+        return view('custom_order.create', [
+            'categories' => $categories,
+            'regions' => $regions,
+            'profile' => $profile
+        ]);
     }
 
     public function postCustomOrderCreate(Request $request)
     {
+
         $messages = [
             'name.required' => 'Наименование обязательное поле',
             'description.required' => 'Описание обязательное поле',
@@ -50,7 +62,7 @@ class CustomOrderController extends Controller
                 'region' => 'string|required',
                 'user_name' => 'required|string|max:191',
                 'email' => 'required|email|max:191',
-                'phone' => 'required|string|regex:/^(\+7)[0-9]{9}$/|max:12',
+                'phone' => 'required|string|regex:/^(\+7|8)[0-9]{10}$/|max:12',
                 'category' => 'required|string|max:191',
                 'file' =>'file|nullable'
         ],$messages);
@@ -68,10 +80,11 @@ class CustomOrderController extends Controller
         $file = $request->file('file');
         if ($file) {
             $file->move('custom_orders_files', $file->getClientOriginalName());
-            $order->file= 'custom_orders_files/'.$file->getClientOriginalName();
+            $order->file= $file->getClientOriginalName();
         }
-        $order->save();
 
+        $order->save();
+        //оповестить всех поставщиков выбранной вами категории о вашем новом заказе
         $profiles = Profile::all();
         $filtred_profiles = $profiles->where('category', $order->category);
         $from_user = User::find(Auth::user()->getAuthIdentifier());
@@ -79,7 +92,6 @@ class CustomOrderController extends Controller
             $to_user = User::find($profile->user_id);
             Notification::send($to_user, new NewOrder($from_user, $order->id));
         }
-
         return view('custom_order.success');
     }
 

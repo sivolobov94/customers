@@ -6,13 +6,13 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12">
-                            <h4>{{$order->name}}</h4>
+                            <h4>Название: {{$order->name}}</h4>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                             <p class="description">
-                                {{$order->description}}
+                                Описание: {{$order->description}}
                             </p>
                         </div>
                     </div>
@@ -20,26 +20,33 @@
                     <div class="row">
                         <div class="col-md-12">
                             <input title="Производитель" type="text" readonly class="form-control-plaintext"
-                                   value="{{$order->region}}">
+                                   value="Регион: {{$order->region}}">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-12">
                             <input type="text" readonly class="form-control-plaintext"
-                                   value="{{$order->user_name}}">
+                                   value="Имя Заказчика: {{$order->user_name}}">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-12">
-                            <input type="text" readonly class="form-control-plaintext" value="{{$order->email}}">
+                            <input type="text" readonly class="form-control-plaintext" value="Email: {{$order->email}}">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-12">
-                            <input type="text" readonly class="form-control-plaintext" value="{{$order->phone}}">
+                            <input type="text" readonly class="form-control-plaintext" value="Телефон: {{$order->phone}}">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span>Приложенный файл:</span>
+                            <a href="{{asset('/custom_orders_files/'.$order->file)}}">{{$order->file}}</a>
                         </div>
                     </div>
 
