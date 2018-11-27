@@ -1,0 +1,33 @@
+@extends('layouts.app')
+
+@section('content')
+    <div class="col-md-12">
+        <div class="card card-plain">
+            <div class="header">
+                <h4 class="title">Сисок доступных заказов</h4>
+            </div>
+            <div class="content table-responsive table-full-width">
+                <table class="table table-hover">
+                    <thead>
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th>Категория</th>
+                    <th>Регион</th>
+                    <th>Дата создания</th>
+                    </thead>
+                    <tbody>
+                    @foreach($custom_orders as $custom_order)
+                        <tr onclick="window.location.assign('/custom-order/{{$custom_order->id}}');">
+                            <td>{{$custom_order->name}}</td>
+                            <td>{{$custom_order->description}}</td>
+                            <td>{{$custom_order->category}}</td>
+                            <td>{{$custom_order->region}}</td>
+                            <td>{{$custom_order->created_at}}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+@endsection

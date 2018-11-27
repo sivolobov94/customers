@@ -54,7 +54,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <a style="margin-left: 20%;" href="{{route('get-accept-delivery',
-                                         ['id' => $notification->data['id_user_from']])}}" class="btn btn-primary">
+                                            ['id' => $notification->data['id_user_from']])}}" class="btn btn-primary">
                                                 Ответить покупателю
                                             </a>
                                         </div>

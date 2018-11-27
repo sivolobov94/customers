@@ -33,7 +33,7 @@ class ProfileController extends Controller
         $messages = [
 
             'r_email.email' => 'Поле Email должно быть в формате example@mail.ru',
-            'regex' => 'Телефон Должен быть в формате +79998887766',
+            'regex' => 'Телефон Должен быть в формате 89998887766',
             'between' => 'Значение кэшбэка должно быть в диапазоне от :min до :max',
             'fax.size' => 'Поле Факс должно не превышать :size символов',
             'r_INN.size' => 'Поле ИНН должно содержать :size символов',
@@ -74,7 +74,7 @@ class ProfileController extends Controller
             [
                 'name' => 'string|max:191|nullable',
                 'company' => 'string|max:1000|nullable',
-                'phone' => 'string|regex:/^(\+7|8)[0-9]{10}$/|max:12|nullable',
+                'phone' => ['string','regex:/^8[0-9]{10}$/','max:12','nullable'],
                 'region' => 'string|max:191|nullable',
                 'address' => 'max:191|nullable',
                 'small_description' => 'string||max:191|nullable',
@@ -89,7 +89,7 @@ class ProfileController extends Controller
                 'r_director' => 'string|max:191|nullable',
                 'r_chief_accountant' => 'string|max:191|nullable',
                 'r_email' => 'string|email|max:191|nullable',
-                'r_phone' => 'string|regex:/^(\+7|8)[0-9]{10}$/|max:12|max:191|nullable',
+                'r_phone' => ['string','regex:/^8[0-9]{10}$/','max:12','nullable'],
                 'r_fax' => 'string|max:15|nullable',
                 'r_INN' => 'string|size:10|nullable',
                 'r_KPP' => 'string|size:9|nullable',

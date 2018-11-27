@@ -27,7 +27,7 @@
                                         <label for="inputState">Описание</label>
                                         <div class="form-group">
                                             <textarea title="Описание" name="description" id="" cols="60" rows="5"
-                                                      placeholder="Опишите подробнее что вы хотели бы найти...">
+                                                      placeholder="Опишите подробнее, что вы хотели бы найти...">
                                                 {{old('description')}}
                                             </textarea>
                                         </div>

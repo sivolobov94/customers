@@ -17,6 +17,7 @@ class CustomOrderController extends Controller
     public function index()
     {
         $custom_orders = CustomOrder::all();
+        //dd($custom_orders);
         return view('custom_order.index', ['custom_orders' => $custom_orders]);
     }
 
@@ -54,7 +55,7 @@ class CustomOrderController extends Controller
             'category.max' => 'Поле наименование не должно быть больше 191 символов',
 
             'email' => 'Поле Email должно быть в формате example@mail.ru',
-            'regex' => 'Телефон Должен быть в формате +79998887766'
+            'regex' => 'Телефон Должен быть в формате 89998887766'
         ];
         $request->validate(
             [
@@ -63,7 +64,7 @@ class CustomOrderController extends Controller
                 'region' => 'string|required',
                 'user_name' => 'required|string|max:191',
                 'email' => 'required|email|max:191',
-                'phone' => 'required|string|regex:/^(\+7|8)[0-9]{10}$/|max:12',
+                'phone' => ['required', 'string', 'regex:/^8[0-9]{10}$/','max:12'],
                 'category' => 'required|string|max:191',
                 'file' =>'file|nullable'
         ],$messages);

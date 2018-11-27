@@ -55,6 +55,7 @@ Route::get('/custom-order/{id}', 'CustomOrderController@show')->name('custom-ord
 Route::get('/custom-order-create', 'CustomOrderController@getCustomOrderCreate')->name('get-custom-order-create')->middleware('verified');
 Route::post('/custom-order-create', 'CustomOrderController@postCustomOrderCreate')->name('post-custom-order-create')->middleware('verified');
 Route::get('/custom-order-success', 'CustomOrderController@getCustomOrderSuccess')->name('get-custom-order-success')->middleware('verified');
+Route::get('/custom-orders', 'CustomOrderController@index')->name('get-all-custom-order')->middleware('verified');
 
 //products not resource
 Route::get('/products', 'ProductController@index')->name('get-all-products');

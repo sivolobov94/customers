@@ -61,7 +61,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
                                             <label for="inputCity">% кэшбэка</label>
-                                            <input value="{{$profile->r_cashback}}" name="price_for_one" type="text"
+                                            <input value="{{$profile->r_cashback ?? ''}}" name="price_for_one" type="text"
                                                    class="form-control" id="inputCity" readonly>
                                         </div>
                                     </div>

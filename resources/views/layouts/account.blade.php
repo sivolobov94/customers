@@ -74,9 +74,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('get-edit-password')}}">
+                    <a href="#">
                         <i class="pe-7s-user"></i>
-                        <p>Реферальная ссылка</p>
+                        <p>Партнерская программа</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="pe-7s-user"></i>
+                        <p>Баланс</p>
                     </a>
                 </li>
             </ul>
