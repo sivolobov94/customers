@@ -1649,7 +1649,7 @@ fieldset[disabled] .btn-neutral.active {
 
 .navbar {
     border: 0;
-    font-size: 14px;
+    font-size: 13.5px;
     border-radius: 0;
 }
 
@@ -3516,7 +3516,11 @@ fieldset[disabled] .btn-neutral.active {
         margin: 0;
     }
 }
-
+@media (max-width: 1200px) {
+.navbar {
+    font-size: 10.5px;
+}	
+}	
 @media (max-width: 991px) {
     .table-responsive {
         width: 100%;

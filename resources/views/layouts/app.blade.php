@@ -9,9 +9,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/light-bootstrap-dashboard.js') }}" defer></script>
+
 
 
     <!-- Fonts -->
@@ -21,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/my.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/all.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin_login.css') }}" rel="stylesheet">
     <link href="{{ asset('css/light-bootstrap-dashboard.css') }}" rel="stylesheet">
 
@@ -109,5 +108,15 @@
     </main>
 </div>
 </body>
-
+    <!-- Scripts -->
+    
+	<script src="{{ asset('js/jquery-1.10.2.min.js')}}"></script>
+	<script src="{{ asset('js/shieldui-all.min.js') }}" defer></script>
+	<script type="text/javascript">
+		jQuery(function ($) {
+			$("#treeview").shieldTreeView();
+		});
+	</script>
+	<script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/light-bootstrap-dashboard.js') }}" defer></script>
 </html>

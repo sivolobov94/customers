@@ -69,3 +69,7 @@ button.button-click:active{
 button.button-click:active:after {
     background: #d8b400;
 }
+
+.products{
+	margin-top: 2%;
+}
