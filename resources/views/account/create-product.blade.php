@@ -60,9 +60,12 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
-                                            <label for="inputCity">% кэшбэка</label>
-                                            <input value="{{$profile->r_cashback ?? ''}}" name="price_for_one" type="text"
-                                                   class="form-control" id="inputCity" readonly>
+                                            <label for="inputCity">Использовать не стандартный кэшбэк
+                                            <input type="checkbox" id="inputCityActivaitor" onclick="if(this.checked){ $('#inputCity').prop('disabled', false);}" />
+                                            </label>
+                                            <p>% кэшбэка</p>
+                                            <input value="{{$profile->r_cashback ?? ''}}" name="cashback" type="text"
+                                                   class="form-control" id="inputCity">
                                         </div>
                                     </div>
                                     <div class="form-row">
@@ -75,6 +78,15 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary">Добавить</button>
                             </form>
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

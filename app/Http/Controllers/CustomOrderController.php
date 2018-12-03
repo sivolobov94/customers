@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Categories;
+use App\Category;
 use App\CustomOrder;
 use App\Notifications\NewOrder;
 use App\Profile;
@@ -17,13 +18,12 @@ class CustomOrderController extends Controller
     public function index()
     {
         $custom_orders = CustomOrder::all();
-        //dd($custom_orders);
         return view('custom_order.index', ['custom_orders' => $custom_orders]);
     }
 
     public function getCustomOrderCreate()
     {
-        $categories = Categories::all();
+        $categories = Category::all();
         $regions = Regions::all();
         $profile = Profile::find(Auth::user()->getAuthIdentifier());
 
@@ -37,7 +37,14 @@ class CustomOrderController extends Controller
 
     public function postCustomOrderCreate(Request $request)
     {
-        
+        if (Auth::user()->toArray()['role'] === 'sale') {
+            return redirect()
+                ->back()
+                ->withErrors(
+                    ['msg' => 'Пользователи являющиеся продавцами не могут создавать заказы']
+                );
+        }
+
         $messages = [
             'name.required' => 'Наименование обязательное поле',
             'description.required' => 'Описание обязательное поле',
@@ -64,10 +71,10 @@ class CustomOrderController extends Controller
                 'region' => 'string|required',
                 'user_name' => 'required|string|max:191',
                 'email' => 'required|email|max:191',
-                'phone' => ['required', 'string', 'regex:/^8[0-9]{10}$/','max:12'],
+                'phone' => ['required', 'string', 'regex:/^8[0-9]{10}$/', 'max:12'],
                 'category' => 'required|string|max:191',
-                'file' =>'file|nullable'
-        ],$messages);
+                'file' => 'file|nullable'
+            ], $messages);
 
         $order = new CustomOrder();
         $order->name = $request->name;
@@ -82,7 +89,7 @@ class CustomOrderController extends Controller
         $file = $request->file('file');
         if ($file) {
             $file->move('custom_orders_files', $file->getClientOriginalName());
-            $order->file= $file->getClientOriginalName();
+            $order->file = $file->getClientOriginalName();
         }
 
         $order->save();

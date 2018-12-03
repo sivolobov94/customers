@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CashbackList;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -50,7 +51,8 @@ class AdminController extends Controller
 
     public function getAdminPage()
     {
-        return view('admin.admin');
+        $list = CashbackList::all();
+        return view('admin.index', ['list' => $list]);
     }
 
     public function getUserProfile()

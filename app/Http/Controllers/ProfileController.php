@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Categories;
-use App\CustomOrder;
+use App\CashbackList;
+use App\Category;
+use App\Order;
 use App\Profile;
 use App\Regions;
 use App\User;
@@ -22,10 +23,17 @@ class ProfileController extends Controller
     public function getEditProfile()
     {
         $profile = User::find(Auth::user()->getAuthIdentifier())->profile;
-        $categories = Categories::all();
+        $categories = Category::all();
         $regions= Regions::all();
 
         return view('account.edit-profile', ['profile' => $profile, 'categories' => $categories, 'regions' => $regions]);
+    }
+
+    public function getBalance()
+    {
+        $orders = Order::where('buyer_id', Auth::user()->getAuthIdentifier())->get();
+        $profile = Profile::where('user_id', Auth::user()->getAuthIdentifier())->first();
+        return view('account.balance', ['profile' => $profile, 'orders' => $orders]);
     }
 
     public function postEditProfile(Request $request)
@@ -159,7 +167,6 @@ class ProfileController extends Controller
     public function getProducts()
     {
         $products = User::find(Auth::user()->getAuthIdentifier())->products;
-        //dd($products);
         return view('account.products', ['products' => $products]);
     }
 
@@ -172,6 +179,36 @@ class ProfileController extends Controller
     {
         $orders = User::find(Auth::user()->getAuthIdentifier())->customOrders()->get();
         return view('account.orders',['orders' => $orders] );
+    }
+
+    public function getOrdersForSale()
+    {
+        $orders = Order::where('sale_id', Auth::user()->getAuthIdentifier())->get();
+        return view('account.orders-sale', ['orders' => $orders]);
+    }
+
+    public function getCashbackForm()
+    {
+        $profile = Profile::where('user_id', Auth::user()->getAuthIdentifier())->first();
+        return view('cashback.form', ['profile' => $profile]);
+    }
+
+    public function postCashbackForm(Request $request)
+    {
+        $profile = Profile::where('user_id', Auth::user()->getAuthIdentifier())->first();
+        $request->validate([
+            'sum' => "required|numeric|max:{$profile->accepted_balance}"
+        ]);
+
+        $cashback_list = new CashbackList();
+        $cashback_list->user_id = $profile->user_id;
+        $cashback_list->user_name = $profile->user_name ?? 'Имя пользователя не установлено';
+        $cashback_list->sum = $request->sum;
+        $cashback_list->bank_requisites = $profile->r_bank_requisites ?? 'банковские реквизиты не установлены';
+        $cashback_list->save();
+        $profile->accepted_balance = $profile->accepted_balance - $request->sum;
+        $profile->save();
+        return view('cashback.success');
     }
 
     public function getReferal()

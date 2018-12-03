@@ -26,9 +26,14 @@ Route::get('/account/edit-password', 'ProfileController@getEditPassword')->name(
 Route::post('/account/edit-password', 'ProfileController@postEditPassword')->name('post-edit-password')->middleware('verified');
 Route::get('/account/notifications', 'ProfileController@getNotifications')->name('notifications')->middleware('verified');
 Route::get('/account/orders', 'ProfileController@getOrders')->name('orders')->middleware('verified');
+Route::get('/account/orders-sale', 'ProfileController@getOrdersForSale')->name('orders-sale')->middleware('verified');
 Route::get('/account/referal', 'ProfileController@getReferal')->name('referal')->middleware('verified');
 Route::get('/account/products', 'ProfileController@getProducts')->name('products')->middleware('verified');
 Route::get('/account/notifications', 'NotificationsController@index')->name('notifications')->middleware('verified');
+Route::get('/account/balance', 'ProfileController@getBalance')->name('balance')->middleware('verified');
+Route::get('/account/cashback-form', 'ProfileController@getCashBackForm')->name('get-cashback-form')->middleware('verified');
+Route::post('/account/cashback', 'ProfileController@postCashBackForm')->name('post-cashback-form')->middleware('verified');
+
 
 //search routes
 Route::get('/search', 'SearchController@search' )->name('search');
@@ -47,6 +52,8 @@ Route::get('/order-create', 'OrderController@getOrderCreate')->name('get-order-c
 Route::post('/order-create', 'OrderController@postOrderCreate')->name('post-order-create')->middleware('verified');
 Route::get('/order-success', 'OrderController@getOrderSuccess')->name('get-order-success')->middleware('verified');
 Route::get('/order-payment', 'OrderController@getOrderPayment')->name('get-order-payment')->middleware('verified');
+Route::post('/pay-accept', 'OrderController@payAccept')->name('pay-accept')->middleware('verified');
+
 
 Route::post('/do-order', 'OrderController@doOrder')->name('do-order')->middleware('verified');
 
@@ -59,6 +66,8 @@ Route::get('/custom-orders', 'CustomOrderController@index')->name('get-all-custo
 
 //products not resource
 Route::get('/products', 'ProductController@index')->name('get-all-products');
+Route::get('/products/{id}', 'ProductController@getProductsForCategory')->name('get-products-for-category');
+
 Route::get('/product/{id}', 'ProductController@show')->name('product-detail');
 Route::get('/product-create', 'ProductController@getProductCreate')->name('get-product-create')->middleware('verified');
 Route::post('/product-create', 'ProductController@postProductCreate')->name('post-product-create')->middleware('verified');

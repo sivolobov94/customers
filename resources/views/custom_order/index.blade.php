@@ -2,6 +2,13 @@
 
 @section('content')
     <div class="col-md-12">
+        @if ($custom_orders->isEmpty())
+            <div class="card card-plain">
+                <div class="header">
+                    <h3 class="title" style="text-align: center">Доступных заказов пока нет...</h3>
+                </div>
+            </div>
+            @else
         <div class="card card-plain">
             <div class="header">
                 <h4 class="title">Сисок доступных заказов</h4>
@@ -30,4 +37,5 @@
             </div>
         </div>
     </div>
+    @endif
 @endsection

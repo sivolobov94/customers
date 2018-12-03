@@ -2,19 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Categories;
+use App\CashbackList;
+use App\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class CategoriesController extends Controller
+class CashbackListController extends Controller
 {
-    /**
-     *
-     */
-    public function getAllCategories()
-    {
-       return Categories::all();
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -22,22 +16,18 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        $items = CashbackList::all();
+        return view('admin.cashback-list', ['items' => $items]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @param Request $request
-     * @return void
+     * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $categories = new Categories();
-        $categories->name = $request->name;
-        $categories->parent_id = $request->parent_id;
-        $categories->link = $request->link;
-        $categories->save();
+        //
     }
 
     /**
@@ -48,16 +38,16 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Categories  $categories
+     * @param  \App\CashbackList  $cashbackList
      * @return \Illuminate\Http\Response
      */
-    public function show(Categories $categories)
+    public function show(CashbackList $cashbackList)
     {
         //
     }
@@ -65,10 +55,10 @@ class CategoriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Categories  $categories
+     * @param  \App\CashbackList  $cashbackList
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categories $categories)
+    public function edit(CashbackList $cashbackList)
     {
         //
     }
@@ -77,10 +67,10 @@ class CategoriesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Categories  $categories
+     * @param  \App\CashbackList  $cashbackList
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categories $categories)
+    public function update(Request $request, CashbackList $cashbackList)
     {
         //
     }
@@ -88,11 +78,11 @@ class CategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Request $request
-     * @return void
+     * @param  \App\CashbackList  $cashbackList
+     * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(CashbackList $cashbackList)
     {
-        Categories::destroy($request->id);
+        //
     }
 }

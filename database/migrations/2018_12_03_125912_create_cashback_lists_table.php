@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoriesTable extends Migration
+class CreateCashbackListsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('category', function (Blueprint $table) {
+        Schema::create('cashback_lists', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('parent_id')->nullable();
-            $table->string('level')->nullable();
-            $table->string('name');
-            $table->string('link');
+            $table->string('user_id');
+            $table->string('user_name');
+            $table->string('sum');
+            $table->string('bank_requisites');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category');
+        Schema::dropIfExists('cashback_lists');
     }
 }

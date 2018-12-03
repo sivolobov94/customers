@@ -21,6 +21,8 @@ class Profile extends Model
         'small_description',
         'description',
         'site',
+        'balance',
+        'accepted_balance',
         'referal',
         'r_fullname',
         'r_name',

@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Categories;
+use App\Category;
 use App\Product;
 use App\Profile;
 use App\Regions;
-use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Input;
 
 class ProductController extends Controller
 {
@@ -21,15 +18,25 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $items = Product::where(['reserved' => false])->get();
-        return view('products.index', ['items' => $items]);
+        $categories = Category::all();
+        $items = Product::all();
+        return view('products.index', ['items' => $items, 'categories' => $categories]);
+    }
+
+    public function getProductsForCategory($id)
+    {
+        $categories = Category::all();
+        $category = Category::find($id);
+        $items = Product::where('category', $category->name)->get();
+        return view('products.index', ['items' => $items, 'categories' => $categories]);
+
     }
 
     public function getProductCreate()
     {
-        $categories = Categories::all();
+        $categories = Category::all();
         $regions = Regions::all();
-        $profile = Profile::find(Auth::user()->getAuthIdentifier());
+        $profile = Profile::where('user_id', Auth::user()->getAuthIdentifier())->first();
         return view('account.create-product', [
             'categories' => $categories,
             'regions' => $regions,
@@ -62,12 +69,11 @@ class ProductController extends Controller
                 'description' => 'required|string|max:191',
                 'category' => 'required|string|max:191',
                 'region' => 'required|string|max:191',
-                'manufacturer' => 'required|email|max:50',
+                'manufacturer' => 'required|max:50',
                 'measure' => 'required|string|max:20',
                 'price_for_one' => 'required|string|max:10',
                 'cashback' => 'required|numeric|between:1,100',
             ], $messages);
-
 
         $product = new Product();
         $product->user_id = Auth::user()->getAuthIdentifier();

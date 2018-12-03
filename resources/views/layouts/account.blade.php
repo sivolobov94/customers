@@ -4,18 +4,18 @@
         <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <link rel="icon" type="image/png" href="{{asset('img/favicon.ico')}}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
     <title>Light Bootstrap Dashboard by Creative Tim</title>
 
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+    <meta name="viewport" content="width=device-width"/>
 
 
     <!-- Bootstrap core CSS     -->
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet"/>
 
     <!-- Animation library for notifications   -->
     <link href="{{asset('css/animate.min.css')}}" rel="stylesheet"/>
@@ -26,7 +26,7 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="{{asset('css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/pe-icon-7-stroke.css')}}" rel="stylesheet"/>
 </head>
 <body>
 
@@ -55,18 +55,32 @@
                         <p>Изменить пароль</p>
                     </a>
                 </li>
-                <li>
-                    <a href="{{route('products')}}">
-                        <i class="pe-7s-user"></i>
-                        <p>Мои товары</p>
-                    </a>
-                </li>
+                @if (Auth::user()->toarray()['role'] === 'sale')
+                    <li>
+                        <a href="{{route('products')}}">
+                            <i class="pe-7s-user"></i>
+                            <p>Мои товары</p>
+                        </a>
+                    </li>
+                @endif
+                @if(Auth::user()->toarray()['role'] === 'buyer')
                 <li>
                     <a href="{{route('orders')}}">
                         <i class="pe-7s-user"></i>
                         <p>Мои заказы</p>
                     </a>
                 </li>
+                @endif
+
+                @if(Auth::user()->toarray()['role'] === 'sale')
+                    <li>
+                        <a href="{{route('orders-sale')}}">
+                            <i class="pe-7s-user"></i>
+                            <p>Мои заказы</p>
+                        </a>
+                    </li>
+                @endif
+
                 <li>
                     <a href="{{route('notifications')}}">
                         <i class="pe-7s-user"></i>
@@ -79,18 +93,20 @@
                         <p>Партнерская программа</p>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <i class="pe-7s-user"></i>
-                        <p>Баланс</p>
-                    </a>
-                </li>
+                @if (Auth::user()->toarray()['role'] === 'buyer')
+                    <li>
+                        <a href="{{route('balance')}}">
+                            <i class="pe-7s-user"></i>
+                            <p>Баланс</p>
+                        </a>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>
 
     <div class="main-panel" style="margin-top: 60px;">
-@yield('account-content')
+        @yield('account-content')
     </div>
 </div>
 </body>
