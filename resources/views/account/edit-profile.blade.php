@@ -136,19 +136,19 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Юридический адрес</label>
-                                            <input value="{{$profile->r_law_address}}" name="r_law_address" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_law_address  ?? old('r_law_address')}}" name="r_law_address" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Почтовый адрес</label>
-                                            <input value="{{$profile->r_post_address}}" name="r_post_address" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_post_address  ?? old('r_post_address')}}" name="r_post_address" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Директор</label>
-                                            <input value="{{$profile->r_director}}" name="r_director" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_director  ?? old('r_director')}}" name="r_director" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -157,19 +157,19 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Главный бухгалтер</label>
-                                            <input value="{{$profile->r_chief_accountant}}" name="r_chief_accountant" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_chief_accountant  ?? old('r_chief_accountant')}}" name="r_chief_accountant" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Электронный адрес</label>
-                                            <input value="{{$profile->r_email}}" name="r_email" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_email  ?? old('r_email')}}" name="r_email" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Телефон</label>
-                                            <input value="{{$profile->r_phone}}" name="r_phone" type="text" class="form-control" placeholder="+79998887766">
+                                            <input value="{{$profile->r_phone  ?? old('r_phone')}}" name="r_phone" type="text" class="form-control" placeholder="+79998887766">
                                         </div>
                                     </div>
                                 </div>
@@ -178,19 +178,19 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Факс</label>
-                                            <input value="{{$profile->r_fax}}" name="r_fax" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_fax  ?? old('r_fax')}}" name="r_fax" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>ИНН</label>
-                                            <input value="{{$profile->r_INN}}" name="r_INN" type="number" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_INN ?? old('r_INN')}}" name="r_INN" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>КПП</label>
-                                            <input value="{{$profile->r_KPP}}" name="r_KPP" type="number" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_KPP  ?? old('r_KPP')}}" name="r_KPP" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -199,19 +199,19 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>ОГРН</label>
-                                            <input value="{{$profile->r_OGRN}}" name="r_OGRN" type="number" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_OGRN  ?? old('r_OGRN')}}" name="r_OGRN" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>ОКПО</label>
-                                            <input value="{{$profile->r_OKPO}}" name="r_OKPO" type="number" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_OKPO  ?? old('r_OKPO')}}" name="r_OKPO" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>ОКАТО</label>
-                                            <input value="{{$profile->r_OKATO}}" name="r_OKATO" type="number" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_OKATO  ?? old('r_OKATO')}}" name="r_OKATO" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -220,13 +220,13 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Реквизиты банка</label>
-                                            <input value="{{$profile->r_bank_requisites}}" name="r_bank_requisites" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_bank_requisites  ?? old('r_bank_requisites')}}" name="r_bank_requisites" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>% кэшбэка</label>
-                                            <input value="{{$profile->r_cashback}}" name="r_cashback" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_cashback  ?? old('r_cashback')}}" name="r_cashback" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                 </div>

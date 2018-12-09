@@ -59,10 +59,12 @@ Route::post('/do-order', 'OrderController@doOrder')->name('do-order')->middlewar
 
 //custom orders
 Route::get('/custom-order/{id}', 'CustomOrderController@show')->name('custom-order-detail')->middleware('verified');
-Route::get('/custom-order-create', 'CustomOrderController@getCustomOrderCreate')->name('get-custom-order-create')->middleware('verified');
+Route::get('/custom-order-create', 'CustomOrderController@getCustomOrderCreate')->name('get-custom-order-create');
 Route::post('/custom-order-create', 'CustomOrderController@postCustomOrderCreate')->name('post-custom-order-create')->middleware('verified');
-Route::get('/custom-order-success', 'CustomOrderController@getCustomOrderSuccess')->name('get-custom-order-success')->middleware('verified');
-Route::get('/custom-orders', 'CustomOrderController@index')->name('get-all-custom-order')->middleware('verified');
+Route::get('/custom-order-success', 'CustomOrderController@getCustomOrderSuccess')->name('get-custom-order-success');
+Route::get('/custom-orders', 'CustomOrderController@index')->name('get-all-custom-order');
+Route::get('/custom-order-edit/{id}', 'CustomOrderController@getCustomOrderEdit')->name('get-custom-order-edit');
+Route::post('/custom-orders-edit', 'CustomOrderController@postCustomOrderEdit')->name('post-custom-order-edit');
 
 //products not resource
 Route::get('/products', 'ProductController@index')->name('get-all-products');
@@ -92,3 +94,5 @@ Route::post('/accept-delivery', 'NotificationsController@PostAcceptDelivery')->n
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin/user', 'AdminController@getUserProfile')->name('mass-unload')->middleware('admin');
+

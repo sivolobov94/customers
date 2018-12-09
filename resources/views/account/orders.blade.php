@@ -27,6 +27,7 @@
                             <td>{{$order->user_name}}</td>
                             <td>{{$order->email}}</td>
                             <td>{{$order->phone}}</td>
+                            <td><a class="btn btn-primary" href="{{route('get-custom-order-edit', ['id' => $order->id])}}">Изменить</a></td>
                         </tr>
                     @endforeach
                     </tbody>

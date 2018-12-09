@@ -60,7 +60,7 @@
                                                         <div class="form-group">
                                                             <label>Краткое описание</label>
                                                             <textarea name="small_description" type="text"
-                                                                      class="form-control-plaintext" placeholder="">
+                                                                      class="form-control-plaintext" placeholder="" disabled>
                                                                 {{$profile->small_description}}
                                                             </textarea>
                                                         </div>
@@ -72,7 +72,7 @@
                                                             <label>Детальное описание</label>
                                                             <textarea name="description" rows="5"
                                                                       class="form-control-plaintext"
-                                                                      placeholder="">
+                                                                      placeholder="" disabled>
                                                                 {{$profile->description}}
                                                             </textarea>
                                                         </div>
@@ -85,7 +85,8 @@
                                                             <label>Сайт</label>
                                                             <input value="{{$profile->site}}" readonly name="site"
                                                                    type="text"
-                                                                   class="form-control-plaintext" placeholder="">
+                                                                   class="form-control-plaintext" placeholder=""
+                                                                   disabled>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -93,10 +94,11 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label for="inputState">Рубрики</label>
+                                                            <label for="inputState">Категории</label>
                                                             <input value="{{$profile->category}}" readonly name="site"
                                                                    type="text" class="form-control-plaintext"
-                                                                   placeholder="">
+                                                                   placeholder=""
+                                                                   disabled>
                                                         </div>
                                                     </div>
                                                 </div>
