@@ -49,6 +49,11 @@ class ProfileController extends Controller
             'r_OGRN.size' => 'Поле OGRN должно содержать :size символов',
             'r_OKPO.size' => 'Поле OKPO должно содержать :size символов',
             'r_OKATO.size' => 'Поле OKATO должно содержать :size символов',
+            'r_INN.numeric' => 'Поле ИНН должно быть числом',
+            'r_KPP.numeric' => 'Поле КПП должно быть числом',
+            'r_OGRN.numeric' => 'Поле OGRN должно быть числом',
+            'r_OKPO.numeric' => 'Поле OKPO должно быть числом',
+            'r_OKATO.numeric' => 'Поле OKATO должно быть числом',
             'r_cashback.integer' => 'Поле кэшбэк должно быть числом',
 
 
@@ -99,11 +104,11 @@ class ProfileController extends Controller
                 'r_email' => 'string|email|max:191|nullable',
                 'r_phone' => ['string','regex:/^8[0-9]{10}$/','max:12','nullable'],
                 'r_fax' => 'string|max:15|nullable',
-                'r_INN' => 'string|size:10|nullable',
-                'r_KPP' => 'string|size:9|nullable',
-                'r_OGRN' => 'string|size:13|nullable',
-                'r_OKPO' => 'string|size:9|nullable',
-                'r_OKATO' => 'string|size:11|nullable',
+                'r_INN' => 'numeric|size:10|nullable',
+                'r_KPP' => 'numeric|size:9|nullable',
+                'r_OGRN' => 'numeric|size:13|nullable',
+                'r_OKPO' => 'numeric|size:9|nullable',
+                'r_OKATO' => 'numeric|size:11|nullable',
                 'r_bank_requisites' => 'string|max:191|nullable',
                 'r_cashback' =>'integer|between:1,100|nullable'
             ], $messages);
