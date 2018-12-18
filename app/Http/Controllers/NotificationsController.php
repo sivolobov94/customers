@@ -40,6 +40,9 @@ class NotificationsController extends Controller
         $file = $request->file ?? '';
         $from_user = User::find(Auth::user()->getAuthIdentifier());
         $to_user = User::find($request->id);
+        $file->move('custom_orders_online', $file->getClientOriginalName());
+        $file = '/reply_files/'.$file->getClientOriginalName();
+
         Notification::send($to_user, new ReplyToBuyer($from_user, $to_user, $comment, $file));
         return view('account.mail-success');
     }

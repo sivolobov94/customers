@@ -12,6 +12,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\URL;
 
 class CustomOrderController extends Controller
 {
@@ -23,6 +24,7 @@ class CustomOrderController extends Controller
 
     public function getCustomOrderCreate()
     {
+        request()->session()->put(['redirect' => URL::full()]);
         $categories = Category::all();
         $regions = Regions::all();
             $user_id = Auth::user();
@@ -67,7 +69,8 @@ class CustomOrderController extends Controller
             'category.max' => 'Поле наименование не должно быть больше 191 символов',
 
             'email' => 'Поле Email должно быть в формате example@mail.ru',
-            'regex' => 'Телефон Должен быть в формате 89998887766'
+            'regex' => 'Телефон Должен быть в формате 89998887766',
+            'file.max' => 'Файл не должен превышать 20Мб'
         ];
         $request->validate(
             [
@@ -78,7 +81,7 @@ class CustomOrderController extends Controller
                 'email' => 'required|email|max:191',
                 'phone' => ['required', 'string', 'regex:/^8[0-9]{10}$/', 'max:12'],
                 'category' => 'required|string|max:191',
-                'file' => 'file|nullable'
+                'file' => 'file|nullable| max:20000'
             ], $messages);
 
         $user_id = Auth::user();
@@ -118,7 +121,7 @@ class CustomOrderController extends Controller
 
     public function getCustomOrderEdit($id)
     {
-        $custom_order = CustomOrder::find($id)->first();
+        $custom_order = CustomOrder::find($id);
         $categories = Category::all();
         $regions = Regions::all();
         $user_id = Auth::user();

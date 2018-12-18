@@ -27,7 +27,7 @@ class SearchController extends Controller
             return view('products.not-found');
         }
         $items = Product::where('name', 'LIKE', '%' . $request->query('text') . '%')->get();
-        if(!$items) {
+        if($items->isEmpty()) {
             $items = Product::where('description', 'LIKE', '%' . $request->query('text') . '%')->get();
         }
         if ($items->count() < 1) {
@@ -48,7 +48,7 @@ class SearchController extends Controller
             return view('custom_order.not-found');
         }
         $items = CustomOrder::where('name', 'LIKE', '%' . $request->query('text') . '%')->get();
-        if(!$items) {
+        if($items->isEmpty()) {
             $items = CustomOrder::where('description', 'LIKE', '%' . $request->query('text') . '%')->get();
         }
         if ($items->count() < 1) {

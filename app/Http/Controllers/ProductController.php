@@ -89,6 +89,8 @@ class ProductController extends Controller
         if ($image) {
             $image->move('products_images', $image->getClientOriginalName());
             $product->image = 'products_images/'.$image->getClientOriginalName();
+        } else {
+            $product->image = 'img/no-photo.png';
         }
         $product->save();
         return view('account.product-success');

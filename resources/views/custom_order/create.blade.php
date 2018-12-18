@@ -71,9 +71,9 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label for="inputState">Телефон</label>
-                                            <input value="{{$profile->phone ?? ''}}" name="phone"
-                                                   type="text" class="form-control" placeholder="+79998887766">
+                                            <label for="phone">Телефон</label>
+                                            <input id="phone" value="{{$profile->phone ?? ''}}" name="phone"
+                                                   type="text" class="form-control" placeholder="89998887766">
                                         </div>
                                     </div>
                                 </div>
@@ -107,6 +107,7 @@
                 </div>
             </div>
         </div>
+        {{dump($errors)}}
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -117,4 +118,8 @@
             </div>
         @endif
     </div>
+    <script>
+        $(":input").inputmask();
+        $("#phone").inputmask({"mask": "8(999)999-9999"});
+    </script>
 @stop

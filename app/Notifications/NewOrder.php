@@ -55,7 +55,7 @@ class NewOrder extends Notification
             ->subject($subject)
             ->greeting($greeting)
             ->salutation('Новый заказ')
-            ->line('Для вашей рубрики имеется новый заказ')
+            ->line('Для вашей категории имеется новый заказ')
             ->action('Посмотреть заказ', url('/'));
     }
 

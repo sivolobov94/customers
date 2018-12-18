@@ -31,7 +31,7 @@
                                     <div class="col-md-4">
                                         <a style="margin-left: 20%;" href="{{route('get-accept-delivery',
                                          ['id' => $notification->data['id_user_from']])}}" class="btn btn-primary">
-                                            Ответить покупателю
+                                            Ответить
                                         </a>
                                     </div>
                                     </div>
@@ -51,11 +51,14 @@
                                             @if(isset($notification->data['comment']))
                                                 <br>Сообщение: {{$notification->data['comment']}}
                                             @endif
+                                            @if($notification->data['file'])
+                                                <a href="{{$notification->data['file']}}">{{$notification->data['file']}}</a>
+                                            @endif
                                         </div>
                                         <div class="col-md-4">
                                             <a style="margin-left: 20%;" href="{{route('get-accept-delivery',
                                             ['id' => $notification->data['id_user_from']])}}" class="btn btn-primary">
-                                                Ответить покупателю
+                                                Ответить
                                             </a>
                                         </div>
                                     </div>

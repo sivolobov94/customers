@@ -13,7 +13,7 @@
                     <div class="card border-primary rounded-0">
                         <div class="card-header p-0">
                             <div class="bg-info text-white text-center py-2">
-                                <h3><i class="fa fa-envelope"></i> Форма обратной связи</h3>
+                                <h3><i class="fa fa-envelope"></i>   Форма обратной связи</h3>
                                 <p class="m-0">Свяжитесь с нами</p>
                             </div>
                         </div>

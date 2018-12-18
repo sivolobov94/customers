@@ -50,11 +50,13 @@
                         </div>
                     </div>
                 @endif
+                @if (Auth::user()->toArray()['role'] == 'sale')
                 <div class="row">
                     <div class="col-md-12">
                         <a class="btn btn-primary" href="{{route('get-accept-delivery', ['id' => $order->user_id])}}">Откликнуться</a>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
     </div>

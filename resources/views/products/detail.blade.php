@@ -65,7 +65,9 @@
                             </textarea>
                             </div>
                         </div>
+                        @if(Auth::user()->toArray()['role'] == 'buyer')
                         <button type="submit" class="btn btn-primary">Заказать</button>
+                        @endif
                     </form>
                     @if ($errors->any())
                         <div class="alert alert-danger">

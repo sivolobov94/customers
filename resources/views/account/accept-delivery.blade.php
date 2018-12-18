@@ -19,7 +19,7 @@
 
             <div style="margin-top: 10px" class="row">
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary">Ответить покупателю</button>
+                    <button type="submit" class="btn btn-primary">Ответить</button>
                 </div>
             </div>
         </form>

@@ -93,7 +93,7 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label for="inputState">Рубрики</label>
+                                                            <label for="inputState">Категории</label>
                                                             <input value="{{$profile->category}}" readonly name="site"
                                                                    type="text" class="form-control-plaintext"
                                                                    placeholder="">
