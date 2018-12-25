@@ -95,4 +95,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/user', 'AdminController@getUserProfile')->name('mass-unload')->middleware('admin');
-
+Route::get('/admin/referal', 'AdminController@getReferalPage')->name('admin-referal')->middleware('admin');
+Route::get('/admin/referal/set_reward', 'AdminController@setReward')->name('admin-set-reward')->middleware('admin');

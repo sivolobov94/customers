@@ -1,13 +1,13 @@
 @extends('layouts.account')
 
 @section('account-content')
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Реферальная программа</h1>
-            <p class="lead">Краткое описание: бла бла бла</p>
-            <p class="lead">Детальное описание:бла бла блабла бла блабла бла блабла бла блабла бла бла</p>
-            <p class="lead">Сайт:йцуйцуцйу.com</p>
-            <button type="button" class="btn btn-primary">Сохранить</button>
-        </div>
+    <h2>Ваша реферальная ссылка</h2>
+    <div class="container">
+        <col-md-12>
+            <label>
+                <input type="text" readonly="readonly"
+                       value="{{url('/').'/?ref='.Auth::user()->affiliate_id}}">
+            </label>
+        </col-md-12>
     </div>
 @stop

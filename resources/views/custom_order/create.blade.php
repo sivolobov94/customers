@@ -107,7 +107,6 @@
                 </div>
             </div>
         </div>
-        {{dump($errors)}}
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+
     /**
      * Метод получения главной страницы авторизации
      *
@@ -49,15 +50,40 @@ class AdminController extends Controller
         return redirect()->route('admin-get-login');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getAdminPage()
     {
         $list = CashbackList::all();
         return view('admin.index', ['list' => $list]);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getUserProfile()
     {
         return view('admin.user');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getReferalPage()
+    {
+        return view('admin.referal');
+    }
+
+    /**
+     * @param Request $request
+     */
+    public function setReward(Request $request)
+    {
+        $request->validate([
+            'reward' => "integer|min:0|max:1"
+        ]);
+
+        $this->reward = $request->reward;
+    }
 }

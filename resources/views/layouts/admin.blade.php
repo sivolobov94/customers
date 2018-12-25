@@ -43,6 +43,12 @@
                         <p>Заказанные выплаты</p>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('admin-referal')}}">
+                        <i class="pe-7s-user"></i>
+                        <p>Награда за реферальную программу</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

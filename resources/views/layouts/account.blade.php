@@ -88,7 +88,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{route('referal')}}">
                         <i class="pe-7s-user"></i>
                         <p>Партнерская программа</p>
                     </a>

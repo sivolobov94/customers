@@ -16,9 +16,7 @@ class CreateCategoriesTable extends Migration
         Schema::create('category', function (Blueprint $table) {
             $table->increments('id');
             $table->string('parent_id')->nullable();
-            $table->string('level')->nullable();
             $table->string('name');
-            $table->string('link');
             $table->timestamps();
         });
     }
