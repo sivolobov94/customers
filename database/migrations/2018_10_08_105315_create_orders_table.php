@@ -23,7 +23,8 @@ class CreateOrdersTable extends Migration
             $table->string('sale');
             $table->string('sum');
             $table->string('cashback');
-            $table->boolean('accepted')->default(false);
+            $table->integer('status')->default(1); // 1 = disagree, 2 = waiting, 3 = agree.
+            $table->string('referal_reward');
             $table->timestamps();
         });
     }

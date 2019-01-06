@@ -44,9 +44,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('admin-referal')}}">
+                    <a href="{{route('get-orders-accept')}}">
                         <i class="pe-7s-user"></i>
-                        <p>Награда за реферальную программу</p>
+                        <p>Утверждение заказов</p>
                     </a>
                 </li>
             </ul>

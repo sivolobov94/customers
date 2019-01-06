@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    const STATUS_DISAGREE = 1;
+    const STATUS_WAITING = 2;
+    const STATUS_AGREE = 3;
+
     protected $table = 'orders';
     protected $fillable = [
         'buyer_id',
@@ -16,12 +20,6 @@ class Order extends Model
         'sale',
         'sum',
         'cashback',
-        'accepted'
+        'status'
     ];
-
-
-    public function getOrdersForOne($user_id)
-    {
-        $products = Product::find();
-    }
 }

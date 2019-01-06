@@ -25,23 +25,26 @@
                             <td>{{$order->product_quantity}}</td>
                             <td>{{$order->sum}}</td>
                             <td>{{$order->cashback}}</td>
-                            @if(!$order->accepted)
+                            @if($order->status == \App\Order::STATUS_DISAGREE)
                                 <td>
-                                    <form method="post" action="{{route('pay-accept')}}">
+                                    <form method="post" action="{{route('send-pay-accept')}}">
                                         <input title="order_id" name="order_id" value="{{$order->id}}" type="text"
                                                hidden>
                                         {{csrf_field()}}
-                                        <button type="submit" class="btn btn-primary">Подтвердить оплату.</button>
+                                        <button type="submit" class="btn btn-primary">Согласовать</button>
                                     </form>
                                 </td>
-                            @else
+                            @elseif ($order->status == \App\Order::STATUS_WAITING)
                                 <td>
-                                    <a class="btn btn-primary disabled" >Оплата подтверждена.</a>
+                                    <a class="btn btn-primary disabled" >На согласовании</a>
+                                </td>
+                                @elseif($order->status == \App\Order::STATUS_AGREE)
+                                <td>
+                                    <a class="btn btn-primary disabled" >Согласован</a>
                                 </td>
                             @endif
 
                         </tr>
-
                     @endforeach
                     </tbody>
                 </table>

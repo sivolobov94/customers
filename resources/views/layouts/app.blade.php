@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Сервис кэшбэка</title>
 
 
 
@@ -109,14 +109,13 @@
 </div>
 </body>
     <!-- Scripts -->
-    
-	<script src="{{ asset('js/jquery-1.10.2.min.js')}}"></script>
-	<script src="{{ asset('js/shieldui-all.min.js') }}" defer></script>
-	<script type="text/javascript">
-		jQuery(function ($) {
-			$("#treeview").shieldTreeView();
-		});
-	</script>
-	<script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/light-bootstrap-dashboard.js') }}" defer></script>
+<script src="{{ asset('js/jquery-1.10.2.min.js')}}"></script>
+<script src="{{ asset('js/shieldui-all.min.js') }}" defer></script>
+<script type="text/javascript">
+    /*jQuery(function ($) {
+        $("#treeview").shieldTreeView();
+    });*/
+</script>
+<script src="{{ asset('js/app.js') }}" defer></script>
+<script src="{{ asset('js/light-bootstrap-dashboard.js') }}" defer></script>
 </html>

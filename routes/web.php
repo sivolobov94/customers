@@ -53,6 +53,7 @@ Route::post('/order-create', 'OrderController@postOrderCreate')->name('post-orde
 Route::get('/order-success', 'OrderController@getOrderSuccess')->name('get-order-success')->middleware('verified');
 Route::get('/order-payment', 'OrderController@getOrderPayment')->name('get-order-payment')->middleware('verified');
 Route::post('/pay-accept', 'OrderController@payAccept')->name('pay-accept')->middleware('verified');
+Route::post('/send-pay-accept', 'OrderController@sendPayAccept')->name('send-pay-accept')->middleware('verified');
 
 
 Route::post('/do-order', 'OrderController@doOrder')->name('do-order')->middleware('verified');
@@ -86,6 +87,9 @@ Route::get('/admin/login', 'AdminController@getLogin')->name('admin-get-login');
 Route::post('/admin/login', 'AdminController@postLogin')->name('admin-post-login');
 Route::get('/admin', 'AdminController@getAdminPage')->name('get-admin-page')->middleware('admin');
 Route::get('/admin/user', 'AdminController@getUserProfile')->name('get-admin-user')->middleware('admin');
+Route::get('/admin/referal', 'AdminController@getReferalPage')->name('admin-referal')->middleware('admin');
+Route::get('/admin/referal/set_reward', 'AdminController@setReward')->name('admin-set-reward')->middleware('admin');
+Route::get('/admin/orders-accept', 'AdminController@getOrdersAccept')->name('get-orders-accept')->middleware('admin');
 
 //accept delivery
 Route::get('/accept-delivery/{id}', 'NotificationsController@getAcceptDelivery')->name('get-accept-delivery')->middleware('verified');
@@ -93,7 +97,4 @@ Route::post('/accept-delivery', 'NotificationsController@PostAcceptDelivery')->n
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin/user', 'AdminController@getUserProfile')->name('mass-unload')->middleware('admin');
-Route::get('/admin/referal', 'AdminController@getReferalPage')->name('admin-referal')->middleware('admin');
-Route::get('/admin/referal/set_reward', 'AdminController@setReward')->name('admin-set-reward')->middleware('admin');
+

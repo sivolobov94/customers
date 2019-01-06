@@ -29,7 +29,7 @@ class DoOrder extends Notification
      * @param $quantity
      * @param $comment
      */
-    public function __construct(User $user_from,User $user_to, Product $product, $quantity, $comment)
+    public function __construct(User $user_from, User $user_to, Product $product, $quantity, $comment)
     {
         $this->from_user = $user_from;
         $this->user_to = $user_to;

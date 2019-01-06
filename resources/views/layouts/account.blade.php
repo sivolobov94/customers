@@ -28,8 +28,8 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{{asset('css/pe-icon-7-stroke.css')}}" rel="stylesheet"/>
 </head>
-<body>
 
+<body>
 <div class="wrapper">
     <div class="sidebar" data-color="blue" data-image="{{asset('img/sidebar-5.jpg')}}">
 
@@ -93,14 +93,12 @@
                         <p>Партнерская программа</p>
                     </a>
                 </li>
-                @if (Auth::user()->toarray()['role'] === 'buyer')
                     <li>
                         <a href="{{route('balance')}}">
                             <i class="pe-7s-user"></i>
                             <p>Баланс</p>
                         </a>
                     </li>
-                @endif
             </ul>
         </div>
     </div>
@@ -111,13 +109,25 @@
 </div>
 </body>
 
-<!--   Core JS Files   -->
 <script src="{{asset('js/jquery.3.2.1.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/jquery.maskedinput.min.js')}}" type="text/javascript"></script>
+<script>
+    jQuery(function($){
+        $("#phone").mask("8(999)999-99-99");
+        $("#r_phone").mask("8(999)999-99-99");
+        $("#date").mask("99.99.9999");
+        $("#fax").mask("8-999-9999999");
+        $("#inn").mask("9999999999-99");
+        $("#kpp").mask("999-999-999");
+        $("#ogrn").mask("9-99-99-99-99999-9");
+        $("#okpo").mask("9999999999");
+        $("#cashback").mask("99");
 
+
+    });
+</script>
 <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 <script src="{{asset('js/light-bootstrap-dashboard.js')}}"></script>
-
 </html>
-
 @endsection

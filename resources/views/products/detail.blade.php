@@ -38,7 +38,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <input type="text" readonly class="form-control-plaintext"
-                                   value="Цена за единицу: {{$product->price}}">
+                                   value="Цена за единицу: {{$product->price_for_one}}">
                         </div>
                     </div>
 
@@ -65,9 +65,11 @@
                             </textarea>
                             </div>
                         </div>
-                        @if(Auth::user()->toArray()['role'] == 'buyer')
+
+                        @if(!Auth::guest() and Auth::user()->toArray()['role'] == 'buyer')
                         <button type="submit" class="btn btn-primary">Заказать</button>
                         @endif
+
                     </form>
                     @if ($errors->any())
                         <div class="alert alert-danger">

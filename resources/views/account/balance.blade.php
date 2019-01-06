@@ -26,9 +26,11 @@
                             <td>{{$order->product_quantity}}</td>
                             <td>{{$order->sum}}</td>
                             <td>{{$order->cashback}}</td>
-                            @if(!$order->accepted)
+                            @if($order->status == \App\Order::STATUS_DISAGREE)
                                 <td>Не подтвержден</td>
-                            @else
+                            @elseif($order->status == \App\Order::STATUS_WAITING)
+                                <td>На утверждении</td>
+                            @elseif($order->status == \App\Order::STATUS_AGREE)
                                 <td>Подтвержден</td>
                         </tr>
                         @endif

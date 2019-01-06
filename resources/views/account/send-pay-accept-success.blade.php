@@ -1,13 +1,13 @@
-@extends('layouts.admin')
+@extends('layouts.account')
 
-@section('admin-content')
+@section('account-content')
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="header">
-                            <h2 class="title">Оплата успешно подтверждена</h2>
+                            <h2 class="title">Заказ отправлен на согласование</h2>
                         </div>
                             </div>
                         </div>

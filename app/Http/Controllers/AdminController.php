@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CashbackList;
+use App\Order;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -65,6 +66,12 @@ class AdminController extends Controller
     public function getUserProfile()
     {
         return view('admin.user');
+    }
+
+    public function getOrdersAccept()
+    {
+        $orders = Order::where('status', Order::STATUS_WAITING)->get();
+        return view('admin.accept-orders', ['orders' => $orders]);
     }
 
     /**

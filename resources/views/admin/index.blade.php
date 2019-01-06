@@ -4,7 +4,7 @@
     <div class="col-md-12">
         <div class="card card-plain">
             <div class="header">
-                <h4 class="title">Ваши товары</h4>
+                <h4 class="title">Выплаты</h4>
             </div>
             <div class="content table-responsive table-full-width">
                 <table class="table table-hover">

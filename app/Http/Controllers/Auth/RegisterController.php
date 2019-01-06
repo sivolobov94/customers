@@ -10,17 +10,6 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
     use RegistersUsers;
 
     /**
@@ -48,8 +37,12 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        if (session()->get('referred_by')) {
+            $data['referred_by'] = session()->get('referred_by') ?? null;
+        }
+
         return Validator::make($data, [
-           // 'name' => 'required|string|max:255',
+            // 'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -63,12 +56,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $data['referred_by'] = null;
+        if (session()->get('referred_by')) {
+            $data['referred_by'] = User::where('affiliate_id',session()->get('referred_by'))->first()->id ?? null;
+        }
+
         return User::create([
           //  'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'role' => $data['role'],
-            'affiliate_id' => str_random(10)
+            'affiliate_id' => str_random(10),
+            'referred_by' => $data['referred_by']
         ]);
     }
 }

@@ -54,7 +54,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Телефон</label>
-                                            <input value="{{$profile->phone}}" name="phone" type="text" class="form-control" placeholder="+79998887766">
+                                            <input value="{{$profile->phone}}" id="phone" name="phone" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -127,7 +127,7 @@
                                     </div><div class="col-md-4">
                                         <div class="form-group">
                                             <label>Дата создания</label>
-                                            <input value="{{$profile->r_date_create}}" name="r_date_create" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_date_create}}" id="date" name="r_date_create" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -169,7 +169,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Телефон</label>
-                                            <input value="{{$profile->r_phone  ?? ''}}" name="r_phone" type="text" class="form-control" placeholder="+79998887766">
+                                            <input value="{{$profile->r_phone  ?? ''}}" id="r_phone" name="r_phone" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -178,19 +178,19 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Факс</label>
-                                            <input value="{{$profile->r_fax  ?? ''}}" name="r_fax" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_fax  ?? ''}}" id="fax" name="r_fax" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>ИНН</label>
-                                            <input value="{{$profile->r_INN ?? ''}}" name="r_INN" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_INN ?? ''}}" id="inn" name="r_INN" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>КПП</label>
-                                            <input value="{{$profile->r_KPP  ?? ''}}" name="r_KPP" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_KPP  ?? ''}}" id="kpp" name="r_KPP" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -199,7 +199,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>ОГРН</label>
-                                            <input value="{{$profile->r_OGRN  ?? ''}}" name="r_OGRN" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_OGRN  ?? ''}}" id="ogrn" name="r_OGRN" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -211,7 +211,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>ОКАТО</label>
-                                            <input value="{{$profile->r_OKATO  ?? ''}}" name="r_OKATO" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_OKATO  ?? ''}}" id="okato" name="r_OKATO" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -226,7 +226,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>% кэшбэка</label>
-                                            <input value="{{$profile->r_cashback  ?? ''}}" name="r_cashback" type="text" class="form-control" placeholder="">
+                                            <input value="{{$profile->r_cashback  ?? ''}}" id="cashback" name="r_cashback" type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                 </div>
