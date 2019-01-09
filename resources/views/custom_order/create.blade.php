@@ -117,8 +117,4 @@
             </div>
         @endif
     </div>
-    <script>
-        $(":input").inputmask();
-        $("#phone").inputmask({"mask": "8(999)999-9999"});
-    </script>
 @stop

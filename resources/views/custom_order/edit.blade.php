@@ -74,7 +74,7 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label for="inputState">Телефон</label>
-                                            <input value="{{$custom_order->phone ?? ''}}" name="phone"
+                                            <input value="{{$custom_order->phone ?? ''}}" id="phone" name="phone"
                                                    type="text" class="form-control" placeholder="+79998887766">
                                         </div>
                                     </div>

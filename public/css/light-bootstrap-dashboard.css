@@ -241,6 +241,7 @@ input:focus {
     width: 260px;
     z-index: 4;
     padding-bottom: 100px;
+
 }
 
 .sidebar .sidebar-background {
@@ -3519,8 +3520,8 @@ fieldset[disabled] .btn-neutral.active {
 @media (max-width: 1200px) {
 .navbar {
     font-size: 10.5px;
-}	
-}	
+}
+}
 @media (max-width: 991px) {
     .table-responsive {
         width: 100%;

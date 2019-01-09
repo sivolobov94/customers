@@ -22,6 +22,7 @@
 	<link href="{{ asset('css/all.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin_login.css') }}" rel="stylesheet">
     <link href="{{ asset('css/light-bootstrap-dashboard.css') }}" rel="stylesheet">
+    <link id="themecss" rel="stylesheet" type="text/css" href="//www.shieldui.com/shared/components/latest/css/light/all.min.css" />
 
 </head>
 <body>
@@ -111,10 +112,35 @@
     <!-- Scripts -->
 <script src="{{ asset('js/jquery-1.10.2.min.js')}}"></script>
 <script src="{{ asset('js/shieldui-all.min.js') }}" defer></script>
+<script src="{{asset('js/jquery.maskedinput.min.js')}}" type="text/javascript"></script>
+<script>
+    jQuery(function($){
+        $("#phone").mask("8(999)999-99-99");
+    });
+</script>
+<!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+    (function(){ var widget_id = 'v08jWYp0ze';var d=document;var w=window;function l(){var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+</script>
+<!-- {/literal} END JIVOSITE CODE -->
+
+<script type="text/javascript">
+    $(function () {
+        $("#treeview").shieldTreeView({
+            checkboxes: {
+                enabled: true,
+                children: true
+            },
+            dragDrop: true
+        });
+    });
+</script>
+
 <script type="text/javascript">
     /*jQuery(function ($) {
         $("#treeview").shieldTreeView();
     });*/
+
 </script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <script src="{{ asset('js/light-bootstrap-dashboard.js') }}" defer></script>
