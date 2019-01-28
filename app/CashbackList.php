@@ -11,6 +11,7 @@ class CashbackList extends Model
         [
             'user_id',
             'username',
+            'email',
             'sum',
             'bank_requisites',
         ];

@@ -11,6 +11,7 @@ class Profile extends Model
     protected $table = 'profile';
     protected $fillable = [
         'name',
+        'email',
         'user_id',
         'company',
         'phone',

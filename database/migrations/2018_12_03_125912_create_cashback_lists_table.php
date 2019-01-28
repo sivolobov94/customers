@@ -17,6 +17,7 @@ class CreateCashbackListsTable extends Migration
             $table->increments('id');
             $table->string('user_id');
             $table->string('user_name');
+            $table->string('email');
             $table->string('sum');
             $table->string('bank_requisites');
             $table->timestamps();

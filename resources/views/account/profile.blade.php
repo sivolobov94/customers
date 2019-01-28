@@ -29,14 +29,15 @@
                         </div>
                         <div class="content">
                             <div class="author">
-                                    @if($profile->logo)
-                                        <img class="avatar border-gray" src="../../../{{$profile->logo}}" alt="logo"/>
-                                    @else
-                                        <img class="avatar border-gray" src="../../../img/no-photo.png" alt="no-photo"/>
-                                    @endif
-                                    <h4 class="title">{{$profile->name}}<br/>
-                                        <small>Компания {{$profile->company}}</small>
-                                    </h4>
+                                @if($profile->logo)
+                                    <img class="avatar border-gray" src="../../../{{$profile->logo}}" alt="logo"/>
+                                @else
+                                    <img class="avatar border-gray" src="../../../img/no-photo.png" alt="no-photo"/>
+                                @endif
+                                <h4 class="title">{{$profile->name}}<br/>
+                                    <small>{{$profile->company}}</small>
+                                    <small>email:{{$profile->email}}</small>
+                                </h4>
                             </div>
                             <p class="description text-center"> {{$profile->region}}<br>
                                 {{$profile->address}} <br>
@@ -60,7 +61,8 @@
                                                         <div class="form-group">
                                                             <label>Краткое описание</label>
                                                             <textarea name="small_description" type="text"
-                                                                      class="form-control-plaintext" placeholder="" disabled>
+                                                                      class="form-control-plaintext" placeholder=""
+                                                                      disabled>
                                                                 {{$profile->small_description}}
                                                             </textarea>
                                                         </div>
@@ -94,7 +96,7 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label for="inputState">Категории</label>
+                                                            <label for="inputState">СФеры деятельности</label>
                                                             <input value="{{$profile->category}}" readonly name="site"
                                                                    type="text" class="form-control-plaintext"
                                                                    placeholder=""
@@ -247,16 +249,18 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label>Реквизиты банка</label>
-                                                            <input value="{{$profile->r_bank_requisites}}" readonly
-                                                                   name="r_bank_requisites" type="text"
-                                                                   class="form-control-plaintext" placeholder="">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label>Реквизиты банка</label>
+                                                                <textarea name="r_bank_requisites" type="text"
+                                                                          class="form-control-plaintext" placeholder=""
+                                                                          disabled>
+                                                                {{$profile->r_bank_requisites}}
+                                                            </textarea>
+                                                            </div>
                                                         </div>
-                                                    </div>
+
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label>% кэшбэка</label>

@@ -18,7 +18,7 @@ class CustomOrderController extends Controller
 {
     public function index()
     {
-        $custom_orders = CustomOrder::all();
+        $custom_orders = CustomOrder::orderBy('created_at', 'desc')->get();
         return view('custom_order.index', ['custom_orders' => $custom_orders]);
     }
 
@@ -27,11 +27,20 @@ class CustomOrderController extends Controller
         request()->session()->put(['redirect' => URL::full()]);
         $categories = Category::all();
         $regions = Regions::all();
-            $user_id = Auth::user();
-            if (is_null($user_id)) {
+
+        if (auth::user()){
+            $profile = Profile::firstOrCreate(['user_id' => auth::id()]);
+            return view('custom_order.create', [
+                'categories' => $categories,
+                'regions' => $regions,
+                'profile' => $profile
+            ]);
+        }
+            $user_id = Auth::id();
+            if (!$user_id) {
                 $profile = new \stdClass();
             } else {
-                $profile = Profile::find($user_id->getAuthIdentifier());
+                $profile = Profile::find($user_id);
             }
 
         return view('custom_order.create', [
@@ -39,7 +48,6 @@ class CustomOrderController extends Controller
             'regions' => $regions,
             'profile' => $profile
         ]);
-
     }
 
     public function postCustomOrderCreate(Request $request)
@@ -79,7 +87,7 @@ class CustomOrderController extends Controller
                 'region' => 'string|required',
                 'user_name' => 'required|string|max:191',
                 'email' => 'required|email|max:191',
-                'phone' => ['required', 'string', 'regex:/^8[0-9]{10}$/', 'max:12'],
+                'phone' => 'required|string|max:16',
                 'category' => 'required|string|max:191',
                 'file' => 'file|nullable| max:20000'
             ], $messages);

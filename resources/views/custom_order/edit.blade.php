@@ -10,6 +10,15 @@
                             <h4 class="title">Редактирование заказа</h4>
                         </div>
                         <div class="content">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <form method="post" enctype="multipart/form-data" action="{{route('post-custom-order-edit')}}">
                                 {{csrf_field()}}
                                 <input title="custom_order_id" name="custom_order_id" value="{{$custom_order->id}}" type="text" hidden>
@@ -110,14 +119,5 @@
                 </div>
             </div>
         </div>
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
     </div>
 @stop

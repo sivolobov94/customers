@@ -8,6 +8,7 @@ use App\Profile;
 use App\Regions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 
 class ProductController extends Controller
 {
@@ -56,7 +57,7 @@ class ProductController extends Controller
             'price_for_one.required' => 'Цена за единицу обязательное поле',
             'cashback.required' => 'кэшбэк обязательное поле',
 
-            'name.max' => 'Поле наименование не должно быть больше 191 символов',
+            'name.max' => 'Поле наименование не должно быть больше 50 символов',
             'description.max' => 'Поле Описание не должно быть больше 1000 символов',
             'user_name.max' => 'Поле Ваше имя не должно быть больше 191 символов',
             'email.max' => 'Поле Email не должно быть больше 191 символов',
@@ -66,7 +67,7 @@ class ProductController extends Controller
         $request->validate(
             [
                 'name' => 'required|string|max:50',
-                'description' => 'required|string|max:191',
+                'description' => 'required|string|max:1000',
                 'category' => 'required|string|max:191',
                 'region' => 'required|string|max:191',
                 'manufacturer' => 'required|max:50',
@@ -85,11 +86,13 @@ class ProductController extends Controller
         $product->measure = $request->measure;
         $product->price_for_one = $request->price_for_one;
         $product->cashback = $request->cashback;
-        $image = $request->file('image');
-        if ($image) {
-            $image->move('products_images', $image->getClientOriginalName());
-            $product->image = 'products_images/'.$image->getClientOriginalName();
+        $file = $request->file('image');
+        if ($file) {
+            $file->move('products_images', $file->getClientOriginalName());
+            Image::make(sprintf('products_images/%s', $file->getClientOriginalName()))->resize(476, 350)->save();
+            $product->image = 'products_images/'.$file->getClientOriginalName();
         } else {
+            Image::make('img/no-photo.png')->resize(476, 350)->save();
             $product->image = 'img/no-photo.png';
         }
         $product->save();
@@ -115,17 +118,6 @@ class ProductController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param $id
@@ -148,28 +140,5 @@ class ProductController extends Controller
     {
         $product->image = '';
         $product->save();
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Product $product)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Product $product)
-    {
-        //
     }
 }

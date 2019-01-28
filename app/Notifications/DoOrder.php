@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\Order;
 use App\Product;
 use App\User;
 use Illuminate\Bus\Queueable;
@@ -19,6 +20,7 @@ class DoOrder extends Notification
     private $user_to;
     private $quantity;
     private $comment;
+    private $order;
 
     /**
      * Create a new notification instance.
@@ -28,14 +30,16 @@ class DoOrder extends Notification
      * @param Product $product
      * @param $quantity
      * @param $comment
+     * @param Order $order
      */
-    public function __construct(User $user_from, User $user_to, Product $product, $quantity, $comment)
+    public function __construct(User $user_from, User $user_to, Product $product, $quantity, $comment, Order $order)
     {
         $this->from_user = $user_from;
         $this->user_to = $user_to;
         $this->product = $product;
         $this->quantity = $quantity;
         $this->comment = $comment;
+        $this->order = $order;
     }
 
     /**
@@ -69,10 +73,9 @@ class DoOrder extends Notification
         return (new MailMessage)
             ->subject($subject)
             ->greeting($greeting)
-            ->line('На ваш Товар '.$this->product->name.' имеется отклик от ' . $name_user_from)
+            ->line('На ваш Товар ' . $this->product->name . ' имеется отклик от ' . $name_user_from)
             ->action('Посмотреть Покупателя', route('account', ['id' => $this->from_user->id]));
             //->line(new Action('Утвердить заказ', url('/products')));
-
     }
 
     /**
@@ -92,8 +95,8 @@ class DoOrder extends Notification
             'id_user_from' => $this->from_user->id,
             'quantity' => $this->quantity,
             'measure' => $this->product->measure,
-            'comment' => $this->comment
-
+            'comment' => $this->comment,
+            'order_id' => $this->order->id
         ];
     }
 }

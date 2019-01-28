@@ -39,7 +39,6 @@ class ProfileController extends Controller
     public function postEditProfile(Request $request)
     {
         $messages = [
-
             'r_email.email' => 'Поле Email должно быть в формате example@mail.ru',
             'regex' => 'Телефон Должен быть в формате 89998887766',
             'between' => 'Значение кэшбэка должно быть в диапазоне от :min до :max',
@@ -81,7 +80,7 @@ class ProfileController extends Controller
             'r_OGRN' => 'Поле ОГРН не должно превышать 15 символ',
             'r_OKPO' => 'Поле ОКПО не должно превышать 15 символ',
             'r_OKATO' => 'Поле ОКАТО не должно превышать 15 символ',
-            'r_bank_requisites' => 'Поле Банковские реквизиты не должно превышать 15 символ',
+            'r_bank_requisites' => 'Поле Банковские реквизиты не должно превышать 191 символ',
         ];
         $request->validate(
             [
@@ -102,7 +101,7 @@ class ProfileController extends Controller
                 'r_director' => 'string|max:191|nullable',
                 'r_chief_accountant' => 'string|max:191|nullable',
                 'r_email' => 'string|email|max:191|nullable',
-                'r_phone' => ['string','regex:/^8[0-9]{10}$/','max:12','nullable'],
+                'r_phone' => 'string|max:12|nullable',
                 'r_fax' => 'string|max:15|nullable',
                 'r_INN' => 'numeric|size:10|nullable',
                 'r_KPP' => 'numeric|size:9|nullable',
@@ -115,6 +114,7 @@ class ProfileController extends Controller
 
         $profile = Profile::firstOrCreate(['user_id' => Auth::user()->getAuthIdentifier()]);
         $profile->name = $request->name;
+        $profile->email = Auth::user()->toArray()['email'];
         $profile->company = $request->company;
         $profile->phone = $request->phone;
         $profile->region = $request->region;
@@ -204,12 +204,13 @@ class ProfileController extends Controller
         $request->validate([
             'sum' => "required|numeric|max:{$profile->accepted_balance}"
         ]);
-
+        //dd($profile);
         $cashback_list = new CashbackList();
         $cashback_list->user_id = $profile->user_id;
         $cashback_list->user_name = $profile->user_name ?? 'Имя пользователя не установлено';
         $cashback_list->sum = $request->sum;
         $cashback_list->bank_requisites = $profile->r_bank_requisites ?? 'банковские реквизиты не установлены';
+        $cashback_list->email = Auth::user()->toArray()['email'];
         $cashback_list->save();
         $profile->accepted_balance = $profile->accepted_balance - $request->sum;
         $profile->save();

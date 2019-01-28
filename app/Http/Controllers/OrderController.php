@@ -23,12 +23,16 @@ class OrderController extends Controller
                     ['msg' => 'Пользователи являющиеся продавцами не могут заказывать товары']
                 );
         }
+        $messages = [
+            'quantity.min' => 'Оформить заказ можно минимум на 1 единицу.',
+            'quantity.max' => 'Оформить заказ можно максимум на 9999999 единицу.'
+        ];
         $request->validate(
             [
-                'quantity' => 'required|numeric|max:9999999',
+                'quantity' => 'required|numeric|min:1|max:9999999',
                 'comment' => 'max:140'
             ]
-        );
+        , $messages);
         $products = Product::all();
         $product = Product::find($request->id);
         $to_user = User::find($product->user_id);
@@ -61,7 +65,7 @@ class OrderController extends Controller
         $order->cashback = $cashback;
         $order->referal_reward = $referal_reward;
         $order->save();
-        Notification::send($to_user, new DoOrder($from_user, $to_user, $product, $request->quantity, $request->comment));
+        Notification::send($to_user, new DoOrder($from_user, $to_user, $product, $request->quantity, $request->comment, $order));
         return view('products.index', ['items' => $products, 'categories' => $categories]);
     }
 

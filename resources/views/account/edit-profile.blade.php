@@ -93,7 +93,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="inputState">Категории</label>
+                                            <label for="inputState">СФеры деятельности</label>
                                             <select multiple name="category" id="inputState" class="form-control form-control-lg">
                                             @if($categories)
                                                 @foreach($categories as $category)
@@ -220,7 +220,10 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Реквизиты банка</label>
-                                            <input value="{{$profile->r_bank_requisites  ?? ''}}" name="r_bank_requisites" type="text" class="form-control" placeholder="">
+                                            <textarea name="r_bank_requisites" type="text"
+                                                      class="form-control" placeholder="">
+                                                                {{$profile->r_bank_requisites}}
+                                                            </textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -263,7 +266,7 @@
                     <div class="col-md-8">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Редактирование профилия</h4>
+                                <h4 class="title">Редактирование профиля</h4>
                             </div>
                             <div class="content">
                                 <form enctype="multipart/form-data" method="POST" action="{{route('post-edit-profile')}}">
@@ -319,7 +322,6 @@
                                             <div class="form-group">
                                                 <label>Краткое описание</label>
                                                 <textarea name="small_description" type="text" class="form-control" placeholder="">
-
                                             </textarea>
                                             </div>
                                         </div>
@@ -348,7 +350,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="inputState">Категории</label>
+                                                <label for="inputState">СФеры деятельности</label>
                                                 <select multiple name="category" id="inputState" class="form-control form-control-lg">
                                                 @if($categories)
                                                     @foreach($categories as $category)
@@ -475,7 +477,11 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Реквизиты банка</label>
-                                                <input value="" name="r_bank_requisites" type="text" class="form-control" placeholder="">
+                                                <textarea name="r_bank_requisites" type="text"
+                                                          class="form-control" placeholder=""
+                                                          disabled>
+                                                                {{$profile->r_bank_requisites}}
+                                                            </textarea>
                                             </div>
                                         </div>
                                         <div class="col-md-4">

@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.account-buyer')
 
-@section('content')
+@section('account-content')
     <div class="content">
         <div class="container-fluid">
             <div class="row">
@@ -10,6 +10,15 @@
                             <h4 class="title">Создание заказа</h4>
                         </div>
                         <div class="content">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <form method="post" enctype="multipart/form-data" action="{{route('post-custom-order-create')}}">
                                 {{csrf_field()}}
                                 <div class="row">
@@ -39,7 +48,8 @@
                                             <label for="inputState">Регион</label>
                                             <select name="region" id="inputState" class="form-control form-control-lg">
                                                 @if($regions)
-                                                    @foreach($regions as $region)
+                                                    <option value="{{$profile->region}}">{{ $profile->region}}</option>
+                                                @foreach($regions as $region)
                                                         <option>{{ $region->name }}</option>
                                                     @endforeach
                                                 @endif
@@ -81,7 +91,7 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label for="inputState">Категория</label>
+                                            <label for="inputState">Группы товаров</label>
                                             <select name="category" id="inputState" class="form-control form-control-lg">
                                                 @if($categories)
                                                     @foreach($categories as $category)
@@ -107,14 +117,5 @@
                 </div>
             </div>
         </div>
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
     </div>
 @stop

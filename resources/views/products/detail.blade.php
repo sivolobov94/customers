@@ -2,6 +2,15 @@
 
 @section('content')
         <div class="container" style="border: 4px solid darkslategray">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-md-6">
                     <img src="../../../{{$product->image}}" alt="Card image cap">
@@ -15,12 +24,17 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
+                            <input title="Категория" type="text" readonly class="form-control-plaintext"
+                                   value="Категория: {{$product->category}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
                             <p class="description">
                                 Описание: {{$product->description}}
                             </p>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-12">
                             <input title="Производитель" type="text" readonly class="form-control-plaintext"
@@ -71,15 +85,6 @@
                         @endif
 
                     </form>
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
                 </div>
             </div>
         </div>
