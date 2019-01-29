@@ -60,12 +60,12 @@ Route::post('/do-order', 'OrderController@doOrder')->name('do-order')->middlewar
 
 //custom orders
 Route::get('/custom-order/{id}', 'CustomOrderController@show')->name('custom-order-detail')->middleware('verified');
-Route::get('/custom-order-create', 'CustomOrderController@getCustomOrderCreate')->name('get-custom-order-create');
+Route::get('/custom-order-create', 'CustomOrderController@getCustomOrderCreate')->name('get-custom-order-create')->middleware('verified');
 Route::post('/custom-order-create', 'CustomOrderController@postCustomOrderCreate')->name('post-custom-order-create')->middleware('verified');
-Route::get('/custom-order-success', 'CustomOrderController@getCustomOrderSuccess')->name('get-custom-order-success');
+Route::get('/custom-order-success', 'CustomOrderController@getCustomOrderSuccess')->name('get-custom-order-success')->middleware('verified');
 Route::get('/custom-orders', 'CustomOrderController@index')->name('get-all-custom-order');
-Route::get('/custom-order-edit/{id}', 'CustomOrderController@getCustomOrderEdit')->name('get-custom-order-edit');
-Route::post('/custom-orders-edit', 'CustomOrderController@postCustomOrderEdit')->name('post-custom-order-edit');
+Route::get('/custom-order-edit/{id}', 'CustomOrderController@getCustomOrderEdit')->name('get-custom-order-edit')->middleware('verified');
+Route::post('/custom-orders-edit', 'CustomOrderController@postCustomOrderEdit')->name('post-custom-order-edit')->middleware('verified');
 
 //products not resource
 Route::get('/products', 'ProductController@index')->name('get-all-products');
@@ -75,6 +75,8 @@ Route::get('/product/{id}', 'ProductController@show')->name('product-detail');
 Route::get('/product-create', 'ProductController@getProductCreate')->name('get-product-create')->middleware('verified');
 Route::post('/product-create', 'ProductController@postProductCreate')->name('post-product-create')->middleware('verified');
 Route::get('/product-success', 'ProductController@getProductSuccess')->name('get-product-success')->middleware('verified');
+Route::get('/product/edit/{id}', 'ProductController@getProductEdit')->name('get-product-edit')->middleware('verified');
+Route::post('/product/edit/{id}', 'ProductController@postProductEdit')->name('post-product-edit')->middleware('verified');
 
 //feedback mail
 Route::post('/feedback/send', 'FeedbackController@send')->name('feedback-send');

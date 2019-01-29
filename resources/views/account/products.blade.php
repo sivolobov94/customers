@@ -29,6 +29,7 @@
                                 <td>{{$product->measure}}</td>
                                 <td>{{$product->price_for_one}}</td>
                                 <td>{{$product->cashback}}</td>
+                                <td><a class="btn btn-primary" href="{{route('get-product-edit', ['id' => $product->id])}}">Изменить</a></td>
                             </tr>
                     @endforeach
                     </tbody>

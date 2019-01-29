@@ -133,12 +133,48 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @param Request $request
+     * @return void
      */
-    public function edit(Product $product)
+    public function postProductEdit($id, Request $request)
     {
-        $product->image = '';
+        $product = Product::find($id);
+        $product->user_id = Auth::user()->getAuthIdentifier();
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->category = $request->category;
+        $product->region = $request->region;
+        $product->manufacturer = $request->manufacturer;
+        $product->measure = $request->measure;
+        $product->price_for_one = $request->price_for_one;
+        $product->cashback = $request->cashback;
+        $file = $request->file('image');
+        if ($file) {
+            $file->move('products_images', $file->getClientOriginalName());
+            Image::make(sprintf('products_images/%s', $file->getClientOriginalName()))->resize(476, 350)->save();
+            $product->image = 'products_images/'.$file->getClientOriginalName();
+        } else {
+            Image::make('img/no-photo.png')->resize(476, 350)->save();
+            $product->image = 'img/no-photo.png';
+        }
         $product->save();
+        return view('account.product-success');
+    }
+
+
+    public function getProductEdit($id)
+    {
+        $categories = Category::all();
+        $regions = Regions::all();
+        $profile = Profile::where('user_id', Auth::user()->getAuthIdentifier())->first();
+        $product = Product::find($id);
+
+        return view('account.edit-product', [
+            'product' => $product,
+            'categories' => $categories,
+            'regions' => $regions,
+            'profile' => $profile
+        ]);
     }
 }

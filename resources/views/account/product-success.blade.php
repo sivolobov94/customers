@@ -7,7 +7,7 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="header">
-                            <h2 class="title">Продукт успешно добавлен.</h2>
+                            <h2 class="title">Продукт успешно сохранен.</h2>
                         </div>
                         <div class="content">
                             <div class="container">
