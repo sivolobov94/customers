@@ -68,7 +68,7 @@
                             <div class="col-md-8">
                                 <label for="quantity">Укажите количество товара, которое хотите заказать</label>
                                 <input name="quantity" style="margin-bottom: 15px;"
-                                       id="quantity" type="number" class="form-control" value="" placeholder="10" required>
+                                       id="quantity" min="1" type="number" class="form-control" value="" placeholder="10" required>
                             </div>
                         </div>
 

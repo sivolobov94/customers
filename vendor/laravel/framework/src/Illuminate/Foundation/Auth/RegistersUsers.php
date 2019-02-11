@@ -5,7 +5,6 @@ namespace Illuminate\Foundation\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Support\Facades\Cookie;
 
 trait RegistersUsers
 {
@@ -18,10 +17,6 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        $referred_by = last(explode('=',$_SERVER['QUERY_STRING']));
-        if ($referred_by) {
-            session()->put('referred_by', $referred_by);
-        }
         return view('auth.register');
     }
 
@@ -33,7 +28,6 @@ trait RegistersUsers
      */
     public function register(Request $request)
     {
-
         $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));
@@ -63,6 +57,6 @@ trait RegistersUsers
      */
     protected function registered(Request $request, $user)
     {
-
+        //
     }
 }

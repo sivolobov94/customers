@@ -1,4 +1,4 @@
-<?hh
+<?
 /**
  * Mockery
  *
@@ -30,9 +30,9 @@ class MethodWithHHVMReturnType extends MockeryTestCase
         return array('key' => true);
     }
 
-    public function HHVMVoid() : ?void
+    public function HHVMVoid() : void
     {
-        return null;
+        return;
     }
 
     public function HHVMMixed() : mixed

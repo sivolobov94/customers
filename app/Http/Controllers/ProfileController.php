@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\CashbackList;
 use App\Category;
+use App\CustomOrder;
 use App\Order;
 use App\Profile;
 use App\Regions;
 use App\User;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,12 +22,29 @@ class ProfileController extends Controller
         return view('account.profile', ['profile' => $profile]);
     }
 
-    public function getEditProfile()
+    public function getEditProfile(Request $request)
     {
-        $profile = User::find(Auth::user()->getAuthIdentifier())->profile;
+        $profile = Profile::firstOrCreate(['user_id' => Auth::id()]);
         $categories = Category::all();
+        if ($profile->region) {
+            $client_ip = request()->ip();
+            $client = new Client();
+            $response = $client->request('GET',
+                sprintf('%s?ip=%s', env('DADATA_URL'), $client_ip),
+                ['headers' => [
+                    'Accept' => 'application/json',
+                    'Authorization' => sprintf('Token %s', env('DADATA_API_KEY'))]]);
+            $response = json_decode($response->getBody()->getContents());
+            $region = $response->location->unrestricted_value;
+            if (!Regions::where('name', $region)->first()) {
+                $new_region = new Regions();
+                $new_region->name = $region;
+                $new_region->save();
+            }
+            $profile->region = $region;
+            $profile->save();
+        }
         $regions= Regions::all();
-
         return view('account.edit-profile', ['profile' => $profile, 'categories' => $categories, 'regions' => $regions]);
     }
 
@@ -86,7 +105,7 @@ class ProfileController extends Controller
             [
                 'name' => 'string|max:191|nullable',
                 'company' => 'string|max:1000|nullable',
-                'phone' => ['string','regex:/^8[0-9]{10}$/','max:12','nullable'],
+                'phone' => 'string|max:20|nullable',
                 'region' => 'string|max:191|nullable',
                 'address' => 'max:191|nullable',
                 'small_description' => 'string||max:191|nullable',
@@ -101,7 +120,7 @@ class ProfileController extends Controller
                 'r_director' => 'string|max:191|nullable',
                 'r_chief_accountant' => 'string|max:191|nullable',
                 'r_email' => 'string|email|max:191|nullable',
-                'r_phone' => 'string|max:12|nullable',
+                'r_phone' => 'string|max:20|nullable',
                 'r_fax' => 'string|max:15|nullable',
                 'r_INN' => 'numeric|size:10|nullable',
                 'r_KPP' => 'numeric|size:9|nullable',
@@ -111,6 +130,32 @@ class ProfileController extends Controller
                 'r_bank_requisites' => 'string|max:191|nullable',
                 'r_cashback' =>'integer|between:1,100|nullable'
             ], $messages);
+        request()->session()->put('name');
+        request()->session()->put('company');
+        request()->session()->put('phone');
+        request()->session()->put('region');
+        request()->session()->put('address');
+        request()->session()->put('small_description');
+        request()->session()->put('description');
+        request()->session()->put('site');
+        request()->session()->put('category');
+        request()->session()->put('r_fullname');
+        request()->session()->put('r_name');
+        request()->session()->put('r_date_create');
+        request()->session()->put('r_law_address');
+        request()->session()->put('r_post_address');
+        request()->session()->put('director');
+        request()->session()->put('r_chief_accountant');
+        request()->session()->put('r_email');
+        request()->session()->put('r_phone');
+        request()->session()->put('r_fax');
+        request()->session()->put('r_INN');
+        request()->session()->put('r_KPP');
+        request()->session()->put('r_OGRN');
+        request()->session()->put('r_OKPO');
+        request()->session()->put('r_OKATO');
+        request()->session()->put('r_bank_requisites');
+        request()->session()->put('r_cashback');
 
         $profile = Profile::firstOrCreate(['user_id' => Auth::user()->getAuthIdentifier()]);
         $profile->name = $request->name;
@@ -148,7 +193,6 @@ class ProfileController extends Controller
             $profile->logo= 'company_logos/'.$logo->getClientOriginalName();
         }
         $profile->save();
-
         return view('account.profile', ['profile' => $profile]);
     }
 
@@ -182,7 +226,7 @@ class ProfileController extends Controller
 
     public function getOrders()
     {
-        $orders = User::find(Auth::user()->getAuthIdentifier())->customOrders()->get();
+        $orders = CustomOrder::where('user_id', Auth::id())->orderBy('created_at', 'DESC')->get();
         return view('account.orders',['orders' => $orders] );
     }
 

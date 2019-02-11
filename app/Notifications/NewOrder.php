@@ -5,7 +5,6 @@ namespace App\Notifications;
 use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
 class NewOrder extends Notification
@@ -68,7 +67,8 @@ class NewOrder extends Notification
     public function toArray($notifiable)
     {
         return [
-
+        'order_id' => $this->order_id,
+            'id_user_from' => $this->from_user->id,
         ];
     }
 }

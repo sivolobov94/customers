@@ -48,6 +48,7 @@
                                         Запомнить меня
                                     </label>
                                 </div>
+                                <a href="{{route('register')}}"><u>Регистрация</u></a>
                             </div>
                         </div>
 

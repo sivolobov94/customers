@@ -36,7 +36,8 @@
                                 @endif
                                 <h4 class="title">{{$profile->name}}<br/>
                                     <small>{{$profile->company}}</small>
-                                    <small>email:{{$profile->email}}</small>
+                                    <div><small>email:{{$profile->email}}</small>
+                                    </div>
                                 </h4>
                             </div>
                             <p class="description text-center"> {{$profile->region}}<br>

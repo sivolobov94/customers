@@ -11,6 +11,25 @@
                 <table class="table table-hover">
                     <tbody>
                     @foreach($notifications as $notification)
+                        @if($notification->type === "App\Notifications\NewOrder")
+                            <tr>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            Для вашей категории поступил новый <a
+                                                    href="{{'/custom-order/'.$notification->data['order_id']}}">заказ</a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a style="margin-left: 20%;" href="{{route('get-reply-form',
+                                            ['id' => $notification->data['id_user_from']])}}" class="btn btn-primary">
+                                                Ответить
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endif
+
                         @if($notification->type === "App\Notifications\DoOrder")
                             <tr>
                                 <td>
@@ -28,12 +47,12 @@
                                                 <br>Комментарий:{{$notification->data['comment']}}
                                             @endif
                                         </div>
-                                    <div class="col-md-4">
-                                        <a style="margin-left: 20%;" href="{{route('get-accept-delivery',
+                                        <div class="col-md-4">
+                                            <a style="margin-left: 20%;" href="{{route('get-reply-form',
                                          ['id' => $notification->data['id_user_from']])}}" class="btn btn-primary">
-                                            Ответить
-                                        </a>
-                                    </div>
+                                                Ответить
+                                            </a>
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
@@ -56,7 +75,7 @@
                                             @endif
                                         </div>
                                         <div class="col-md-4">
-                                            <a style="margin-left: 20%;" href="{{route('get-accept-delivery',
+                                            <a style="margin-left: 20%;" href="{{route('get-reply-form',
                                             ['id' => $notification->data['id_user_from']])}}" class="btn btn-primary">
                                                 Ответить
                                             </a>
@@ -65,6 +84,7 @@
                                 </td>
                             </tr>
                         @endif
+
                     @endforeach
                     </tbody>
                 </table>

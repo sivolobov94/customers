@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Auth::routes(['verify' => true]);
 //mainpage
 Route::get('/', 'MainController@index')->name('main');
@@ -60,8 +49,8 @@ Route::post('/do-order', 'OrderController@doOrder')->name('do-order')->middlewar
 
 //custom orders
 Route::get('/custom-order/{id}', 'CustomOrderController@show')->name('custom-order-detail')->middleware('verified');
-Route::get('/custom-order-create', 'CustomOrderController@getCustomOrderCreate')->name('get-custom-order-create')->middleware('verified');
-Route::post('/custom-order-create', 'CustomOrderController@postCustomOrderCreate')->name('post-custom-order-create')->middleware('verified');
+Route::get('/custom-order-create', 'CustomOrderController@getCustomOrderCreate')->name('get-custom-order-create');
+Route::post('/custom-order-create', 'CustomOrderController@postCustomOrderCreate')->name('post-custom-order-create');
 Route::get('/custom-order-success', 'CustomOrderController@getCustomOrderSuccess')->name('get-custom-order-success')->middleware('verified');
 Route::get('/custom-orders', 'CustomOrderController@index')->name('get-all-custom-order');
 Route::get('/custom-order-edit/{id}', 'CustomOrderController@getCustomOrderEdit')->name('get-custom-order-edit')->middleware('verified');
@@ -94,8 +83,9 @@ Route::get('/admin/referal/set_reward', 'AdminController@setReward')->name('admi
 Route::get('/admin/orders-accept', 'AdminController@getOrdersAccept')->name('get-orders-accept')->middleware('admin');
 
 //accept delivery
-Route::get('/accept-delivery/{id}', 'NotificationsController@getAcceptDelivery')->name('get-accept-delivery')->middleware('verified');
-Route::post('/accept-delivery', 'NotificationsController@PostAcceptDelivery')->name('post-accept-delivery')->middleware('verified');
+Route::get('/reply-form/{id}', 'NotificationsController@getReplyForm')->name('get-reply-form')->middleware('verified');
+Route::post('/reply-form', 'NotificationsController@postReplyForm')->name('post-reply-form')->middleware('verified');
+Route::post('/reply-form', 'NotificationsController@postReplyForm')->name('post-reply-form')->middleware('verified');
 
 Auth::routes();
 

@@ -169,7 +169,6 @@ class ProductController extends Controller
         $regions = Regions::all();
         $profile = Profile::where('user_id', Auth::user()->getAuthIdentifier())->first();
         $product = Product::find($id);
-
         return view('account.edit-product', [
             'product' => $product,
             'categories' => $categories,

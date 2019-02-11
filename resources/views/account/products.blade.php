@@ -7,7 +7,7 @@
                 <h4 class="title">Ваши товары</h4>
             </div>
             <div class="content table-responsive table-full-width">
-                <table class="table table-hover">
+                <table style="table-layout: fixed" class="table table-fixed">
                     <thead>
                     <th>Название</th>
                     <th>Описание</th>
@@ -22,7 +22,7 @@
                     @foreach($products as $product)
                             <tr onclick="window.location.assign('/product/{{$product->id}}');">
                                 <td>{{$product->name}}</td>
-                                <td>{{$product->description}}</td>
+                                <td style="width: 20%">{{$product->description}}</td>
                                 <td>{{$product->category}}</td>
                                 <td>{{$product->region}}</td>
                                 <td>{{$product->manufacturer}}</td>

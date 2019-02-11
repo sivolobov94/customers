@@ -114,7 +114,6 @@
 <script src="{{asset('js/jquery.maskedinput.min.js')}}" type="text/javascript"></script>
 <script>
     jQuery(function($){
-        $("#phone").mask("8(999)999-99-99");
         $("#r_phone").mask("8(999)999-99-99");
         $("#date").mask("99.99.9999");
         $("#fax").mask("8-999-9999999");

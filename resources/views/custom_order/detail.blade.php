@@ -33,12 +33,6 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="text" readonly class="form-control-plaintext" value="Email: {{$order->email}}">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
                         <input type="text" readonly class="form-control-plaintext" value="Телефон: {{$order->phone}}">
                     </div>
                 </div>
@@ -53,7 +47,8 @@
                 @if (Auth::user()->toArray()['role'] == 'sale')
                 <div class="row">
                     <div class="col-md-12">
-                        <a class="btn btn-primary" href="{{route('get-accept-delivery', ['id' => $order->user_id])}}">Откликнуться</a>
+                        <a class="btn btn-primary" href="{{route('get-reply-form', ['id' => $order->user_id,
+                         'order_id' => $order->user_id])}}">Откликнуться</a>
                     </div>
                 </div>
                 @endif

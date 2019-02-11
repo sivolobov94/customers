@@ -74,7 +74,7 @@
                                             </label>
                                             <p>% кэшбэка</p>
                                             <input value="{{$profile->r_cashback ?? ''}}" name="cashback" type="text"
-                                                   class="form-control" id="inputCity">
+                                                   class="form-control" id="inputCity" required>
                                         </div>
                                     </div>
                                     <div class="form-row">

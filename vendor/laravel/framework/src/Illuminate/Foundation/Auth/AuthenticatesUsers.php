@@ -4,7 +4,6 @@ namespace Illuminate\Foundation\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Validation\ValidationException;
 
 trait AuthenticatesUsers
@@ -64,10 +63,7 @@ trait AuthenticatesUsers
      */
     protected function validateLogin(Request $request)
     {
-        $messages = [
-
-        ];
-        $this->validate($request, [
+        $request->validate([
             $this->username() => 'required|string',
             'password' => 'required|string',
         ]);
@@ -122,7 +118,7 @@ trait AuthenticatesUsers
      */
     protected function authenticated(Request $request, $user)
     {
-        return redirect()->guest('login');
+        //
     }
 
     /**

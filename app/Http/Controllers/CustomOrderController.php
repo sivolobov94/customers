@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Categories;
 use App\Category;
 use App\CustomOrder;
 use App\Notifications\NewOrder;
@@ -24,11 +23,11 @@ class CustomOrderController extends Controller
 
     public function getCustomOrderCreate()
     {
+        //dd(request()->session()->all());
         request()->session()->put(['redirect' => URL::full()]);
         $categories = Category::all();
         $regions = Regions::all();
-
-        if (auth::user()){
+        if (auth::user()) {
             $profile = Profile::firstOrCreate(['user_id' => auth::id()]);
             return view('custom_order.create', [
                 'categories' => $categories,
@@ -36,12 +35,7 @@ class CustomOrderController extends Controller
                 'profile' => $profile
             ]);
         }
-            $user_id = Auth::id();
-            if (!$user_id) {
-                $profile = new \stdClass();
-            } else {
-                $profile = Profile::find($user_id);
-            }
+        $profile = collect();
 
         return view('custom_order.create', [
             'categories' => $categories,
@@ -52,12 +46,14 @@ class CustomOrderController extends Controller
 
     public function postCustomOrderCreate(Request $request)
     {
-        if (Auth::user()->toArray()['role'] === 'sale') {
-            return redirect()
-                ->back()
-                ->withErrors(
-                    ['msg' => 'Пользователи являющиеся продавцами не могут создавать заказы']
-                );
+        if (Auth::user()) {
+            if (Auth::user()->toArray()['role'] === 'sale') {
+                return redirect()
+                    ->back()
+                    ->withErrors(
+                        ['msg' => 'Пользователи являющиеся продавцами не могут создавать заказы']
+                    );
+            }
         }
 
         $messages = [
@@ -93,38 +89,53 @@ class CustomOrderController extends Controller
             ], $messages);
 
         $user_id = Auth::user();
-        if(is_null($user_id)) {
+        if (is_null($user_id)) {
             $user_id = env('GUEST_ID');
         } else {
             $user_id = $user_id->getAuthIdentifier();
         }
 
-        $order = new CustomOrder();
-        $order->name = $request->name;
-        $order->user_id = $user_id;
-        $order->description = $request->description;
-        $order->region = $request->region;
-        $order->user_name = $request->user_name;
-        $order->email = $request->email;
-        $order->phone = $request->phone;
-        $order->category = $request->category;
-
-        $file = $request->file('file');
-        if ($file) {
-            $file->move('custom_orders_files', $file->getClientOriginalName());
-            $order->file = $file->getClientOriginalName();
+        request()->session()->put('name', $request->name);
+        request()->session()->put('description', $request->description);
+        request()->session()->put('region', $request->region);
+        request()->session()->put('user_name', $request->user_name);
+        request()->session()->put('email', $request->email);
+        request()->session()->put('phone', $request->phone);
+        request()->session()->put('category', $request->category);
+        if ($request->file) {
+            request()->session()->put('file', $request->file->getClientOriginalName());
         }
+        //dd(request()->session()->all());
+        if (Auth::user()) {
+            $order = new CustomOrder();
+            $order->name = $request->name;
+            $order->user_id = $user_id;
+            $order->description = $request->description;
+            $order->region = $request->region;
+            $order->user_name = $request->user_name;
+            $order->email = $request->email;
+            $order->phone = $request->phone;
+            $order->category = $request->category;
 
-        $order->save();
-        //оповестить всех поставщиков выбранной вами категории о вашем новом заказе
-        $profiles = Profile::all();
-        $filtred_profiles = $profiles->where('category', $order->category);
-        $from_user = User::find(Auth::user()->getAuthIdentifier());
-        foreach ($filtred_profiles as $profile) {
-            $to_user = User::find($profile->user_id);
-            Notification::send($to_user, new NewOrder($from_user, $order->id));
+            $file = $request->file('file');
+            if ($file) {
+                $file->move('custom_orders_files', $file->getClientOriginalName());
+                $order->file = $file->getClientOriginalName();
+            }
+
+            $order->save();
+            //оповестить всех поставщиков выбранной вами категории о вашем новом заказе
+            $profiles = Profile::all();
+            $filtred_profiles = $profiles->where('category', $order->category);
+            $from_user = User::find(Auth::user()->getAuthIdentifier());
+            foreach ($filtred_profiles as $profile) {
+                $to_user = User::find($profile->user_id);
+                Notification::send($to_user, new NewOrder($from_user, $order->id));
+            }
+            return view('custom_order.success');
         }
-        return view('custom_order.success');
+        
+        return redirect()->route('login');
     }
 
     public function getCustomOrderEdit($id)
@@ -189,7 +200,7 @@ class CustomOrderController extends Controller
             ], $messages);
 
         $user_id = Auth::user();
-        if(is_null($user_id)) {
+        if (is_null($user_id)) {
             $user_id = env('GUEST_ID');
         } else {
             $user_id = $user_id->getAuthIdentifier();
@@ -221,6 +232,7 @@ class CustomOrderController extends Controller
         }
         return view('custom_order.success');
     }
+
     public function getCustomOrderSuccess()
     {
         return view('custom_order.success');

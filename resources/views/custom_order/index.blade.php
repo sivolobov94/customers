@@ -20,7 +20,6 @@
                     <th>Описание</th>
                     <th>Категория</th>
                     <th>Регион</th>
-                    <th>email</th>
                     <th style="width: 170px;">Дата создания</th>
                     </thead>
                     <tbody>
@@ -30,7 +29,6 @@
                             <td>{{$custom_order->description}}</td>
                             <td>{{$custom_order->category}}</td>
                             <td>{{$custom_order->region}}</td>
-                            <td>{{$custom_order->email}}</td>
                             <td style="width: 170px;">{{$custom_order->created_at}}</td>
                         </tr>
                     @endforeach

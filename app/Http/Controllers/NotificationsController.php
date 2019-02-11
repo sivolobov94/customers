@@ -24,13 +24,32 @@ class NotificationsController extends Controller
         return view('notifications.index', ['notifications' => $notifications]);
     }
 
-    public function getAcceptDelivery()
+    public function getReplyForm()
     {
         $id = last(explode('/',URL::current()));
-        return view('account.accept-delivery', ['id' => $id]);
+        return view('account.reply-form', ['id' => $id]);
     }
 
-    public function postAcceptDelivery(Request $request)
+    public function postReplyForm(Request $request)
+    {
+        $request->validate([
+            'comment' => 'string|max:191',
+            'file' => 'file|max:20000'
+        ]);
+        $comment = $request->comment ?? '';
+        $file = $request->file ?? '';
+        $from_user = User::find(Auth::user()->getAuthIdentifier());
+        $to_user = User::find($request->id);
+        if ($file) {
+            $file->move('custom_orders_online', $file->getClientOriginalName());
+            $file = '/custom_orders_online/'.$file->getClientOriginalName();
+        }
+
+        Notification::send($to_user, new ReplyToBuyer($from_user, $to_user, $comment, $file));
+        return view('account.mail-success');
+    }
+
+    public function replyToCustomOrder(Request $request)
     {
         $request->validate([
             'comment' => 'string|max:191',

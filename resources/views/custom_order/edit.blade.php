@@ -49,6 +49,7 @@
                                         <div class="form-group">
                                             <label for="inputState">Регион</label>
                                             <select  name="region" id="inputState" class="form-control form-control-lg">
+                                                <option value="{{$custom_order->region}}">{{$custom_order->region}}</option>
                                                 @if($regions)
                                                     @foreach($regions as $region)
                                                         <option>{{ $region->name }}</option>
@@ -94,7 +95,8 @@
                                         <div class="form-group">
                                             <label for="inputState">Категория</label>
                                             <select name="category" id="inputState" class="form-control form-control-lg">
-                                                @if($categories)
+                                                <option value="{{$custom_order->category}}">{{$custom_order->category}}</option>
+                                            @if($categories)
                                                     @foreach($categories as $category)
                                                         <option>{{ $category->name }}</option>
                                                     @endforeach

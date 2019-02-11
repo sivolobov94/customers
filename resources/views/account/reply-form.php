@@ -3,7 +3,7 @@
 @section('account-content')
     <div class="col-md-12">
         <p>Сообщение:</p>
-        <form method="post" enctype="multipart/form-data" action="{{route('post-accept-delivery')}}">
+        <form method="post" enctype="multipart/form-data" action="{{route('post-reply-form')}}">
             {{csrf_field()}}
             <textarea name="comment" id="" cols="60" rows="7"
                       placeholder="">
