@@ -80,7 +80,7 @@ class CustomOrderController extends Controller
             [
                 'name' => 'required|string|max:191',
                 'description' => 'required|string|max:1000',
-                'region' => 'string|required',
+                'region' => 'required|string',
                 'user_name' => 'required|string|max:191',
                 'email' => 'required|email|max:191',
                 'phone' => 'required|string|max:16',
@@ -183,7 +183,6 @@ class CustomOrderController extends Controller
             'email.max' => 'Поле Email не должно быть больше 191 символов',
             'phone.max' => 'Поле телефон не должно быть больше 12 символов',
             'category.max' => 'Поле наименование не должно быть больше 191 символов',
-
             'email' => 'Поле Email должно быть в формате example@mail.ru',
             'regex' => 'Телефон Должен быть в формате 89998887766'
         ];
@@ -194,7 +193,7 @@ class CustomOrderController extends Controller
                 'region' => 'string|required',
                 'user_name' => 'required|string|max:191',
                 'email' => 'required|email|max:191',
-                'phone' => ['required', 'string', 'regex:/^8[0-9]{10}$/', 'max:12'],
+                'phone' => 'required|string|max:20',
                 'category' => 'required|string|max:191',
                 'file' => 'file|nullable'
             ], $messages);

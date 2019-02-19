@@ -63,7 +63,7 @@ class OrderController extends Controller
         $order->sale = $to_user->name ?? 'Пользователь без имени';
         $order->sum = (int)$request->quantity * (int)$product->price_for_one;
         $order->cashback = $cashback;
-        $order->referal_reward = $referal_reward;
+        $order->referal_reward = $referal_reward ?? '';
         $order->save();
         Notification::send($to_user, new DoOrder($from_user, $to_user, $product, $request->quantity, $request->comment, $order));
         return view('products.index', ['items' => $products, 'categories' => $categories]);

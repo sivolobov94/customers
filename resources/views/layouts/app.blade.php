@@ -8,10 +8,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Сервис кэшбэка</title>
-
-
-
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">

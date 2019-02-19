@@ -63,6 +63,7 @@ class ProductController extends Controller
             'email.max' => 'Поле Email не должно быть больше 191 символов',
             'phone.max' => 'Поле телефон не должно быть больше 12 символов',
             'category.max' => 'Поле наименование не должно быть больше 191 символов',
+            'price_for_one.max' => 'Поле цена не должно превышать 20 символов',
         ];
         $request->validate(
             [
@@ -72,7 +73,7 @@ class ProductController extends Controller
                 'region' => 'required|string|max:191',
                 'manufacturer' => 'required|max:50',
                 'measure' => 'required|string|max:20',
-                'price_for_one' => 'required|string|max:10',
+                'price_for_one' => 'required|string|max:20',
                 'cashback' => 'required|numeric|between:1,100',
             ], $messages);
 

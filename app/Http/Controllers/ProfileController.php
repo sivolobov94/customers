@@ -205,9 +205,10 @@ class ProfileController extends Controller
     {
         $user = User::where('id', Auth::user()->getAuthIdentifier())->first();
         if (password_verify($request->input('current_password'), $user->password) && $request->input('new_password') === $request->input('accept_password')) {
-            $user->password = $request->input('new_password');
+            $user->password = bcrypt($request->input('new_password'));
             $user->save();
-            return view('account.profile');
+            $profile = Profile::where('user_id', $user->id)->first();
+            return view('account.profile', ['profile' =>$profile]);
         } else {
             return view('account.edit-password');
         }
